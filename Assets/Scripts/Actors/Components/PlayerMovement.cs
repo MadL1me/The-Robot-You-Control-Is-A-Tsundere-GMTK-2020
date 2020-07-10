@@ -40,8 +40,11 @@ namespace GMTK2020
             
             if (Input.GetKeyDown(KeyCode.Space))
                 StartCoroutine(Dash());
-            
-            transform.Translate(_moveVector * _movingSpeed * Time.deltaTime);
+        }
+
+        private void FixedUpdate()
+        {
+            _rigidbody.velocity = (_moveVector * _movingSpeed * Time.fixedDeltaTime);
         }
 
         private IEnumerator Dash()
@@ -50,11 +53,12 @@ namespace GMTK2020
 
             var curPosition = transform.position;
             var nextPosition = _moveVector * _dashingLength * _dashingSpeed;
+            var difference = (nextPosition - curPosition).normalized;
             var wait = new WaitForFixedUpdate();
             
             for (float i = 0; i < 1; i += Time.deltaTime)
             {
-                transform.position = Vector3.Lerp(curPosition, nextPosition, i);
+                _rigidbody.velocity = difference * _dashingSpeed;
                 yield return wait;
             }
 

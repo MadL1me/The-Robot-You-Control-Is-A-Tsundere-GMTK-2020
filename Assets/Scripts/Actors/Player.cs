@@ -8,7 +8,7 @@ namespace GMTK2020
 {
     public class Player : Actor
     {
-        public override void OnActorDeath()
+        public override void Die()
         {
             Debug.Log("PLAYER DEATH");
         }
