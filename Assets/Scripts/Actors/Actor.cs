@@ -8,6 +8,8 @@ namespace GMTK2020
     [RequireComponent(typeof(HealthComponent))]
     public abstract class Actor : MonoBehaviour
     {
+        public event Action OnActorDeath;
+        
         protected HealthComponent _health;
         [SerializeField] protected float _movingSpeed;
         
@@ -20,9 +22,10 @@ namespace GMTK2020
 
         protected virtual void SubscribeOnEvents()
         {
+            OnActorDeath += Die;
             _health.OnHealthEnd += OnActorDeath;
         }
 
-        public abstract void OnActorDeath();
+        public abstract void Die();
     }
 }
