@@ -9,6 +9,8 @@ namespace GMTK2020
     public abstract class Actor : MonoBehaviour
     {
         public event Action OnActorDeath;
+
+        public ProjectileSide Side;
         
         protected HealthComponent _health;
         protected Rigidbody2D _rigidbody;

@@ -9,7 +9,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Weapon : ScriptableObject
 {
-    public Bullet Ammo;
+    public BulletConfig Ammo;
     public int MagazineRounds;
     public float ReloadSpeed;
 }

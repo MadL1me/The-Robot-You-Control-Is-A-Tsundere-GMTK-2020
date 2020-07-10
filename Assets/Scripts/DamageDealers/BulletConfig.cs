@@ -8,5 +8,7 @@ namespace GMTK2020
         public float BulletSpeed;
         public int BulletDamage;
         public Sprite Sprite;
+
+        public Bullet BulletPrefab;
     }
 }
