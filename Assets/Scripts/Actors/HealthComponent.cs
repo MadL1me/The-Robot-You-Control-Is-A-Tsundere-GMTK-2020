@@ -27,6 +27,16 @@ namespace GMTK2020
             } 
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("DamageDealer"))
+            {
+                var damage = other.gameObject.GetComponent<IDamageDealer>().GetDamage;
+                Debug.Log("Damage get");
+                Health -= damage;
+            }
+        }
+
         [SerializeField] private int _maxHealth;
         [SerializeField] private int _health;
     }
