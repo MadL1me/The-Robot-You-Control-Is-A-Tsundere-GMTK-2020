@@ -11,11 +11,14 @@ namespace GMTK2020
         public event Action OnActorDeath;
         
         protected HealthComponent _health;
+        protected Rigidbody2D _rigidbody;
+        
         [SerializeField] protected float _movingSpeed;
         
         protected virtual void Awake()
         {
             _health = GetComponent<HealthComponent>();
+            _rigidbody = GetComponent<Rigidbody2D>();
             
             SubscribeOnEvents();
         }
