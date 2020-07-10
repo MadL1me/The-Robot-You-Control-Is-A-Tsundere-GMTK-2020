@@ -10,7 +10,8 @@ namespace GMTK2020
     [RequireComponent(typeof(Collider2D))]
     public class Bullet : MonoBehaviour, IDamageDealer
     {
-        public int GetDamage => _damage;
-        [SerializeField] protected int _damage;
+        [SerializeField] private BulletConfig _bulletConfig;
+        
+        public int GetDamage => _bulletConfig.BulletDamage;
     }
 }
