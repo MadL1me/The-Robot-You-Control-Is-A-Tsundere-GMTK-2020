@@ -44,3 +44,6 @@ TagManager:
   - name: World
     uniqueID: 3644547291
     locked: 0
+  - name: Entities
+    uniqueID: 2804920137
+    locked: 0
