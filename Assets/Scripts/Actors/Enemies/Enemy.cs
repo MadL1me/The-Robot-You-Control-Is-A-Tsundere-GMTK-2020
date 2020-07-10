@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+﻿using System;
+using Pathfinding;
 using UnityEngine;
 
 namespace GMTK2020
@@ -6,21 +7,51 @@ namespace GMTK2020
     public abstract class Enemy : Actor, IDamageDealer
     {
         public int GetDamage => _damageFromTouch;
-
-        protected AstarPath _path;
-        protected Seeker _seeker;
-        
         [SerializeField] protected int _damageFromTouch;
+
+        protected Player _player;
+        protected Path _path;
+        protected Seeker _seeker;
+        protected int _currentWayPoint;
+        protected bool _reachedEndOfThePath;
 
         protected override void Awake()
         {
-            _seeker = GetComponent<Seeker>(); 
+            FindPlayer();
+            
+            _seeker = GetComponent<Seeker>();
+            _seeker.StartPath(_rigidbody.position, _player.transform.position, OnPathComplete);
+            
             base.Awake();
         }
 
-        public abstract void Attack();
+        protected void FindPlayer() => _player = FindObjectOfType<Player>();
+
+        protected void OnPathComplete(Path path)
+        {
+            if (!path.error)
+            {
+                _path = path;
+                _currentWayPoint = 0;
+            }
+        }
+
+        protected virtual void Update()
+        {
+            HandleAstarPath();
+        }
+
+        protected void HandleAstarPath()
+        {
+            if (_currentWayPoint == _path.vectorPath.Count)
+                _reachedEndOfThePath = true;
+            else
+                _reachedEndOfThePath = false;
+        }
+
+        protected abstract void Attack();
         protected abstract void Move();
-        public abstract void MakeAIDecision();
+        protected abstract void MakeAIDecision();
         
         public override void Die() { Destroy(gameObject); }
     }
