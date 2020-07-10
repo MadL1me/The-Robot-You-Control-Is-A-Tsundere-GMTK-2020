@@ -6,12 +6,25 @@ namespace GMTK2020
     { 
         int GetDamage { get; }
     }
+
+    public enum ProjectileSide
+    {
+        Friend,
+        Opponent
+    }
     
     [RequireComponent(typeof(Collider2D))]
     public class Bullet : MonoBehaviour, IDamageDealer
     {
-        [SerializeField] private BulletConfig _bulletConfig;
-        
-        public int GetDamage => _bulletConfig.BulletDamage;
+        public int GetDamage => _damage;
+        [SerializeField] protected int _damage;
+
+        public float Speed;
+        public ProjectileSide Side;
+
+        private void Update()
+        {
+            
+        }
     }
 }
