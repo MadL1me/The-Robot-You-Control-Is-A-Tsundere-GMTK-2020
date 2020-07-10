@@ -1,18 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using GMTK2020;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace GMTK2020
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Player : Actor
     {
-        
-    }
+        public override void OnActorDeath()
+        {
+            Debug.Log("PLAYER DEATH");
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+                _health.Health -= 200;
+        }
+    }   
 }
