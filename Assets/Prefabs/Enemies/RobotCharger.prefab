@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2090022834594560105}
   - component: {fileID: 2090022834594560110}
   - component: {fileID: 2090022834594560149}
+  - component: {fileID: 134092940}
   m_Layer: 0
   m_Name: RobotCharger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd46afcf69e49e088c0eb635a3485c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 0
-  _health: 0
+  _maxHealth: 150
+  _health: 150
 --- !u!212 &2090022834594560104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1490047159
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1397487043193086174, guid: 3c671fff7b6af304a8caeb37f3b81026,
     type: 3}
@@ -163,6 +164,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   _movingSpeed: 200
-  _damageFromTouch: 0
+  _damageFromTouch: 200
   _pathUpdatingRate: 1.5
   _currentWayPoint: 0
+--- !u!58 &134092940
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090022834594560148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005140722, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.38974887
