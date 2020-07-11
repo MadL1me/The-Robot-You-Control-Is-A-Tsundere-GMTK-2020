@@ -25,6 +25,24 @@ namespace GMTK2020
             base.Awake();
         }
 
+        protected override void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                _bearer.TrySetWeapon(0);
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+                _bearer.TrySetWeapon(1);
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+                _bearer.TrySetWeapon(2);
+
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+                _bearer.TrySetWeapon(_bearer.ActiveWeapon + 1);
+
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+                _bearer.TrySetWeapon(_bearer.ActiveWeapon - 1); ;
+
+            base.Update();
+        }
+
         protected override void PlayActorAnimations()
         {
             var animType = AnimType.Idle;

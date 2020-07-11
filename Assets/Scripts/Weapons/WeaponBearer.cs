@@ -73,20 +73,6 @@ public class WeaponBearer : MonoBehaviour
                 CurrentWeapon.Refill();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            TrySetWeapon(0);
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            TrySetWeapon(1);
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            TrySetWeapon(2);
-        
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f ) // forward
-            TrySetWeapon(ActiveWeapon+1);
-        
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f ) // backwards
-            TrySetWeapon(ActiveWeapon-1);;
-        
     }
 
     public bool Shoot(float direction)
