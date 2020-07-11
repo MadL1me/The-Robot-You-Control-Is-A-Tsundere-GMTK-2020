@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2090022834594560110}
   - component: {fileID: 2090022834594560149}
   - component: {fileID: 134092940}
+  - component: {fileID: 134092941}
   m_Layer: 0
   m_Name: RobotCharger
   m_TagString: Enemy
@@ -89,9 +90,9 @@ SpriteRenderer:
   m_SortingLayerID: -1490047159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1397487043193086174, guid: 3c671fff7b6af304a8caeb37f3b81026,
+  m_Sprite: {fileID: -1345355511210907812, guid: 8e7c1eb5c14859b468c6df4f3638de9f,
     type: 3}
-  m_Color: {r: 0.18607318, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,6 +181,25 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005140722, y: 0}
+  m_Offset: {x: -0.00023174286, y: 0.091319084}
   serializedVersion: 2
-  m_Radius: 0.38974887
+  m_Radius: 0.34469217
+--- !u!95 &134092941
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090022834594560148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6b522088984ad643a03b39f4faca9c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
