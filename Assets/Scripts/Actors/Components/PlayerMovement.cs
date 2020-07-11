@@ -35,6 +35,7 @@ namespace GMTK2020
         [SerializeField] private Camera _camera;
         
         private bool _isDashing;
+        private bool _isDashTimeout;
         private float _horizontalMove;
         private float _verticalMove;
 
@@ -56,6 +57,7 @@ namespace GMTK2020
 
         private void Update()
         {
+
             if (!DisableAllInput)
                 HandleInputs();
 
@@ -107,7 +109,7 @@ namespace GMTK2020
 
             if (_isDashing)
                 return;
-            
+
             _horizontalMove = Input.GetAxisRaw("Horizontal");
             _verticalMove = Input.GetAxisRaw("Vertical");
 
@@ -143,34 +145,41 @@ namespace GMTK2020
 
             MoveVector = new Vector3(_horizontalMove, _verticalMove).normalized;
             
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !_isDashTimeout)
                 StartCoroutine(Dash());
         }
 
         private void FixedUpdate()
         {
-            _rigidbody.velocity = (MoveVector * _movingSpeed * Time.fixedDeltaTime);
+            if (!_isDashing)
+                _rigidbody.velocity = (MoveVector * _movingSpeed * Time.fixedDeltaTime);
         }
+
 
         private IEnumerator Dash()
         {
+            Debug.Log("Dash started");
             _isDashing = true;
+            _isDashTimeout = true;
             _healthComponent.IsInvisible = true;
             
             var curPosition = transform.position;
             var nextPosition = MoveVector * _dashingLength * _dashingSpeed;
             var difference = (nextPosition - curPosition).normalized;
             var wait = new WaitForFixedUpdate();
+
+            var distance = _dashingSpeed * _dashingLength;
             
-            for (float i = 0; i < 1; i += Time.deltaTime)
+            for (float i = 0; i < distance; i += _dashingSpeed)
             {
-                _rigidbody.velocity = difference * _dashingSpeed;
+                _rigidbody.velocity = (MoveVector * _dashingSpeed * Time.fixedDeltaTime);
                 yield return wait;
             }
-
+            
             _healthComponent.IsInvisible = false;
-            yield return new WaitForSeconds(_dashTimeout);
             _isDashing = false;
+            yield return new WaitForSeconds(_dashTimeout);
+            _isDashTimeout = false;
         }
     }
 }
