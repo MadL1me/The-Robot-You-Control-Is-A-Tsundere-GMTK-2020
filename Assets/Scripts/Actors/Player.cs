@@ -24,12 +24,17 @@ namespace GMTK2020
             Debug.Log("PLAYER DEATH");
         }
 
-        public void OnGetDamage(int damage)
+        public override bool Damage(int amount)
         {
-            HealthStats.Health -= damage;
-            HealthStats.SetInvisibleForTime(_invisibleTime);
+            if (base.Damage(amount))
+            {
+                HealthStats.SetInvisibleForTime(_invisibleTime);
+                return true;
+            }
+
+            return false;
         }
-        
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))

@@ -58,8 +58,8 @@ namespace GMTK2020
             {
                 if (Side != actor.Side)
                 {
-                    actor.HealthStats.Health -= Config.BulletDamage;
-                    Destroy(gameObject);
+                    if (actor.Damage(Config.BulletDamage))
+                        Destroy(gameObject);
                 }
             }
             else

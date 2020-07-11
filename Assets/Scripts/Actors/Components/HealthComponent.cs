@@ -21,9 +21,6 @@ namespace GMTK2020
             get => _health;
             set
             {
-                if (IsInvisible)
-                    return;
-                
                 _health = value;
                 
                 OnHealthChange?.Invoke(value, _maxHealth);

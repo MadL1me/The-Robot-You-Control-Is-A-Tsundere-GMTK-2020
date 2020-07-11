@@ -17,6 +17,19 @@ namespace GMTK2020
         protected Rigidbody2D _rigidbody;
         
         [SerializeField] protected float _movingSpeed;
+
+        public bool CanTakeDamage() =>
+            !HealthStats.IsInvisible;
+
+        public virtual bool Damage(int amount)
+        {
+            if (!CanTakeDamage())
+                return false;
+
+            HealthStats.Health -= amount;
+
+            return true;
+        }
         
         protected virtual void Awake()
         {

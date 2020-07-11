@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 0
   _movingSpeed: 1
+  _camera: {fileID: 0}
+  _invisibleTime: 1
 --- !u!114 &3662044472884154150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,7 @@ MonoBehaviour:
   _movingSpeed: 250
   _dashingSpeed: 0.1
   _dashingLength: 9
+  _dashTimeout: 0
 --- !u!50 &8453965063706806823
 Rigidbody2D:
   serializedVersion: 4
@@ -189,5 +192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c827a8d4d02a2499893883f92a1dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentWeapon: {fileID: 11400000, guid: f45c89e177c959d44b3b769bd4a8ae34, type: 2}
-  CurrentRounds: 0
+  InitialArsenal: []
+  ActiveWeapon: 0
