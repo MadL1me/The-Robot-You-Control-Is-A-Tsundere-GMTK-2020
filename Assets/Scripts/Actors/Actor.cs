@@ -41,10 +41,9 @@ namespace GMTK2020
 
         protected virtual void SubscribeOnEvents()
         {
-            OnActorDeath += Die;
-            HealthStats.OnHealthEnd += OnActorDeath;
+            HealthStats.OnHealthEnd += Die;
         }
 
-        public abstract void Die();
+        public virtual void Die() => OnActorDeath?.Invoke();
     }
 }

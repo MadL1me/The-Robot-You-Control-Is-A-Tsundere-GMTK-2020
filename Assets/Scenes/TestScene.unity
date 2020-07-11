@@ -219,6 +219,11 @@ PrefabInstance:
       propertyPath: _invisibleTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3662044472884154203, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _health
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3662044472884154205, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: m_Name

@@ -21,6 +21,7 @@ namespace GMTK2020
 
         public override void Die()
         {
+            base.Die();
             Debug.Log("PLAYER DEATH");
         }
 
