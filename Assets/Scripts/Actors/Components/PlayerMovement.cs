@@ -92,7 +92,7 @@ namespace GMTK2020
             else if (Input.GetKeyDown(KeyCode.Alpha3))
                 _bearer.TrySetWeapon(2);
 
-            if ((_bearer.CurrentWeapon?.WeaponType.IsAutomatic == true ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1"))
+            if ((_bearer.CurrentWeapon?.WeaponConfig.IsAutomatic == true ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1"))
                 || _glitch.HasFlag(GlitchType.RandomShoot))
             {
                 var vecDiff = Input.mousePosition - new Vector3(_camera.pixelWidth, _camera.pixelHeight) / 2F;
@@ -100,7 +100,7 @@ namespace GMTK2020
                 var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;
 
                 if (_bearer.Shoot(direction))
-                    _cameraFollow.Shake(_bearer.CurrentWeapon.WeaponType.ScreenShakeAmount);
+                    _cameraFollow.Shake(_bearer.CurrentWeapon.WeaponConfig.ScreenShakeAmount);
             }
 
             if (_isDashing)

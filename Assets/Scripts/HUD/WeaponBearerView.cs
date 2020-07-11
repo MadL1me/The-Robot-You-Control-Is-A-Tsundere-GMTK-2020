@@ -8,7 +8,13 @@ namespace GMTK2020.HUD
     {
         [SerializeField] private Image _weaponImage;
         [SerializeField] private Text _weaponName;
-        
+        [SerializeField] private WeaponBearer _weaponBearer;
+
+        private void Start()
+        {
+            SwitchWeapon(_weaponBearer.CurrentWeapon.WeaponConfig);
+        }
+
         public void SwitchWeapon(WeaponConfig weaponConfig)
         {
             _weaponName.text = weaponConfig.WeaponName;

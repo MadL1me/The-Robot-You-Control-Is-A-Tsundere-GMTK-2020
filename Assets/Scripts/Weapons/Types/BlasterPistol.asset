@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efc013de53c0e84cbc9bd4bc550045a, type: 3}
   m_Name: BlasterPistol
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 0}
-  MagazineRounds: 0
-  ReloadDuration: 0
-  ShootDelay: 0
+  Ammo: {fileID: 11400000, guid: 696ec147633d6e54eb76284faab92a36, type: 2}
+  MagazineRounds: 1
+  ReloadDuration: 1
+  ShootDelay: 1
   IsAutomatic: 0
-  RoundsPerShot: 0
-  Spread: 0
-  WeaponSprite: {fileID: 0}
-  ScreenShakeAmount: 0
+  RoundsPerShot: 1
+  Spread: 1
+  WeaponSprite: {fileID: 21300000, guid: f206c6e93ef37404088aa37c481c1c3a, type: 3}
+  ScreenShakeAmount: 1
+  WeaponName: Sans bone

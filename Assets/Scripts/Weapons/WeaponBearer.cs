@@ -40,13 +40,13 @@ public class WeaponBearer : MonoBehaviour
         CurrentWeapon?.CanShoot() == true && !IsReloading;
 
     public bool CanReload() =>
-        CurrentWeapon?.CurrentRounds != CurrentWeapon.WeaponType.MagazineRounds && !IsReloading;
+        CurrentWeapon?.CurrentRounds != CurrentWeapon.WeaponConfig.MagazineRounds && !IsReloading;
 
     public bool RequiresReload() =>
         CurrentWeapon?.CurrentRounds == 0 && !IsReloading;
 
     public float GetReloadProgress() =>
-        (Time.time - _reloadStart) / CurrentWeapon.WeaponType.ReloadDuration;
+        (Time.time - _reloadStart) / CurrentWeapon.WeaponConfig.ReloadDuration;
 
     public bool TrySetWeapon(int weaponId)
     {
@@ -63,7 +63,7 @@ public class WeaponBearer : MonoBehaviour
     {
         if (IsReloading)
         {
-            if (Time.time - _reloadStart > CurrentWeapon?.WeaponType.ReloadDuration)
+            if (Time.time - _reloadStart > CurrentWeapon?.WeaponConfig.ReloadDuration)
             {
                 IsReloading = false;
                 CurrentWeapon.Refill();
