@@ -10,15 +10,10 @@ namespace GMTK2020.HUD
         [SerializeField] private Text _weaponName;
         [SerializeField] private WeaponBearer _weaponBearer;
 
-        private void Start()
+        private void Update()
         {
-            SwitchWeapon(_weaponBearer.CurrentWeapon.WeaponConfig);
-        }
-
-        public void SwitchWeapon(WeaponConfig weaponConfig)
-        {
-            _weaponName.text = weaponConfig.WeaponName;
-            _weaponImage.sprite = weaponConfig.WeaponSprite;
+            _weaponName.text = _weaponBearer?.CurrentWeapon.WeaponConfig.WeaponName;
+            _weaponImage.sprite = _weaponBearer?.CurrentWeapon.WeaponConfig.WeaponSprite;
         }
     }
 }
