@@ -68,9 +68,13 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\DamageDealers\Bullet.cs" />
      <Compile Include="Assets\Scripts\DamageDealers\BulletConfig.cs" />
+     <Compile Include="Assets\Scripts\HUD\AmmoCounter.cs" />
+     <Compile Include="Assets\Scripts\HUD\ReloadIndicator.cs" />
+     <Compile Include="Assets\Scripts\HUD\ReloadProgress.cs" />
      <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponBearer.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponConfig.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/sn0wy/Desktop/Projects/Unity/GMTK_2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
