@@ -28,7 +28,7 @@ public class DialogueBox : MonoBehaviour
 
     public void DisplaySpeech(string[] lines)
     {
-        if (IsShown)
+        if (IsShown || _playingAnim)
             return;
 
         _currentLine = 0;
