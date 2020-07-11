@@ -154,7 +154,7 @@ namespace GMTK2020
         private void FixedUpdate()
         {
             if (!_isDashing)
-                _rigidbody.velocity = (MoveVector * _movingSpeed * Time.fixedDeltaTime);
+                _rigidbody.velocity = MoveVector * _movingSpeed;
         }
 
 
@@ -174,7 +174,7 @@ namespace GMTK2020
             
             for (float i = 0; i < distance; i += _dashingSpeed)
             {
-                _rigidbody.velocity = (MoveVector * _dashingSpeed * Time.fixedDeltaTime);
+                _rigidbody.velocity = MoveVector * _dashingSpeed;
                 yield return wait;
             }
             
