@@ -55,7 +55,6 @@ public class WeaponBearer : MonoBehaviour
     {
         if (weaponId < Arsenal.Length && weaponId >= 0)
         {
-            _view.SwitchWeapon(InitialArsenal[ActiveWeapon]);
             ActiveWeapon = weaponId;
             return true;
         }
