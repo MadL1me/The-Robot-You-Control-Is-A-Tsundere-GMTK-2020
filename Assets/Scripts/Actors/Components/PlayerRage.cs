@@ -12,7 +12,6 @@ namespace GMTK2020
         private const float ENEMY_PRESENCE_CHECK_RADIUS = 4F;
 
         [SerializeField] private LevelManager _levelManager;
-        [SerializeField] private LevelExit _levelExit;
 
         private PlayerMovement _movement;
         private WeaponBearer _weaponBearer;

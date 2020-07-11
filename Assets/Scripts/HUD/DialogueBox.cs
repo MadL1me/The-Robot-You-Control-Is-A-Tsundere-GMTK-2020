@@ -16,6 +16,7 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private RectTransform _imageRight;
     [SerializeField] private Image _blinker;
     [SerializeField] private Text _text;
+    [SerializeField] private AudioSource _source;
     [SerializeField] private PlayerMovement _movement;
 
     public bool IsShown { get; private set; }
@@ -149,6 +150,7 @@ public class DialogueBox : MonoBehaviour
 
         for (int i = 0; i < line.Length && !_shouldSkip; i++)
         {
+            _source.PlayOneShot(_source.clip);
             _text.text += line[i];
 
             yield return new WaitForSeconds(BOX_TYPE_SPEED);
@@ -163,6 +165,7 @@ public class DialogueBox : MonoBehaviour
 
     private void Update()
     {
+        // TODO: Remove
         if (Input.GetKeyDown(KeyCode.F))
             DisplaySpeech(new[] { "Hello, this is first line", "Hello, this is second line", "Hello, this is third line" });
 

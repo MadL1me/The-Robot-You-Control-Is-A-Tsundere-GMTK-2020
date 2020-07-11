@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMTK2020.Level;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace GMTK2020
         protected SpriteRenderer _spriteRenderer;
         
         [SerializeField] protected float _movingSpeed;
+        [SerializeField] protected LevelManager _musicManager;
         
         public bool CanTakeDamage() =>
             !HealthStats.IsInvisible;
@@ -29,6 +31,7 @@ namespace GMTK2020
                 return false;
 
             HealthStats.Health -= amount;
+            _musicManager.Intensify();
 
             return true;
         }

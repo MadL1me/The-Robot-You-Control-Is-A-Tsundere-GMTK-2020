@@ -16,6 +16,8 @@ namespace GMTK2020.Level
 
         [SerializeField] private float _delayBetweenRestartAndLevelSwitch;
 
+        private MusicManager _music;
+
         private AstarPath _pathfinder;
 
         public bool IsCompleted { get; private set; }
@@ -27,13 +29,11 @@ namespace GMTK2020.Level
             FindEnemies();
             FindPlayer();
 
-            ScanLevelField();
+            _music = FindObjectOfType<MusicManager>();
         }
 
-        private void ScanLevelField()
-        {
-
-        }
+        public void Intensify() =>
+            _music.Intensify();
 
         private void FindPlayer()
         {
