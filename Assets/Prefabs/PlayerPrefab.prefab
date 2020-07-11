@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4b3877c16c4cf59810cf93a0230e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movingSpeed: 250
+  _movingSpeed: 350
   _dashingSpeed: 0.1
   _dashingLength: 9
   _dashTimeout: 0
@@ -207,3 +207,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f785cce0f45ab846960ba6834ece94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelManager: {fileID: 0}
+  _levelExit: {fileID: 0}

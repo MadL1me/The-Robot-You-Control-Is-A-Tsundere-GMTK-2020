@@ -7,12 +7,13 @@ namespace GMTK2020
     [Flags]
     public enum GlitchType
     {
-        None,
-        RandomShoot,
-        RandomWalkLeft,
-        RandomWalkRight,
-        RandomWalkForward,
-        RandomWalkBack,
+        None = 0,
+        RandomShoot = 1 << 0,
+        RandomWalkLeft = 1 << 1,
+        RandomWalkRight = 1 << 2,
+        RandomWalkForward = 1 << 3,
+        RandomWalkBack = 1 << 4,
+        RandomReload = 1 << 5
     }
 
     public class PlayerMovement : MonoBehaviour
@@ -24,6 +25,7 @@ namespace GMTK2020
         private Rigidbody2D _rigidbody;
         private WeaponBearer _bearer;
         private Player _player;
+        private CameraFollow _cameraFollow;
         
         [SerializeField] private float _movingSpeed;
         [SerializeField] private float _dashingSpeed;
@@ -48,6 +50,7 @@ namespace GMTK2020
             _healthComponent = GetComponent<HealthComponent>();
             _bearer = GetComponent<WeaponBearer>();
             _player = GetComponent<Player>();
+            _cameraFollow = _camera.GetComponent<CameraFollow>();
         }
 
         private void Update()
@@ -79,7 +82,7 @@ namespace GMTK2020
 
         private void HandleInputs()
         {
-            if (Input.GetKeyDown(KeyCode.R) && _bearer.CanReload())
+            if ((Input.GetKeyDown(KeyCode.R) || _glitch.HasFlag(GlitchType.RandomReload)) && _bearer.CanReload())
                 _bearer.Reload();
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -96,7 +99,8 @@ namespace GMTK2020
 
                 var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;
 
-                _bearer.Shoot(direction);
+                if (_bearer.Shoot(direction))
+                    _cameraFollow.Shake(_bearer.CurrentWeapon.WeaponType.ScreenShakeAmount);
             }
 
             if (_isDashing)

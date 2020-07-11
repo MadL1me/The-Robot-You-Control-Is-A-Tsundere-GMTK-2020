@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GMTK2020.Level;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,17 @@ namespace GMTK2020
     {
         private const float ENEMY_PRESENCE_CHECK_RADIUS = 4F;
 
-        private PlayerMovement _mov;
+        [SerializeField] private LevelManager _levelManager;
+        [SerializeField] private LevelExit _levelExit;
+
+        private PlayerMovement _movement;
+        private WeaponBearer _weaponBearer;
         private float _nextRage;
 
         private void Start()
         {
-            _mov = GetComponent<PlayerMovement>();
+            _movement = GetComponent<PlayerMovement>();
+            _weaponBearer = GetComponent<WeaponBearer>();
             _nextRage = Time.time + Random.Range(7F, 18F);
         }
 
@@ -37,22 +43,24 @@ namespace GMTK2020
 
         private GlitchType DecideGlitchType()
         {
+            if (_levelManager.IsCompleted)
+                return GlitchType.None;
+
             var enemiesNear = Physics2D
                 .OverlapBoxAll(transform.position, new Vector2(ENEMY_PRESENCE_CHECK_RADIUS, ENEMY_PRESENCE_CHECK_RADIUS), 0F)
                 .Where(x => x.CompareTag("Enemy"))
                 .Count();
 
-            var moveDesire = Random.Range(0.5F, 1.3F);
-            var shootDesire = 0.2F;
+            var wastedRounds = _weaponBearer.CurrentWeapon?.WeaponType.MagazineRounds - _weaponBearer.CurrentWeapon?.CurrentRounds;
 
-            shootDesire += enemiesNear * 0.75F;
-
-            if (shootDesire > moveDesire)
+            if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
                 return GlitchType.RandomShoot;
-            else if (moveDesire > shootDesire)
-                return GetRandomMoveGlitchType(); // TODO: Pathfind to objective
+            else if (wastedRounds != 0 && wastedRounds <= 5)
+                return GlitchType.RandomReload;
             else
-                return GlitchType.None;
+                return GetRandomMoveGlitchType(); // TODO: Pathfind to objective
+            /*else
+                return GlitchType.None;*/
         }
 
         private float DecideGlitchTypeDuration(GlitchType type)
@@ -66,6 +74,8 @@ namespace GMTK2020
                 case GlitchType.RandomWalkLeft:
                 case GlitchType.RandomWalkRight:
                     return Random.Range(4F, 15F);
+                case GlitchType.RandomReload:
+                    return 0.5F;
             }
 
             return 0F;
@@ -76,13 +86,20 @@ namespace GMTK2020
             if (Time.time > _nextRage)
             {
                 var type = DecideGlitchType();
+
+                if (type == GlitchType.None)
+                {
+                    _nextRage = Time.time + 1F;
+                    return;
+                }
+
                 var duration = DecideGlitchTypeDuration(type);
 
                 Debug.Log($"Glitching {type} for {duration}");
 
                 _nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
 
-                _mov.ApplyGlitch(type, duration);
+                _movement.ApplyGlitch(type, duration);
             }
         }
     }

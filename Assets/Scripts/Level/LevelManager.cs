@@ -18,6 +18,8 @@ namespace GMTK2020.Level
 
         private AstarPath _pathfinder;
 
+        public bool IsCompleted { get; private set; }
+
         private void Start()
         {
             _enemiesKilled = 0;
@@ -53,8 +55,11 @@ namespace GMTK2020.Level
         public void OnEnemyDie()
         {
             _enemiesKilled++;
-            if (_enemiesKilled >= _totalEnemiesCount)
-                ProceedToNextLevel();
+            if (_enemiesKilled >= _totalEnemiesCount && !IsCompleted)
+            {
+                IsCompleted = true;
+                Debug.Log("Level completed");
+            }
         }
 
         public void ProceedToNextLevel() => StartCoroutine(NextLevelProceedCoroutine());

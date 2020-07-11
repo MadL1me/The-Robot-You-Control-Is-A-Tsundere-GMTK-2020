@@ -17,4 +17,5 @@ public class WeaponConfig : ScriptableObject
     public int RoundsPerShot;
     public float Spread;
     public Sprite WeaponSprite;
+    public float ScreenShakeAmount;
 }
