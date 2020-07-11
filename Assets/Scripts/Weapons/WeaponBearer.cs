@@ -23,11 +23,9 @@ public class WeaponBearer : MonoBehaviour
     private float _reloadStart;
     private Actor _actor;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private WeaponBearerView _view;
 
     public void Awake()
     {
-        _view = FindObjectOfType<WeaponBearerView>();
         _audioSource = GetComponent<AudioSource>();
         Arsenal = InitialArsenal.Select(x => new Weapon(x)).ToArray();
     }

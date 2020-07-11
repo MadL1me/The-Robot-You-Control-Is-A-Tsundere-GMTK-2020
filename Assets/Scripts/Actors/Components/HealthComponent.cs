@@ -41,6 +41,8 @@ namespace GMTK2020
             IsInvisible = false;
         }
 
+        public int MaxHealth => _maxHealth;
+        
         [SerializeField] private int _maxHealth;
         [SerializeField] private int _health;
     }
