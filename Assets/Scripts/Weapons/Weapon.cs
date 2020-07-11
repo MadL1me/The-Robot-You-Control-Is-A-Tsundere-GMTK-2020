@@ -46,6 +46,7 @@ public class Weapon
             var angle = Quaternion.Euler(0F, 0F, directionWithSpread);
 
             var bullet = UnityEngine.Object.Instantiate(WeaponType.Ammo.BulletPrefab, pos, angle);
+            Debug.Log("Shoot!");
             bullet.Angle = directionWithSpread;
             bullet.Side = bearer.Side;
         }

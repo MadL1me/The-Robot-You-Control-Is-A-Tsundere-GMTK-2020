@@ -6,7 +6,8 @@ namespace GMTK2020
     public class HealthComponent : MonoBehaviour
     {
         public event Action OnHealthEnd;
-
+        public event Action<int, int> OnHealthChange;
+        
         private void Awake()
         {
             _health = _maxHealth;
@@ -18,6 +19,8 @@ namespace GMTK2020
             set
             {
                 _health = value;
+                
+                OnHealthChange?.Invoke(value, _maxHealth);
                 
                 if (value <= 0)
                     OnHealthEnd?.Invoke();

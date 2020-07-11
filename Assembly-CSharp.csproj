@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\DamageDealers\Bullet.cs" />
      <Compile Include="Assets\Scripts\DamageDealers\BulletConfig.cs" />
      <Compile Include="Assets\Scripts\HUD\AmmoCounter.cs" />
+     <Compile Include="Assets\Scripts\HUD\PlayerHPView.cs" />
      <Compile Include="Assets\Scripts\HUD\ReloadIndicator.cs" />
      <Compile Include="Assets\Scripts\HUD\ReloadProgress.cs" />
      <Compile Include="Assets\Scripts\Level\LevelManager.cs" />

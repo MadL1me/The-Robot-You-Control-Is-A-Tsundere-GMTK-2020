@@ -16,4 +16,5 @@ public class WeaponConfig : ScriptableObject
     public bool IsAutomatic;
     public int RoundsPerShot;
     public float Spread;
+    public Sprite WeaponSprite;
 }

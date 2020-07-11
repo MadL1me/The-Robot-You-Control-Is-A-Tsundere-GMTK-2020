@@ -26,7 +26,7 @@ namespace GMTK2020
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))
-                Stats.Health -= 200;
+                HealthStats.Health -= 100;
 
             if (Input.GetKeyDown(KeyCode.R) && _bearer.CanReload())
                 _bearer.Reload();
