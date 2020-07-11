@@ -11,7 +11,8 @@ namespace GMTK2020
         [SerializeField] private Camera _camera;
 
         private WeaponBearer _bearer;
-
+        [SerializeField] private float _invisibleTime;
+        
         protected override void Awake()
         {
             _bearer = GetComponent<WeaponBearer>();
@@ -23,6 +24,12 @@ namespace GMTK2020
             Debug.Log("PLAYER DEATH");
         }
 
+        public void OnGetDamage(int damage)
+        {
+            HealthStats.Health -= damage;
+            HealthStats.SetInvisibleForTime(_invisibleTime);
+        }
+        
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))

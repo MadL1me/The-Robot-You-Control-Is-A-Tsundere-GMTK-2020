@@ -86,10 +86,17 @@ namespace GMTK2020
             return true;
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if(other.gameObject.CompareTag("Player"))
+            {
+                other.gameObject.GetComponent<Player>().OnGetDamage(_damageFromTouch);
+            }
+        }
+
         protected abstract void Attack();
         protected abstract void Move();
         protected abstract void MakeAIDecision();
-        
         public override void Die() { Destroy(gameObject); }
     }
 }

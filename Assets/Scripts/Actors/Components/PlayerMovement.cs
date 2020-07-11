@@ -11,16 +11,19 @@ namespace GMTK2020
         [SerializeField] private float _movingSpeed;
         [SerializeField] private float _dashingSpeed;
         [SerializeField] private float _dashingLength;
-
+        [SerializeField] private float _dashTimeout;
+        
         private bool _isDashing;
-       
         private float _horizontalMove;
         private float _verticalMove;
         private Vector3 _moveVector;
+
+        private HealthComponent _healthComponent;
         
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _healthComponent = GetComponent<HealthComponent>();
         }
 
         private void Update()
@@ -50,7 +53,8 @@ namespace GMTK2020
         private IEnumerator Dash()
         {
             _isDashing = true;
-
+            _healthComponent.IsInvisible = true;
+            
             var curPosition = transform.position;
             var nextPosition = _moveVector * _dashingLength * _dashingSpeed;
             var difference = (nextPosition - curPosition).normalized;
@@ -62,6 +66,8 @@ namespace GMTK2020
                 yield return wait;
             }
 
+            _healthComponent.IsInvisible = false;
+            yield return new WaitForSeconds(_dashTimeout);
             _isDashing = false;
         }
     }

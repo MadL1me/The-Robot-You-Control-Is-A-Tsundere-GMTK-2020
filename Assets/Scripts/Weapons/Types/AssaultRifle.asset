@@ -17,3 +17,6 @@ MonoBehaviour:
   ReloadDuration: 2
   ShootDelay: 0.1
   IsAutomatic: 1
+  RoundsPerShot: 1
+  Spread: 1
+  WeaponSprite: {fileID: 0}

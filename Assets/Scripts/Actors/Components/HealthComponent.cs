@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace GMTK2020
@@ -7,6 +8,8 @@ namespace GMTK2020
     {
         public event Action OnHealthEnd;
         public event Action<int, int> OnHealthChange;
+
+        public bool IsInvisible { get; set; }
         
         private void Awake()
         {
@@ -18,6 +21,9 @@ namespace GMTK2020
             get => _health;
             set
             {
+                if (IsInvisible)
+                    return;
+                
                 _health = value;
                 
                 OnHealthChange?.Invoke(value, _maxHealth);
@@ -30,14 +36,13 @@ namespace GMTK2020
             } 
         }
 
-        private void OnCollisionEnter(Collision other)
+        public void SetInvisibleForTime(float time) => StartCoroutine(SetInvisibleForTimeCoroutine(time));
+        
+        private IEnumerator SetInvisibleForTimeCoroutine(float time)
         {
-            if (other.gameObject.CompareTag("DamageDealer"))
-            {
-                var damage = other.gameObject.GetComponent<IDamageDealer>().GetDamage;
-                Debug.Log("Damage get");
-                Health -= damage;
-            }
+            IsInvisible = true;
+            yield return new WaitForSeconds(time);
+            IsInvisible = false;
         }
 
         [SerializeField] private int _maxHealth;

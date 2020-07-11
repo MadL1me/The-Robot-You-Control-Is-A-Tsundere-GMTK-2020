@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,8 +11,8 @@ namespace GMTK2020.Level
     {
         private List<Enemy> _levelEnemies;
 
-        private int _totalEnemiesCount;
-        private int _enemiesKilled;
+        [SerializeField] private int _totalEnemiesCount;
+        [SerializeField] private int _enemiesKilled;
 
         [SerializeField] private float _delayBetweenRestartAndLevelSwitch;
 
@@ -56,14 +57,20 @@ namespace GMTK2020.Level
                 ProceedToNextLevel();
         }
 
-        public void ProceedToNextLevel()
-        {
-            //TODO some cool looking coroutine
-        }
+        public void ProceedToNextLevel() => StartCoroutine(NextLevelProceedCoroutine());
 
-        public void RestartLevel()
+        public void RestartLevel() =>   StartCoroutine(RestartCoroutine());
+        
+        private IEnumerator NextLevelProceedCoroutine()
         {
-            //TODO some cool loolking restart
+            yield return new WaitForSeconds(_delayBetweenRestartAndLevelSwitch);
+            Application.LoadLevel(Application.loadedLevel);
+        }
+        
+        private IEnumerator RestartCoroutine()
+        {
+            yield return new WaitForSeconds(_delayBetweenRestartAndLevelSwitch);
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }
