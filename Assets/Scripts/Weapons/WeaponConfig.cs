@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu]
 public class WeaponConfig : ScriptableObject
@@ -19,4 +20,7 @@ public class WeaponConfig : ScriptableObject
     public Sprite WeaponSprite;
     public float ScreenShakeAmount;
     public string WeaponName;
+    public AudioClip[] BulletSoundClips;
+
+    public AudioClip GetRandomShotClip() => BulletSoundClips[Random.Range(0,BulletSoundClips.Length)];
 }

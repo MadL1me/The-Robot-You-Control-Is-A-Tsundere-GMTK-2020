@@ -52,7 +52,7 @@ namespace GMTK2020
             _healthComponent = GetComponent<HealthComponent>();
             _bearer = GetComponent<WeaponBearer>();
             _player = GetComponent<Player>();
-            _cameraFollow = _camera.GetComponent<CameraFollow>();
+            _cameraFollow = Camera.main.GetComponent<CameraFollow>();
         }
 
         private void Update()

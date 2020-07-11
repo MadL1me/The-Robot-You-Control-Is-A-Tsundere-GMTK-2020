@@ -8,7 +8,6 @@ namespace GMTK2020
     {
         public event Action OnHealthEnd;
         public event Action<int, int> OnHealthChange;
-
         public bool IsInvisible { get; set; }
         
         private void Awake()

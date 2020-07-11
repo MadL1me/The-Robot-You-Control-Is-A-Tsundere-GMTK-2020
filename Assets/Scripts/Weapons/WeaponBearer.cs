@@ -6,28 +6,29 @@ using GMTK2020.HUD;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Actor))]
+[RequireComponent(typeof(Actor), typeof(AudioSource))]
 public class WeaponBearer : MonoBehaviour
 {
     public const float SINGLE_TAP_ANIMATION_DURATION = 0.15F;
 
-    public WeaponConfig[] InitialArsenal;
-
-    [SerializeField] private WeaponBearerView _view;
+    public Weapon CurrentWeapon => Arsenal.Length != 0 ? Arsenal[ActiveWeapon] : null;
+    public ProjectileSide Side => _actor.Side;
+    public bool IsReloading { get; private set; }
     
+    public WeaponConfig[] InitialArsenal;
     public Weapon[] Arsenal;
     public int ActiveWeapon;
-    public Weapon CurrentWeapon => Arsenal.Length != 0 ? Arsenal[ActiveWeapon] : null;
-
-    public bool IsReloading { get; private set; }
-    public ProjectileSide Side => _actor.Side;
-
+    
     private float _lastShoot;
     private float _reloadStart;
     private Actor _actor;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private WeaponBearerView _view;
 
     public void Awake()
     {
+        _view = FindObjectOfType<WeaponBearerView>();
+        _audioSource = GetComponent<AudioSource>();
         Arsenal = InitialArsenal.Select(x => new Weapon(x)).ToArray();
     }
 
@@ -94,7 +95,8 @@ public class WeaponBearer : MonoBehaviour
             return false;
 
         _lastShoot = Time.time;
-
+        _audioSource.clip = CurrentWeapon.WeaponConfig.GetRandomShotClip();
+        _audioSource.Play();
         return CurrentWeapon.Shoot(this, direction);
     }
 
