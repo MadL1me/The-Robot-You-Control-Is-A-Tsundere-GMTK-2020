@@ -9,15 +9,16 @@ namespace GMTK2020
     public abstract class Actor : MonoBehaviour
     {
         public event Action OnActorDeath;
-
+        
         public ProjectileSide Side;
         
         public HealthComponent HealthStats { get; private set; }
-
-        protected Rigidbody2D _rigidbody;
+        public AnimationController AnimationController { get; private set; }
         
+        protected Rigidbody2D _rigidbody;
         [SerializeField] protected float _movingSpeed;
-
+        
+        
         public bool CanTakeDamage() =>
             !HealthStats.IsInvisible;
 
@@ -33,16 +34,16 @@ namespace GMTK2020
         
         protected virtual void Awake()
         {
+            AnimationController = GetComponent<AnimationController>();
             HealthStats = GetComponent<HealthComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             
             SubscribeOnEvents();
         }
 
-        protected virtual void SubscribeOnEvents()
-        {
-            HealthStats.OnHealthEnd += Die;
-        }
+        protected void Update() => PlayActorAnimations();
+        protected abstract void PlayActorAnimations();
+        protected virtual void SubscribeOnEvents() => HealthStats.OnHealthEnd += Die;
 
         public virtual void Die() => OnActorDeath?.Invoke();
     }

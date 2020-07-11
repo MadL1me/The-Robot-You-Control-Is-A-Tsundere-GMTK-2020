@@ -1,0 +1,1076 @@
+fileFormatVersion: 2
+guid: e79103ac26dc2374aa28f75e6cd69284
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1916209992846931261
+    second: Player_Idle_Down-1
+  - first:
+      213: -5246378996280553909
+    second: Player_Idle_Down-2
+  - first:
+      213: 9037145266233591701
+    second: Player_Idle_Up-1
+  - first:
+      213: -6291370448730645006
+    second: Player_Idle_Up-2
+  - first:
+      213: 2053792249571549336
+    second: Player_Idle_Left-1
+  - first:
+      213: 2887732770372945778
+    second: Player_Idle_Left-2
+  - first:
+      213: 5255935537237649739
+    second: Player_Idle_Right-1
+  - first:
+      213: -7067840220410664879
+    second: Player_Idle_Right-2
+  - first:
+      213: 1375733836362198322
+    second: Player_Walk_Down-1
+  - first:
+      213: 8969872999231062873
+    second: Player_Walk_Down-2
+  - first:
+      213: 144030132880237752
+    second: Player_Walk_Down-3
+  - first:
+      213: -7842474555949814348
+    second: Player_Walk_Down-4
+  - first:
+      213: -6726628352501494855
+    second: Player_Walk_Left-1
+  - first:
+      213: 4455409222272727268
+    second: Player_Walk_Left-2
+  - first:
+      213: -7299807773976357450
+    second: Player_Walk_Left-3
+  - first:
+      213: -3409823314552937767
+    second: Player_Walk_Left-4
+  - first:
+      213: -7234377266653682410
+    second: Player_Shoot_Down-1
+  - first:
+      213: -1169851311988711393
+    second: Player_Shoot_Down-2
+  - first:
+      213: -5060570301635805251
+    second: Player_Shoot_Down-3
+  - first:
+      213: -6267190616417749945
+    second: Player_Shoot_Down-4
+  - first:
+      213: -4597302566694684611
+    second: Player_Shoot_Left-1
+  - first:
+      213: 4068103232174050960
+    second: Player_Shoot_Left-2
+  - first:
+      213: 896231892872290017
+    second: Player_Shoot_Left-3
+  - first:
+      213: 5629513660112980610
+    second: Player_Shoot_Left-4
+  - first:
+      213: -7279459222781950615
+    second: Player_Walk_Up-1
+  - first:
+      213: 3728425618024647644
+    second: Player_Walk_Up-2
+  - first:
+      213: -755848292282834908
+    second: Player_Walk_Up-3
+  - first:
+      213: -3099014366660294619
+    second: Player_Walk_Up-4
+  - first:
+      213: -5647538942226560969
+    second: Player_Walk_Right-1
+  - first:
+      213: 4266992169687652284
+    second: Player_Walk_Right-2
+  - first:
+      213: 2488185123570160669
+    second: Player_Walk_Right-3
+  - first:
+      213: 3581794935237293061
+    second: Player_Walk_Right-4
+  - first:
+      213: -1360698319577300060
+    second: Player_Shoot_Up-1
+  - first:
+      213: -7506672989479610562
+    second: Player_Shoot_Up-2
+  - first:
+      213: -7580967832127787760
+    second: Player_Shoot_Up-3
+  - first:
+      213: -5609830650657636233
+    second: Player_Shoot_Up-4
+  - first:
+      213: 2501097834520190942
+    second: Player_Shoot_Right-2
+  - first:
+      213: 6854527104821046242
+    second: Player_Shoot_Right-3
+  - first:
+      213: 6988321133635137115
+    second: Player_Shoot_Right-4
+  - first:
+      213: -804981340403706583
+    second: Player_Shoot_Right-1
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Idle_Down-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 357
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f1b206deb79a10800000000000000
+      internalID: 1916209992846931261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Down-2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 357
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e80a1791e1137b0800000000000000
+      internalID: -5246378996280553909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Up-1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 357
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597c4712db36a6d70800000000000000
+      internalID: 9037145266233591701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Up-2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 357
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd1505f8ef80b8a0800000000000000
+      internalID: -6291370448730645006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Left-1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 355
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890a9266b29808c10800000000000000
+      internalID: 2053792249571549336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Left-2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 355
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2778550a7a9431820800000000000000
+      internalID: 2887732770372945778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Right-1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 355
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49e6632685d0f840800000000000000
+      internalID: 5255935537237649739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Idle_Right-2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 355
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158243d34ccf9ed90800000000000000
+      internalID: -7067840220410664879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Down-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 293
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23daadd92a6971310800000000000000
+      internalID: 1375733836362198322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Down-2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 291
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9530987e7f36b7c70800000000000000
+      internalID: 8969872999231062873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Down-3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 293
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4674b84a2bff100800000000000000
+      internalID: 144030132880237752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Down-4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 291
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd629c41fee92390800000000000000
+      internalID: -7842474555949814348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Left-1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 291
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc311172736a2a0800000000000000
+      internalID: -6726628352501494855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Left-2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 291
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8b096f41bc4dd30800000000000000
+      internalID: 4455409222272727268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Left-3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 291
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5118f618fd1ba90800000000000000
+      internalID: -7299807773976357450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Left-4
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 291
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d22a3de2cfdda0d0800000000000000
+      internalID: -3409823314552937767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Down-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 229
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61522f194345a9b90800000000000000
+      internalID: -7234377266653682410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Down-2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 227
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1063ec0e6ad3cfe0800000000000000
+      internalID: -1169851311988711393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Down-3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 229
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf3b1a6f1e35c9b0800000000000000
+      internalID: -5060570301635805251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Down-4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 227
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74432c0e6577609a0800000000000000
+      internalID: -6267190616417749945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Left-1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 227
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38fb235ca91330c0800000000000000
+      internalID: -4597302566694684611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Left-2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 227
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e4a5ff55ec47830800000000000000
+      internalID: 4068103232174050960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Left-3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 227
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee570b782e007c00800000000000000
+      internalID: 896231892872290017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Left-4
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 227
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a4e31f8dc002e40800000000000000
+      internalID: 5629513660112980610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Up-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 165
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9650425b76a2afa90800000000000000
+      internalID: -7279459222781950615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Up-2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 163
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb43d578570eb330800000000000000
+      internalID: 3728425618024647644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Up-3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 165
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420656a9bffa285f0800000000000000
+      internalID: -755848292282834908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Up-4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 163
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52881615ad61ef4d0800000000000000
+      internalID: -3099014366660294619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Right-1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 163
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73886650149ef91b0800000000000000
+      internalID: -5647538942226560969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Right-2
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 163
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb71b9555c6673b30800000000000000
+      internalID: 4266992169687652284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Right-3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 163
+        width: 28
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d149fc9df2fc78220800000000000000
+      internalID: 2488185123570160669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walk_Right-4
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 163
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504bc15348715b130800000000000000
+      internalID: 3581794935237293061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Up-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3cf1f6614dd1de0800000000000000
+      internalID: -1360698319577300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Up-2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 99
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e375c0920b0f2d790800000000000000
+      internalID: -7506672989479610562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Up-3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 101
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d2c502cedfac690800000000000000
+      internalID: -7580967832127787760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Up-4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 99
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7700471deb0e522b0800000000000000
+      internalID: -5609830650657636233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Right-2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 99
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf1317aa3fa5b220800000000000000
+      internalID: 2501097834520190942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Right-3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 99
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb2522c51c202f50800000000000000
+      internalID: 6854527104821046242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Right-4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 99
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e6daa9b018bf060800000000000000
+      internalID: 6988321133635137115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Shoot_Right-1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 99
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9255b626cb124d4f0800000000000000
+      internalID: -804981340403706583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

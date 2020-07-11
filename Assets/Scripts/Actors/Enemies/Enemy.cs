@@ -91,6 +91,12 @@ namespace GMTK2020
             if (other.gameObject.CompareTag("Player"))
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
+        
+        protected override void PlayActorAnimations()
+        {
+            
+            
+        }
 
         protected abstract void Attack();
         protected abstract void Move();

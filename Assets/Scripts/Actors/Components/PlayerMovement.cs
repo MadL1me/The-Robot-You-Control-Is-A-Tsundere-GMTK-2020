@@ -19,6 +19,8 @@ namespace GMTK2020
     {
         private const int RAGE_INPUT_GLITCH_FREQUENCY = 30;
 
+        public Vector3 MoveVector { get; protected set; }
+
         private Rigidbody2D _rigidbody;
         private WeaponBearer _bearer;
         private Player _player;
@@ -32,7 +34,6 @@ namespace GMTK2020
         private bool _isDashing;
         private float _horizontalMove;
         private float _verticalMove;
-        private Vector3 _moveVector;
 
         private GlitchType _glitch;
         private float _glitchStart;
@@ -134,7 +135,7 @@ namespace GMTK2020
                     _glitchEffectCounter += UnityEngine.Random.Range(0.05F, 0.5F);
             }
 
-            _moveVector = new Vector3(_horizontalMove, _verticalMove).normalized;
+            MoveVector = new Vector3(_horizontalMove, _verticalMove).normalized;
             
             if (Input.GetKeyDown(KeyCode.Space))
                 StartCoroutine(Dash());
@@ -142,7 +143,7 @@ namespace GMTK2020
 
         private void FixedUpdate()
         {
-            _rigidbody.velocity = (_moveVector * _movingSpeed * Time.fixedDeltaTime);
+            _rigidbody.velocity = (MoveVector * _movingSpeed * Time.fixedDeltaTime);
         }
 
         private IEnumerator Dash()
@@ -151,7 +152,7 @@ namespace GMTK2020
             _healthComponent.IsInvisible = true;
             
             var curPosition = transform.position;
-            var nextPosition = _moveVector * _dashingLength * _dashingSpeed;
+            var nextPosition = MoveVector * _dashingLength * _dashingSpeed;
             var difference = (nextPosition - curPosition).normalized;
             var wait = new WaitForFixedUpdate();
             
