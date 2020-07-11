@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2090022834594560149}
   - component: {fileID: 134092940}
   - component: {fileID: 134092941}
+  - component: {fileID: 5851187167963018751}
   m_Layer: 0
   m_Name: RobotCharger
   m_TagString: Enemy
@@ -92,7 +93,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1345355511210907812, guid: 8e7c1eb5c14859b468c6df4f3638de9f,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33490568, g: 1, b: 0.86753833, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   _movingSpeed: 200
-  _damageFromTouch: 200
+  _damageFromTouch: 1
   _pathUpdatingRate: 1.5
   _currentWayPoint: 0
 --- !u!58 &134092940
@@ -203,3 +204,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5851187167963018751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090022834594560148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8637c62c117495c9101ff544a6310e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
