@@ -7,6 +7,7 @@
         _GlitchY ("GlitchY", Float) = 0.5
         _GlitchAmount ("GlitchAmount", Float) = 0.01
         _NoiseAmount ("NoiseAmount", Float) = 0.2
+        _FadeOutAmount ("FadeOutAmount", Float) = 0.2
     }
     SubShader
     {
@@ -45,6 +46,7 @@
             float _GlitchY;
             float _GlitchAmount;
             float _NoiseAmount;
+            float _FadeOutAmount;
 
             float noise(float2 p)
             {
@@ -60,12 +62,14 @@
 
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
-                if (int(i.uv.y * 1080 / _InterlaceFreq) % 2 == 0)
+                if (uint(i.uv.y * 1080 / _InterlaceFreq) % 2 == 0)
                     col *= 0.85;
 
                 col *= 1.0 - distance(i.uv, float2(0.5, 0.5)) * 1.25;
 
                 col *= (1.0 - _NoiseAmount) + noise(floor(i.uv * 1080 / _InterlaceFreq)) * _NoiseAmount;
+
+                col *= max(0.0, min(1.0, i.uv.y + (0.5 - _FadeOutAmount) * 2.0));
 
                 return col;
             }

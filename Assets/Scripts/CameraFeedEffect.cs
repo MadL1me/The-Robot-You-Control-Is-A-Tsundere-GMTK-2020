@@ -6,14 +6,32 @@ using UnityEngine;
 
 public class CameraFeedEffect : MonoBehaviour
 {
+    private const float LEVEL_FADEIN_ANIM_DURATION = 0.5F;
+
     [SerializeField] private Material _shaderMat;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private LevelManager _levelManager;
+
+    public float FadeOutAmount { get; set; } = 1F;
 
     private float _lastFactor;
     private float _randomFactor;
 
     public bool IsGlitchingOut => _playerMovement.GetCurrentGlitch() != GlitchType.None || _levelManager.IsCompleted;
+
+    private void Start()
+    {
+        StartCoroutine(PlayFadeInAnim());
+    }
+
+    private IEnumerator PlayFadeInAnim()
+    {
+        for (float i = 0F; i < LEVEL_FADEIN_ANIM_DURATION; i += Time.deltaTime)
+        {
+            FadeOutAmount = 1F - i / LEVEL_FADEIN_ANIM_DURATION;
+            yield return null;
+        }
+    }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
@@ -29,6 +47,7 @@ public class CameraFeedEffect : MonoBehaviour
             screenCutOff = 1F;
 
         _shaderMat.SetFloat("_GlitchY", screenCutOff);
+        _shaderMat.SetFloat("_FadeOutAmount", FadeOutAmount);
 
         Graphics.Blit(source, destination, _shaderMat);
     }

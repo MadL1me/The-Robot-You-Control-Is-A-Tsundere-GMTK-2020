@@ -60,6 +60,8 @@ namespace GMTK2020
 
             if (!DisableAllInput)
                 HandleInputs();
+            else
+                MoveVector = Vector3.zero;
 
             if (_glitch != GlitchType.None)
             {
