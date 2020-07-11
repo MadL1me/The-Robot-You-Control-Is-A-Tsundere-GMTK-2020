@@ -21,6 +21,7 @@ namespace GMTK2020
         private const int RAGE_INPUT_GLITCH_FREQUENCY = 30;
 
         public Vector3 MoveVector { get; protected set; }
+        public bool DisableAllInput { get; set; }
 
         private Rigidbody2D _rigidbody;
         private WeaponBearer _bearer;
@@ -55,7 +56,8 @@ namespace GMTK2020
 
         private void Update()
         {
-            HandleInputs();
+            if (!DisableAllInput)
+                HandleInputs();
 
             if (_glitch != GlitchType.None)
             {

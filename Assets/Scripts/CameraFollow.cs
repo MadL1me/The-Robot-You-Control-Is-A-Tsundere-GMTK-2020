@@ -33,6 +33,13 @@ public class CameraFollow : MonoBehaviour
 
         if (_shakeAmount > 0)
             _shakeAmount -= Time.deltaTime * 10;
+
+        var wobbleStrength = WobbleStrength + _shakeAmount * 0.05F;
+
+        transform.position = _curPos +
+            new Vector3(Mathf.PerlinNoise(_wobbleCounter, 0) * 2 - 1F, Mathf.PerlinNoise(0, _wobbleCounter) * 2 - 1F) * wobbleStrength;
+
+        transform.rotation = Quaternion.Euler(0, 0, (Mathf.PerlinNoise(_wobbleCounter, _wobbleCounter) * 2 - 1F) * wobbleStrength);
     }
 
     private void FixedUpdate()
@@ -44,15 +51,5 @@ public class CameraFollow : MonoBehaviour
         targetPos += (Input.mousePosition - screenSize / 2F) / ((screenSize.x + screenSize.y) / 2F) * Elasticity;
 
         _curPos = Vector3.Lerp(_curPos, targetPos, Smoothness);
-    }
-
-    private void LateUpdate()
-    {
-        var wobbleStrength = WobbleStrength + _shakeAmount * 0.05F;
-
-        transform.position = _curPos +
-            new Vector3(Mathf.PerlinNoise(_wobbleCounter, 0) * 2 - 1F, Mathf.PerlinNoise(0, _wobbleCounter) * 2 - 1F) * wobbleStrength;
-
-        transform.rotation = Quaternion.Euler(0, 0, (Mathf.PerlinNoise(_wobbleCounter, _wobbleCounter) * 2 - 1F) * wobbleStrength);
     }
 }

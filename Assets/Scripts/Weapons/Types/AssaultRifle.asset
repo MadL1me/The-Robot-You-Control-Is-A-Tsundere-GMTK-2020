@@ -20,3 +20,4 @@ MonoBehaviour:
   RoundsPerShot: 1
   Spread: 1
   WeaponSprite: {fileID: 0}
+  ScreenShakeAmount: 2
