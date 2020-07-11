@@ -92,7 +92,7 @@ namespace GMTK2020
             else if (Input.GetKeyDown(KeyCode.Alpha3))
                 _bearer.TrySetWeapon(2);
 
-            if ((_bearer.CurrentWeapon?.WeaponType.IsAutomatic == true ? Input.GetMouseButton(0) : Input.GetMouseButtonDown(0))
+            if ((_bearer.CurrentWeapon?.WeaponType.IsAutomatic == true ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1"))
                 || _glitch.HasFlag(GlitchType.RandomShoot))
             {
                 var vecDiff = Input.mousePosition - new Vector3(_camera.pixelWidth, _camera.pixelHeight) / 2F;

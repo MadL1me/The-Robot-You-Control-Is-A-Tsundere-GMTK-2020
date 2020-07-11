@@ -36,7 +36,7 @@ namespace GMTK2020
             _animator = GetComponent<Animator>();
         } 
         
-        public void AnimateActor(WatchDirection direction, AnimType animType, string actorName = "")
+        public void AnimateActor(WatchDirection direction, AnimType animType, float speedMod = 1F, string actorName = "")
         {
             string animName = actorName;
 
@@ -57,7 +57,8 @@ namespace GMTK2020
                 case WatchDirection.Left: animName += "Left"; break; 
                 case WatchDirection.Right: animName += "Right"; break; 
             }
-            
+
+            _animator.speed = speedMod;
             _animator.Play(animName, 0);
         }
     }
