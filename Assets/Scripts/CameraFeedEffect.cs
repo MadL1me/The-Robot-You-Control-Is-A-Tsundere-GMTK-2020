@@ -1,0 +1,35 @@
+﻿using GMTK2020;
+using GMTK2020.Level;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraFeedEffect : MonoBehaviour
+{
+    [SerializeField] private Material _shaderMat;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private LevelManager _levelManager;
+
+    private float _lastFactor;
+    private float _randomFactor;
+
+    public bool IsGlitchingOut => _playerMovement.GetCurrentGlitch() != GlitchType.None || _levelManager.IsCompleted;
+
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    {
+        if (Time.time > _lastFactor + 0.25F)
+        {
+            _randomFactor = Random.Range(0.4F, 1.7F);
+            _lastFactor = Time.time;
+        }    
+
+        var screenCutOff = 1F - (Mathf.Sin(Time.time * _randomFactor) + 1.25F);
+
+        if (!IsGlitchingOut)
+            screenCutOff = 1F;
+
+        _shaderMat.SetFloat("_GlitchY", screenCutOff);
+
+        Graphics.Blit(source, destination, _shaderMat);
+    }
+}
