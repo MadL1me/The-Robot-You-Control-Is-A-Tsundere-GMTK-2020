@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>GMTK2020</RootNamespace>
-    <ProjectGuid>{BE428E33-FB8A-5888-A1D4-613E7107E2F6}</ProjectGuid>
+    <ProjectGuid>{C44B552C-EAE6-CE5B-703E-4A33523F2363}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>AstarPathfindingProjectEditor</AssemblyName>

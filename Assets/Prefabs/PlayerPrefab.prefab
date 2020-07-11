@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8453965063706806823}
   - component: {fileID: 1268363813821138138}
   - component: {fileID: 610306904616343578}
+  - component: {fileID: -502846275627791525}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -115,7 +116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 0
   _movingSpeed: 1
-  _camera: {fileID: 0}
   _invisibleTime: 1
 --- !u!114 &3662044472884154150
 MonoBehaviour:
@@ -133,6 +133,7 @@ MonoBehaviour:
   _dashingSpeed: 0.1
   _dashingLength: 9
   _dashTimeout: 0
+  _camera: {fileID: 0}
 --- !u!50 &8453965063706806823
 Rigidbody2D:
   serializedVersion: 4
@@ -194,3 +195,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialArsenal: []
   ActiveWeapon: 0
+--- !u!114 &-502846275627791525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662044472884154205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f785cce0f45ab846960ba6834ece94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

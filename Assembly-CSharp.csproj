@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>GMTK2020</RootNamespace>
-    <ProjectGuid>{5492110D-3331-29FB-6761-0B279A026ECC}</ProjectGuid>
+    <ProjectGuid>{3072FE98-59E2-1310-1DFA-589125ED2F29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Actors\Actor.cs" />
     <Compile Include="Assets\Scripts\Actors\Components\HealthComponent.cs" />
     <Compile Include="Assets\Scripts\Actors\Components\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Actors\Components\PlayerRage.cs" />
     <Compile Include="Assets\Scripts\Actors\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\Actors\Enemies\RobotCharger.cs" />
     <Compile Include="Assets\Scripts\Actors\Enemies\RobotSelfExploder.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\DamageDealers\BulletConfig.cs" />
     <Compile Include="Assets\Scripts\HUD\AmmoCounter.cs" />
     <Compile Include="Assets\Scripts\HUD\PlayerHPView.cs" />
+    <Compile Include="Assets\Scripts\HUD\RageIndicator.cs" />
     <Compile Include="Assets\Scripts\HUD\ReloadIndicator.cs" />
     <Compile Include="Assets\Scripts\HUD\ReloadProgress.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />

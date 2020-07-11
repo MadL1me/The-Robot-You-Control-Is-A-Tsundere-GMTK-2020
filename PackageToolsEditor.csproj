@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>GMTK2020</RootNamespace>
-    <ProjectGuid>{6EDF8247-653E-9A3C-F0BB-4958F820D03A}</ProjectGuid>
+    <ProjectGuid>{10EE1B1A-B8DF-45A3-7904-ED9A00582861}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PackageToolsEditor</AssemblyName>

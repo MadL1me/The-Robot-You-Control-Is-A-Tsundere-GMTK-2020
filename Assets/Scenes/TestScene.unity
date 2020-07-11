@@ -139,6 +139,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f45c89e177c959d44b3b769bd4a8ae34,
         type: 2}
+    - target: {fileID: 3662044472884154150, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1039876620}
     - target: {fileID: 3662044472884154200, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -867,6 +872,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 60230961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &976247235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3662044472884154150, guid: f58f56e8f63c21f4aaa1540e100ac383,
+    type: 3}
+  m_PrefabInstance: {fileID: 60230961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976247232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4b3877c16c4cf59810cf93a0230e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &976247240 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 610306904616343578, guid: f58f56e8f63c21f4aaa1540e100ac383,
@@ -877,6 +894,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77c827a8d4d02a2499893883f92a1dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &976247241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -502846275627791525, guid: f58f56e8f63c21f4aaa1540e100ac383,
+    type: 3}
+  m_PrefabInstance: {fileID: 60230961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976247232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f785cce0f45ab846960ba6834ece94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1032513402
@@ -1085,6 +1114,7 @@ GameObject:
   - component: {fileID: 1571955657}
   - component: {fileID: 1571955656}
   - component: {fileID: 1571955655}
+  - component: {fileID: 1571955658}
   m_Layer: 5
   m_Name: RageCounter
   m_TagString: Untagged
@@ -1167,6 +1197,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571955653}
   m_CullTransparentMesh: 0
+--- !u!114 &1571955658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571955653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9dc703f562eb74786a3af7034f7aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mov: {fileID: 976247235}
+  _rage: {fileID: 976247241}
 --- !u!1 &1744915523
 GameObject:
   m_ObjectHideFlags: 0
