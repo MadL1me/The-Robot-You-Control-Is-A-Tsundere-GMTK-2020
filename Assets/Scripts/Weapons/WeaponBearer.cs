@@ -87,8 +87,13 @@ public class WeaponBearer : MonoBehaviour
     public void Reload()
     {
         if (!CanReload())
+        {
+            Debug.Log("Cant reload!");
             return;
+        }
 
+        
+        
         IsReloading = true;
         _reloadStart = Time.time;
     }

@@ -1,23 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace GMTK2020
 {
     [RequireComponent(typeof(WeaponBearer))]
     public class RobotShooter : Enemy
     {
-        protected WeaponBearer _weaponBearer;
-        [SerializeField] protected float _shootTimeout;
+        [SerializeField] protected WeaponBearer _weaponBearer;
 
         protected override void Awake()
         {
-            _weaponBearer.GetComponent<WeaponBearer>();
             base.Awake();
+            //_weaponBearer.GetComponent<WeaponBearer>();
         }
 
         protected override void Attack()
         {
             var difference = _player.transform.position - transform.position;
-            var angle = Mathf.Atan2(difference.x, difference.y);
+            var angle = (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg + 360) % 360;
             _weaponBearer.Shoot(angle);
         }
 
@@ -34,23 +34,40 @@ namespace GMTK2020
                 Move();
         }
 
+        private void OnDrawGizmos()
+        {
+            var raycast = Physics2D.Raycast(transform.position,
+                (_player.transform.position - transform.position).normalized, 100f, ~LayerMask.GetMask("Enemy"));
+            Gizmos.DrawLine(transform.position, raycast.point);
+        }
+
         public bool IsCanShot()
         {
             if (_weaponBearer.RequiresReload())
             {
+                Debug.Log("Reuire to reload!");
                 _weaponBearer.Reload();
                 return false;
             }
 
             if (_weaponBearer.IsReloading)
+            {
+                Debug.Log("IS reloading!");
                 return false;
+            }
 
             if (!_weaponBearer.CanShoot())
-                return false;
+            {
+                Debug.Log("CantShoot!!");
+                return false; }
 
             if (!IsEnemySeesPlayer())
+            {
+                Debug.Log("enemy not sees player!");
                 return false;
+            }
             
+            Debug.Log("YESSS IT CA SHOOT");
             return true;
         }
 
@@ -92,7 +109,12 @@ namespace GMTK2020
         
         private bool IsEnemySeesPlayer()
         {
-            var raycast = Physics2D.Raycast(transform.position, (_player.transform.position-transform.position).normalized);
+            var raycast = Physics2D.Raycast(transform.position,
+                (_player.transform.position - transform.position).normalized, 100f, ~LayerMask.GetMask("Enemy"));
+
+            if (!raycast.collider)
+                return false;
+            
             return raycast.collider.gameObject.CompareTag("Player");
         }
     }
