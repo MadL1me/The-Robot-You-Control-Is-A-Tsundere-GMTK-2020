@@ -246,10 +246,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
+      propertyPath: InitialArsenal.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
       propertyPath: InitialArsenal.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a4afed67f5a575840a5cabcc44a7899f,
         type: 2}
+    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: InitialArsenal.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bf11e43e30ffb342b74de7a7a40ecef,
+        type: 2}
+    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1544883307}
     - target: {fileID: 1360064202758526471, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: m_RootOrder

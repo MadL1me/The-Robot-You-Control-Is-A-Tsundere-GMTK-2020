@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: LaserShotgun
   m_EditorClassIdentifier: 
   Ammo: {fileID: 11400000, guid: cd1ffbd97efd32342a68d05aeff2b2cd, type: 2}
-  MagazineRounds: 1
+  MagazineRounds: 5
   ReloadDuration: 1
   ShootDelay: 1
   IsAutomatic: 0
-  RoundsPerShot: 1
-  Spread: 1
+  RoundsPerShot: 5
+  Spread: 10
   WeaponSprite: {fileID: 21300000, guid: f206c6e93ef37404088aa37c481c1c3a, type: 3}
-  ScreenShakeAmount: 1
+  ScreenShakeAmount: 5
   WeaponName: Laser Shotgun
