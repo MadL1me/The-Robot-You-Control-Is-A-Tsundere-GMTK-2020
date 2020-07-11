@@ -36,16 +36,16 @@ namespace GMTK2020
             var screenWidth = Screen.currentResolution.height;
             var aspectRatio = Camera.main.aspect;
             
-            if (screenHeight > 0 && screenHeight * aspectRatio >= screenWidth)
+            if (mousePosition.y > screenHeight/2 && mousePosition.x * aspectRatio >= mousePosition.y)
                 watchDir = WatchDirection.Up;
-            else if (screenHeight <= 0 && screenHeight * aspectRatio >= screenWidth)
+            else if (mousePosition.y < screenHeight/2 && mousePosition.x * aspectRatio >= mousePosition.y)
                 watchDir = WatchDirection.Down;
-            else if (screenWidth >= 0 && screenWidth * aspectRatio >= screenHeight)
+            else if (mousePosition.x > screenWidth/2 && mousePosition.y * aspectRatio >= mousePosition.x)
                 watchDir = WatchDirection.Right;
             else
                 watchDir = WatchDirection.Left;
             
-            AnimationController.AnimateActor(WatchDirection.Down, animType);
+            AnimationController.AnimateActor(watchDir, animType);
         }
 
         public override void Die()

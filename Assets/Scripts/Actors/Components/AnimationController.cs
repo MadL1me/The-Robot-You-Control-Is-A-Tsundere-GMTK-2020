@@ -52,13 +52,13 @@ namespace GMTK2020
             
             switch (direction)
             {
-                case WatchDirection.Up: animName += "Up_"; break; 
+                case WatchDirection.Up: animName += "Up"; break; 
                 case WatchDirection.Down: animName += "Down"; break; 
                 case WatchDirection.Left: animName += "Left"; break; 
                 case WatchDirection.Right: animName += "Right"; break; 
             }
             
-            _animator.Play(animName);
+            _animator.Play(animName, 0);
         }
     }
 }

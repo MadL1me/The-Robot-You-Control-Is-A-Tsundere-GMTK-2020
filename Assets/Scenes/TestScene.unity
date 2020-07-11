@@ -139,6 +139,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f45c89e177c959d44b3b769bd4a8ae34,
         type: 2}
+    - target: {fileID: 1268363813821138138, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268363813821138138, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.34375
+      objectReference: {fileID: 0}
     - target: {fileID: 3662044472884154150, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: _camera
@@ -906,7 +916,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 976247232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2488d941b2092944395df0b3c4617250, type: 3}
+  m_Script: {fileID: 11500000, guid: b8637c62c117495c9101ff544a6310e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &976247235 stripped
@@ -1499,6 +1509,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099051197091833027, guid: f6693d888111f3f47beeef2b1828f147,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099051197091833027, guid: f6693d888111f3f47beeef2b1828f147,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099051197091833027, guid: f6693d888111f3f47beeef2b1828f147,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.5288449
       objectReference: {fileID: 0}
     - target: {fileID: 3099051197091833029, guid: f6693d888111f3f47beeef2b1828f147,
         type: 3}
