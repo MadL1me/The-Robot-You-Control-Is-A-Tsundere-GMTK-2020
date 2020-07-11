@@ -69,6 +69,8 @@ namespace GMTK2020.Level
         
         private IEnumerator RestartCoroutine()
         {
+            Debug.Log("DIUEEEEEEE");
+            
             yield return new WaitForSeconds(_delayBetweenRestartAndLevelSwitch);
             Application.LoadLevel(Application.loadedLevel);
         }
