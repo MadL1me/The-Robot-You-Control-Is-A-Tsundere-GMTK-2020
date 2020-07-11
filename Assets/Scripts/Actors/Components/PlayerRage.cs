@@ -11,11 +11,13 @@ namespace GMTK2020
         private const float ENEMY_PRESENCE_CHECK_RADIUS = 4F;
 
         private PlayerMovement _mov;
+        private WeaponBearer _bearer;
         private float _nextRage;
 
         private void Start()
         {
             _mov = GetComponent<PlayerMovement>();
+            _bearer = GetComponent<WeaponBearer>();
             _nextRage = Time.time + Random.Range(7F, 18F);
         }
 
@@ -42,17 +44,16 @@ namespace GMTK2020
                 .Where(x => x.CompareTag("Enemy"))
                 .Count();
 
-            var moveDesire = Random.Range(0.5F, 1.3F);
-            var shootDesire = 0.2F;
+            var wastedRounds = _bearer.CurrentWeapon?.WeaponType.MagazineRounds - _bearer.CurrentWeapon?.CurrentRounds;
 
-            shootDesire += enemiesNear * 0.75F;
-
-            if (shootDesire > moveDesire)
+            if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
                 return GlitchType.RandomShoot;
-            else if (moveDesire > shootDesire)
-                return GetRandomMoveGlitchType(); // TODO: Pathfind to objective
+            else if (wastedRounds != 0 && wastedRounds <= 5)
+                return GlitchType.RandomReload;
             else
-                return GlitchType.None;
+                return GetRandomMoveGlitchType(); // TODO: Pathfind to objective
+            /*else
+                return GlitchType.None;*/
         }
 
         private float DecideGlitchTypeDuration(GlitchType type)
@@ -66,6 +67,8 @@ namespace GMTK2020
                 case GlitchType.RandomWalkLeft:
                 case GlitchType.RandomWalkRight:
                     return Random.Range(4F, 15F);
+                case GlitchType.RandomReload:
+                    return 0.5F;
             }
 
             return 0F;

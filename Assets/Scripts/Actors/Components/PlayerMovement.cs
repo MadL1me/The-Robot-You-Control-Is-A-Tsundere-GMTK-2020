@@ -7,12 +7,13 @@ namespace GMTK2020
     [Flags]
     public enum GlitchType
     {
-        None,
-        RandomShoot,
-        RandomWalkLeft,
-        RandomWalkRight,
-        RandomWalkForward,
-        RandomWalkBack,
+        None = 0,
+        RandomShoot = 1 << 0,
+        RandomWalkLeft = 1 << 1,
+        RandomWalkRight = 1 << 2,
+        RandomWalkForward = 1 << 3,
+        RandomWalkBack = 1 << 4,
+        RandomReload = 1 << 5
     }
 
     public class PlayerMovement : MonoBehaviour
@@ -78,7 +79,7 @@ namespace GMTK2020
 
         private void HandleInputs()
         {
-            if (Input.GetKeyDown(KeyCode.R) && _bearer.CanReload())
+            if ((Input.GetKeyDown(KeyCode.R) || _glitch.HasFlag(GlitchType.RandomReload)) && _bearer.CanReload())
                 _bearer.Reload();
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
