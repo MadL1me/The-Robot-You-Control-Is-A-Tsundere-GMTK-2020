@@ -7,20 +7,20 @@ using UnityEngine;
 
 public class Weapon
 {
-    public WeaponConfig WeaponType;
+    public WeaponConfig WeaponConfig { get; private set; }
     public int CurrentRounds { get; private set; }
 
     private float _lastShot;
 
-    public Weapon(WeaponConfig type)
+    public Weapon(WeaponConfig config)
     {
-        WeaponType = type;
+        WeaponConfig = config;
 
         Refill();
     }
 
     public void Refill() =>
-        CurrentRounds = WeaponType.MagazineRounds;
+        CurrentRounds = WeaponConfig.MagazineRounds;
 
     public void DecreaseAmmo()
     {
@@ -29,23 +29,23 @@ public class Weapon
     }
 
     public bool CanShoot() =>
-        CurrentRounds > 0 && Time.time - _lastShot > WeaponType.ShootDelay;
+        CurrentRounds > 0 && Time.time - _lastShot > WeaponConfig.ShootDelay;
 
     public bool Shoot(WeaponBearer bearer, float direction)
     {
         if (!CanShoot())
             return false;
 
-        for (int i = 0; i < WeaponType.RoundsPerShot; i++)
+        for (int i = 0; i < WeaponConfig.RoundsPerShot; i++)
         {
             var pos = bearer.transform.position
                 + new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction), Mathf.Sin(Mathf.Deg2Rad * direction)) * 0.5F;
 
-            var directionWithSpread = direction + UnityEngine.Random.Range(-WeaponType.Spread, WeaponType.Spread);
+            var directionWithSpread = direction + UnityEngine.Random.Range(-WeaponConfig.Spread, WeaponConfig.Spread);
 
             var angle = Quaternion.Euler(0F, 0F, directionWithSpread);
 
-            var bullet = UnityEngine.Object.Instantiate(WeaponType.Ammo.BulletPrefab, pos, angle);
+            var bullet = UnityEngine.Object.Instantiate(WeaponConfig.Ammo.BulletPrefab, pos, angle);
             Debug.Log("Shoot!");
             bullet.Angle = directionWithSpread;
             bullet.Side = bearer.Side;

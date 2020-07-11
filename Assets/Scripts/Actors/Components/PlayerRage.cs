@@ -51,7 +51,7 @@ namespace GMTK2020
                 .Where(x => x.CompareTag("Enemy"))
                 .Count();
 
-            var wastedRounds = _weaponBearer.CurrentWeapon?.WeaponType.MagazineRounds - _weaponBearer.CurrentWeapon?.CurrentRounds;
+            var wastedRounds = _weaponBearer.CurrentWeapon?.WeaponConfig.MagazineRounds - _weaponBearer.CurrentWeapon?.CurrentRounds;
 
             if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
                 return GlitchType.RandomShoot;

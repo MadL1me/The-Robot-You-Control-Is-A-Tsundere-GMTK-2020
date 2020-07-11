@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using GMTK2020.HUD;
 using UnityEngine;
 
 
@@ -12,6 +13,8 @@ public class WeaponBearer : MonoBehaviour
 
     public WeaponConfig[] InitialArsenal;
 
+    [SerializeField] private WeaponBearerView _view;
+    
     public Weapon[] Arsenal;
     public int ActiveWeapon;
     public Weapon CurrentWeapon => Arsenal.Length != 0 ? Arsenal[ActiveWeapon] : null;
@@ -40,18 +43,19 @@ public class WeaponBearer : MonoBehaviour
         CurrentWeapon?.CanShoot() == true && !IsReloading;
 
     public bool CanReload() =>
-        CurrentWeapon?.CurrentRounds != CurrentWeapon.WeaponType.MagazineRounds && !IsReloading;
+        CurrentWeapon?.CurrentRounds != CurrentWeapon.WeaponConfig.MagazineRounds && !IsReloading;
 
     public bool RequiresReload() =>
         CurrentWeapon?.CurrentRounds == 0 && !IsReloading;
 
     public float GetReloadProgress() =>
-        (Time.time - _reloadStart) / CurrentWeapon.WeaponType.ReloadDuration;
+        (Time.time - _reloadStart) / CurrentWeapon.WeaponConfig.ReloadDuration;
 
     public bool TrySetWeapon(int weaponId)
     {
-        if (weaponId < Arsenal.Length)
+        if (weaponId < Arsenal.Length && weaponId >= 0)
         {
+            _view.SwitchWeapon(InitialArsenal[ActiveWeapon]);
             ActiveWeapon = weaponId;
             return true;
         }
@@ -63,12 +67,26 @@ public class WeaponBearer : MonoBehaviour
     {
         if (IsReloading)
         {
-            if (Time.time - _reloadStart > CurrentWeapon?.WeaponType.ReloadDuration)
+            if (Time.time - _reloadStart > CurrentWeapon?.WeaponConfig.ReloadDuration)
             {
                 IsReloading = false;
                 CurrentWeapon.Refill();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            TrySetWeapon(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            TrySetWeapon(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            TrySetWeapon(2);
+        
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f ) // forward
+            TrySetWeapon(ActiveWeapon+1);
+        
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f ) // backwards
+            TrySetWeapon(ActiveWeapon-1);;
+        
     }
 
     public bool Shoot(float direction)

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5efc013de53c0e84cbc9bd4bc550045a, type: 3}
-  m_Name: AssaultRifle
+  m_Name: Blaster
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 11400000, guid: be35b0e27c8dabd46b534838291082dd, type: 2}
-  MagazineRounds: 20
-  ReloadDuration: 2
-  ShootDelay: 0.1
-  IsAutomatic: 1
+  Ammo: {fileID: 11400000, guid: 3470ebc2a90ab414aa0da61cf3e481c3, type: 2}
+  MagazineRounds: 5
+  ReloadDuration: 1
+  ShootDelay: 1
+  IsAutomatic: 0
   RoundsPerShot: 1
   Spread: 1
-  WeaponSprite: {fileID: 0}
-  ScreenShakeAmount: 2
+  WeaponSprite: {fileID: 21300000, guid: f206c6e93ef37404088aa37c481c1c3a, type: 3}
+  ScreenShakeAmount: 0
+  WeaponName: Blaster
