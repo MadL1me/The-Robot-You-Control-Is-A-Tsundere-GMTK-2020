@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efc013de53c0e84cbc9bd4bc550045a, type: 3}
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 0}
+  Ammo: {fileID: 11400000, guid: be35b0e27c8dabd46b534838291082dd, type: 2}
   MagazineRounds: 20
-  ReloadSpeed: 2
+  ReloadDuration: 2
+  ShootDelay: 0.1
+  IsAutomatic: 1

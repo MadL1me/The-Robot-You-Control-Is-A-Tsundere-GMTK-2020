@@ -35,10 +35,10 @@ namespace GMTK2020
 
         private void Update()
         {
-            var translateVec = new Vector3(Mathf.Cos(Angle * Mathf.PI * 2), Mathf.Sin(Angle * Mathf.PI * 2)) * Config.BulletSpeed * 0.01F;
+            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.01F;
 
-            transform.Translate(translateVec);
-            transform.rotation = Quaternion.Euler(0F, 0F, Angle * 360F);
+            transform.position += translateVec;
+            transform.rotation = Quaternion.Euler(0F, 0F, Angle);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -49,9 +49,14 @@ namespace GMTK2020
             if (actor != null)
             {
                 // Damage actor
-            }
 
-            Destroy(gameObject);
+                if (Side != actor.Side)
+                    Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

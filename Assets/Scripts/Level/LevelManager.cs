@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace GMTK2020.Level
 {
+    /*
     public class LevelManager : MonoBehaviour
     {
         private List<Enemy> _levelEnemies;
@@ -65,5 +66,5 @@ namespace GMTK2020.Level
         {
             //TODO some cool loolking restart
         }
-    }
+    }*/
 }

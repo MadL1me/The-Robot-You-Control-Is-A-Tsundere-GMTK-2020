@@ -1,9 +1,9 @@
 ﻿using System;
-using Pathfinding;
 using UnityEngine;
 
 namespace GMTK2020
 {
+    /*
     [RequireComponent(typeof(Seeker))]
     public abstract class Enemy : Actor, IDamageDealer
     {
@@ -79,5 +79,5 @@ namespace GMTK2020
         protected abstract void MakeAIDecision();
         
         public override void Die() { Destroy(gameObject); }
-    }
+    }*/
 }
