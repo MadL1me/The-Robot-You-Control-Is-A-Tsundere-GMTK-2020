@@ -44,7 +44,10 @@ public class CameraFollow : MonoBehaviour
         targetPos += (Input.mousePosition - screenSize / 2F) / ((screenSize.x + screenSize.y) / 2F) * Elasticity;
 
         _curPos = Vector3.Lerp(_curPos, targetPos, Smoothness);
+    }
 
+    private void LateUpdate()
+    {
         var wobbleStrength = WobbleStrength + _shakeAmount * 0.05F;
 
         transform.position = _curPos +

@@ -31,20 +31,23 @@ namespace GMTK2020
             if (Input.GetButtonDown("Fire1"))
                 animType = AnimType.Shoot;
 
-            var mousePosition = Input.mousePosition;
-            var screenHeight = Screen.currentResolution.height;
-            var screenWidth = Screen.currentResolution.height;
-            var aspectRatio = Camera.main.aspect;
-            
-            if (mousePosition.y > screenHeight/2 && mousePosition.x * aspectRatio >= mousePosition.y)
-                watchDir = WatchDirection.Up;
-            else if (mousePosition.y < screenHeight/2 && mousePosition.x * aspectRatio >= mousePosition.y)
+            var mainCamera = Camera.main;
+
+            var vecDiff = (vector == Vector3.zero || Input.GetMouseButton(0))
+                ? (Input.mousePosition - new Vector3(mainCamera.pixelWidth, mainCamera.pixelHeight) / 2F)
+                : vector;
+
+            var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;
+
+            if (direction >= 360F * 0.625F && direction < 360F * 0.875F)
                 watchDir = WatchDirection.Down;
-            else if (mousePosition.x > screenWidth/2 && mousePosition.y * aspectRatio >= mousePosition.x)
+            else if (direction >= 360F * 0.125F && direction < 360F * 0.375F)
+                watchDir = WatchDirection.Up;
+            else if (direction >= 360F * 0.875F || direction < 360F * 0.125F)
                 watchDir = WatchDirection.Right;
-            else
+            else if (direction >= 360F * 0.375F && direction < 360F * 0.625F)
                 watchDir = WatchDirection.Left;
-            
+
             AnimationController.AnimateActor(watchDir, animType);
         }
 
