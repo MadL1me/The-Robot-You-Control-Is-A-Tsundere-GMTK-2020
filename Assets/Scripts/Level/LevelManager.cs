@@ -14,6 +14,8 @@ namespace GMTK2020.Level
         private int _enemiesKilled;
 
         [SerializeField] private float _delayBetweenRestartAndLevelSwitch;
+
+        private AstarPath _pathfinder;
         
         private void Start()
         {
