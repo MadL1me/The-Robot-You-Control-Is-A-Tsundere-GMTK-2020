@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2090022834594560149, guid: 29b204e4b9e0aff46bb86e80b70838e0,
+        type: 3}
+      propertyPath: _musicManager
+      value: 
+      objectReference: {fileID: 717000752}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b204e4b9e0aff46bb86e80b70838e0, type: 3}
 --- !u!1001 &140845153
@@ -1385,6 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   _movingSpeed: 0
+  _musicManager: {fileID: 0}
   _damageFromTouch: 0
   _pathUpdatingRate: 0
   _currentWayPoint: 0
@@ -1602,6 +1608,11 @@ PrefabInstance:
       propertyPath: _getDamageClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: a53e9c20cb547ee4d8a2f56a7af3500a, type: 3}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _musicManager
+      value: 
+      objectReference: {fileID: 717000752}
     - target: {fileID: 1360064202758526475, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: _maxHealth
@@ -1651,6 +1662,10 @@ PrefabInstance:
       propertyPath: _source
       value: 
       objectReference: {fileID: 1076551933}
+    - target: {fileID: 1076551932, guid: c8d4e4b7eee864d45a9c54e775657ef1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2222676499918191243, guid: c8d4e4b7eee864d45a9c54e775657ef1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2412,6 +2427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   _movingSpeed: 200
+  _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
   _currentWayPoint: 0
