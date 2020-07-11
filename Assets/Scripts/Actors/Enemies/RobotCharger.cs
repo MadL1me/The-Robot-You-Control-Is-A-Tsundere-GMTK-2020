@@ -9,7 +9,7 @@ namespace GMTK2020
         protected override void Move()
         {
            // Debug.Log($"Direction is: {_directionToCurrentWaypoint}");
-            _rigidbody.AddForce(_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
+            _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
         }
 
         protected override void MakeAIDecision()

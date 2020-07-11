@@ -12,6 +12,7 @@ namespace GMTK2020
         [SerializeField] private float _beforeDashDistance;
         [SerializeField] private float _dashingSpeed;
         [SerializeField] private float _dashingLength;
+        [SerializeField] private float _afterDashTimeout;
         
         protected override void Attack() => StartCoroutine(Charge());
         
@@ -32,6 +33,8 @@ namespace GMTK2020
                 yield return wait;
             }
             
+            yield return new WaitForSeconds(_afterDashTimeout);
+            
             _isDashing = false;
         }
 
@@ -42,10 +45,12 @@ namespace GMTK2020
 
         protected override void MakeAIDecision()
         {
-            if (Vector3.Distance(transform.position, _player.transform.position) <= _beforeDashDistance
-            && !_isDashing)
+            if (_isDashing)
+                return;
+            
+            if (Vector3.Distance(transform.position, _player.transform.position) <= _beforeDashDistance)
                 Attack();
-            else if (!_isDashing)
+            else 
                 Move();
         }
     }
