@@ -7,7 +7,7 @@
         _GlitchY ("GlitchY", Float) = 0.5
         _GlitchAmount ("GlitchAmount", Float) = 0.01
         _NoiseAmount ("NoiseAmount", Float) = 0.2
-        _FadeOutAmount ("FadeOutAmount", Float) = 0.2
+        _FadeOutAmount ("FadeOutAmount", Float) = 0.0
     }
     SubShader
     {
