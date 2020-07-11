@@ -16,8 +16,9 @@ namespace GMTK2020
         public AnimationController AnimationController { get; private set; }
         
         protected Rigidbody2D _rigidbody;
-        [SerializeField] protected float _movingSpeed;
+        protected SpriteRenderer _spriteRenderer;
         
+        [SerializeField] protected float _movingSpeed;
         
         public bool CanTakeDamage() =>
             !HealthStats.IsInvisible;
@@ -37,8 +38,24 @@ namespace GMTK2020
             AnimationController = GetComponent<AnimationController>();
             HealthStats = GetComponent<HealthComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
             
             SubscribeOnEvents();
+        }
+        
+        protected IEnumerator RedColoringEffect(float speed)
+        {
+            //var wait = new WaitForSeconds();
+            var colorBefore = _spriteRenderer.color;
+            
+            for (float i = 0; i < 1; i += Time.deltaTime)
+            {
+                colorBefore = _spriteRenderer.color;
+                _spriteRenderer.color = Color.clear;
+                //yield return wait;
+                _spriteRenderer.color = colorBefore;
+                yield return null;
+            }
         }
 
         protected void Update() => PlayActorAnimations();

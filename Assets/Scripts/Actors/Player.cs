@@ -3,13 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using GMTK2020;
 using UnityEngine;
+using random = UnityEngine.Random;
 
 namespace GMTK2020
 {
     public class Player : Actor
     {
+        private const float BLINKING_RATE = 0.5F;
+        
         [SerializeField] private float _invisibleTime;
-
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip[] _getDamageClips;
+            
         private PlayerMovement _movement;
         private WeaponBearer _bearer;
         
@@ -66,10 +71,28 @@ namespace GMTK2020
         {
             if (base.Damage(amount))
             {
+                _audioSource.clip = _getDamageClips[random.Range(0, _getDamageClips.Length)];
+                _audioSource.Play();
                 HealthStats.SetInvisibleForTime(_invisibleTime);
+                StartCoroutine(BlinkForTime(_invisibleTime));
                 return true;
             }
             return false;
+        }
+
+        private IEnumerator BlinkForTime(float time)
+        {
+            var wait = new WaitForSeconds(BLINKING_RATE);
+            var colorBefore = _spriteRenderer.color;
+            
+            for (float i = 0; i < time; i += BLINKING_RATE*2)
+            {
+                colorBefore = _spriteRenderer.color;
+                _spriteRenderer.color = Color.clear;
+                yield return wait;
+                _spriteRenderer.color = colorBefore;
+                yield return wait;
+            }
         }
     }   
 }

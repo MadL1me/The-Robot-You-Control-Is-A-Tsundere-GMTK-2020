@@ -1048,37 +1048,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
-      propertyPath: InitialArsenal.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
-        type: 3}
-      propertyPath: InitialArsenal.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: a4afed67f5a575840a5cabcc44a7899f,
-        type: 2}
-    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
-        type: 3}
-      propertyPath: InitialArsenal.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1315c7bf35dafef4ebd0fcc339013a1f,
-        type: 2}
-    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
-        type: 3}
-      propertyPath: InitialArsenal.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5bf11e43e30ffb342b74de7a7a40ecef,
-        type: 2}
-    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
-        type: 3}
       propertyPath: _view
       value: 
       objectReference: {fileID: 201422473}
-    - target: {fileID: 1360064202758526468, guid: f58f56e8f63c21f4aaa1540e100ac383,
-        type: 3}
-      propertyPath: _audioSource
-      value: 
-      objectReference: {fileID: 968073680}
     - target: {fileID: 1360064202758526469, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: _levelManager
@@ -1139,6 +1111,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _getDamageClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 968073680}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _getDamageClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ce358122aaa23574eb613124c55262d4, type: 3}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _getDamageClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd809d88eadf8d343962686a5b80a6e1, type: 3}
+    - target: {fileID: 1360064202758526474, guid: f58f56e8f63c21f4aaa1540e100ac383,
+        type: 3}
+      propertyPath: _getDamageClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a53e9c20cb547ee4d8a2f56a7af3500a, type: 3}
     - target: {fileID: 1360064202758526476, guid: f58f56e8f63c21f4aaa1540e100ac383,
         type: 3}
       propertyPath: m_Name
