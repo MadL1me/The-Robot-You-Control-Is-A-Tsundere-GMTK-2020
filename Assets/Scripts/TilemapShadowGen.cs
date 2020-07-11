@@ -22,7 +22,7 @@ public class TilemapShadowGen : MonoBehaviour
                 if (tile == null)
                     continue;
 
-                if (tile.name == _wallName || tilemap.GetTile(new Vector3Int(x, y + 1, 0)) != null)
+                if (tile.name == _wallName || (tilemap.GetTile(new Vector3Int(x, y + 1, 0)) != null && tilemap.GetTile(new Vector3Int(x, y + 2, 0)) != null))
                 {
                     var cube = Instantiate(_castCube,
                         new Vector3(tilemap.transform.position.x + tilemap.cellSize.x * x + 0.5F, tilemap.transform.position.y + tilemap.cellSize.y * y + 0.5F),
