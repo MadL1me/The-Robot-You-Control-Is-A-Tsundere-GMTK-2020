@@ -8,7 +8,9 @@ namespace GMTK2020
     public abstract class Enemy : Actor, IDamageDealer
     {
         public int GetDamage => _damageFromTouch;
+        
         [SerializeField] protected int _damageFromTouch;
+        [SerializeField] protected float _pathUpdatingRate;
 
         protected const float WAYPOINT_DISTANCE = 3F;
         
@@ -18,7 +20,6 @@ namespace GMTK2020
         protected int _currentWayPoint;
         protected bool _reachedEndOfThePath;
         protected Vector3 _directionToCurrentWaypoint;
-        
         
         protected override void Awake()
         {
@@ -30,7 +31,7 @@ namespace GMTK2020
         protected void Start()
         {
             UpdatePath();
-            InvokeRepeating("UpdatePath", 2F, 2F);
+            InvokeRepeating("UpdatePath", 1F, _pathUpdatingRate);
         }
 
         protected void FindPlayer() => _player = FindObjectOfType<Player>();

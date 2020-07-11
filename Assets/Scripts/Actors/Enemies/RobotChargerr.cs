@@ -2,7 +2,7 @@
 
 namespace GMTK2020
 {
-    public class RobotFollower : Enemy
+    public class RobotCharger : Enemy
     {
         protected override void Attack(){}
 
