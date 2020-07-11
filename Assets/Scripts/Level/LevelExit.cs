@@ -7,11 +7,13 @@ public class LevelExit : MonoBehaviour
 {
     [SerializeField] private LevelManager _manager;
 
+    public bool IsOpen => _manager.IsCompleted;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var other = collision.gameObject;
 
-        if (other.CompareTag("Player") && _manager.IsCompleted)
+        if (other.CompareTag("Player") && IsOpen)
             _manager.ProceedToNextLevel();
     }
 }

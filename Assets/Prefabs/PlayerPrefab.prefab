@@ -208,3 +208,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelManager: {fileID: 0}
+  _levelExit: {fileID: 0}
