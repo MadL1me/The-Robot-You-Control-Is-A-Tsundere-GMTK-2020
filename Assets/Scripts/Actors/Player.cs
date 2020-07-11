@@ -11,10 +11,12 @@ namespace GMTK2020
         [SerializeField] private float _invisibleTime;
 
         private PlayerMovement _movement;
+        private WeaponBearer _bearer;
         
         protected override void Awake()
         {
             _movement = GetComponent<PlayerMovement>();
+            _bearer = GetComponent<WeaponBearer>();
             base.Awake();
         }
 
@@ -28,12 +30,12 @@ namespace GMTK2020
             if (Math.Abs(vector.x) >= 0.2F || Math.Abs(vector.y) >= 0.2f)
                 animType = AnimType.Move;
                 
-            if (Input.GetButtonDown("Fire1"))
+            if (_bearer.IsShotInProgress())
                 animType = AnimType.Shoot;
 
             var mainCamera = Camera.main;
 
-            var vecDiff = (vector == Vector3.zero || Input.GetMouseButton(0))
+            var vecDiff = (vector == Vector3.zero || _bearer.IsShotInProgress())
                 ? (Input.mousePosition - new Vector3(mainCamera.pixelWidth, mainCamera.pixelHeight) / 2F)
                 : vector;
 

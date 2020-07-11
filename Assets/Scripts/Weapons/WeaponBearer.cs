@@ -17,6 +17,7 @@ public class WeaponBearer : MonoBehaviour
     public bool IsReloading { get; private set; }
     public ProjectileSide Side => _actor.Side;
 
+    private float _lastShoot;
     private float _reloadStart;
     private Actor _actor;
 
@@ -29,6 +30,9 @@ public class WeaponBearer : MonoBehaviour
     {
         _actor = GetComponent<Actor>();
     }
+
+    public bool IsShotInProgress() =>
+        CurrentWeapon != null && Time.time - _lastShoot <= 0.15F;
 
     public bool CanShoot() =>
         CurrentWeapon?.CanShoot() == true && !IsReloading;
@@ -69,6 +73,8 @@ public class WeaponBearer : MonoBehaviour
     {
         if (!CanShoot())
             return false;
+
+        _lastShoot = Time.time;
 
         return CurrentWeapon.Shoot(this, direction);
     }
