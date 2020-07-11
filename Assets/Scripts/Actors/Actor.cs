@@ -12,14 +12,15 @@ namespace GMTK2020
 
         public ProjectileSide Side;
         
-        protected HealthComponent _health;
+        public HealthComponent Stats { get; private set; }
+
         protected Rigidbody2D _rigidbody;
         
         [SerializeField] protected float _movingSpeed;
         
         protected virtual void Awake()
         {
-            _health = GetComponent<HealthComponent>();
+            Stats = GetComponent<HealthComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             
             SubscribeOnEvents();
@@ -28,7 +29,7 @@ namespace GMTK2020
         protected virtual void SubscribeOnEvents()
         {
             OnActorDeath += Die;
-            _health.OnHealthEnd += OnActorDeath;
+            Stats.OnHealthEnd += OnActorDeath;
         }
 
         public abstract void Die();

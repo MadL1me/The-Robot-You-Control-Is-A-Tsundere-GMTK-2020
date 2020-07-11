@@ -1,5 +1,5 @@
-﻿using System;
-using Pathfinding;
+﻿using Pathfinding;
+using System;
 using UnityEngine;
 
 namespace GMTK2020
