@@ -17,6 +17,8 @@ namespace GMTK2020
     [RequireComponent(typeof(Collider2D)), RequireComponent(typeof(SpriteRenderer))]
     public class Bullet : MonoBehaviour, IDamageDealer
     {
+        public const float KEEP_ALIVE_TIME = 10F;
+
         public int GetDamage => Config.BulletDamage;
 
         public BulletConfig Config;
@@ -25,12 +27,15 @@ namespace GMTK2020
         public ProjectileSide Side { get; set; }
 
         private SpriteRenderer _renderer;
+        private float _appearTime;
 
         private void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
 
             _renderer.sprite = Config.Sprite;
+
+            _appearTime = Time.time;
         }
 
         private void Update()
@@ -39,6 +44,9 @@ namespace GMTK2020
 
             transform.position += translateVec;
             transform.rotation = Quaternion.Euler(0F, 0F, Angle);
+
+            if (Time.time - _appearTime > KEEP_ALIVE_TIME)
+                Destroy(gameObject);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -48,10 +56,11 @@ namespace GMTK2020
 
             if (actor != null)
             {
-                // Damage actor
-
                 if (Side != actor.Side)
+                {
+                    actor.Stats.Health -= Config.BulletDamage;
                     Destroy(gameObject);
+                }
             }
             else
             {

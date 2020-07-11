@@ -36,14 +36,19 @@ public class Weapon
         if (!CanShoot())
             return false;
 
-        var pos = bearer.transform.position
-            + new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction), Mathf.Sin(Mathf.Deg2Rad * direction)) * 0.5F;
+        for (int i = 0; i < WeaponType.RoundsPerShot; i++)
+        {
+            var pos = bearer.transform.position
+                + new Vector3(Mathf.Cos(Mathf.Deg2Rad * direction), Mathf.Sin(Mathf.Deg2Rad * direction)) * 0.5F;
 
-        var angle = Quaternion.Euler(0F, 0F, direction);
+            var directionWithSpread = direction + UnityEngine.Random.Range(-WeaponType.Spread, WeaponType.Spread);
 
-        var bullet = UnityEngine.Object.Instantiate(WeaponType.Ammo.BulletPrefab, pos, angle);
-        bullet.Angle = direction;
-        bullet.Side = bearer.Side;
+            var angle = Quaternion.Euler(0F, 0F, directionWithSpread);
+
+            var bullet = UnityEngine.Object.Instantiate(WeaponType.Ammo.BulletPrefab, pos, angle);
+            bullet.Angle = directionWithSpread;
+            bullet.Side = bearer.Side;
+        }
 
         DecreaseAmmo();
         _lastShot = Time.time;

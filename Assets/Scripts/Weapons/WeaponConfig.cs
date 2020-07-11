@@ -14,4 +14,6 @@ public class WeaponConfig : ScriptableObject
     public float ReloadDuration;
     public float ShootDelay;
     public bool IsAutomatic;
+    public int RoundsPerShot;
+    public float Spread;
 }

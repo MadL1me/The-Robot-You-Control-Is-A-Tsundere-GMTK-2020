@@ -41,6 +41,17 @@ public class WeaponBearer : MonoBehaviour
     public float GetReloadProgress() =>
         (Time.time - _reloadStart) / CurrentWeapon.WeaponType.ReloadDuration;
 
+    public bool TrySetWeapon(int weaponId)
+    {
+        if (weaponId < Arsenal.Length)
+        {
+            ActiveWeapon = weaponId;
+            return true;
+        }
+
+        return false;
+    }
+
     private void Update()
     {
         if (IsReloading)
