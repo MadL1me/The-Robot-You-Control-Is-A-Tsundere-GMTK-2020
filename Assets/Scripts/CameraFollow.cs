@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GMTK2020;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -17,6 +18,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Awake()
     {
+        FocusTarget = GameObject.FindGameObjectWithTag("Player");
         _camera = GetComponent<Camera>();
     }
 

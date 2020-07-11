@@ -22,3 +22,5 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: f206c6e93ef37404088aa37c481c1c3a, type: 3}
   ScreenShakeAmount: 1
   WeaponName: Sans bone
+  BulletSoundClips:
+  - {fileID: 8300000, guid: f916b286fb8bfed4fbaa9ede891b6a89, type: 3}

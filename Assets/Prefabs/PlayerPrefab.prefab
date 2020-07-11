@@ -286,15 +286,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360064202758526476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c827a8d4d02a2499893883f92a1dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 23e75810784440829fb9cbc595b83807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialArsenal:
-  - {fileID: 11400000, guid: 1315c7bf35dafef4ebd0fcc339013a1f, type: 2}
-  - {fileID: 11400000, guid: 5bf11e43e30ffb342b74de7a7a40ecef, type: 2}
-  - {fileID: 11400000, guid: a4afed67f5a575840a5cabcc44a7899f, type: 2}
-  _view: {fileID: 0}
+  InitialArsenal: []
   ActiveWeapon: 0
+  _view: {fileID: 0}
 --- !u!114 &1360064202758526469
 MonoBehaviour:
   m_ObjectHideFlags: 0

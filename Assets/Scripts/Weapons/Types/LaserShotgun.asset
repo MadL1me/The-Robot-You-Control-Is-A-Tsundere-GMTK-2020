@@ -22,3 +22,5 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: f206c6e93ef37404088aa37c481c1c3a, type: 3}
   ScreenShakeAmount: 5
   WeaponName: Laser Shotgun
+  BulletSoundClips:
+  - {fileID: 8300000, guid: 6f4720a27c3377344be9953926a0b57c, type: 3}
