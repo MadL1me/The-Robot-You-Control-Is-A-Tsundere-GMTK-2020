@@ -2,7 +2,6 @@
 
 namespace GMTK2020
 {
-    /*
     public class RobotFollower : Enemy
     {
         protected override void Attack(){}
@@ -18,5 +17,5 @@ namespace GMTK2020
         {
             Move();
         }
-    }*/
+    }
 }

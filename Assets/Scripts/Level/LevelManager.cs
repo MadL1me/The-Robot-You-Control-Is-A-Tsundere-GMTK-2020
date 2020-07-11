@@ -6,31 +6,30 @@ using UnityEngine.SceneManagement;
 
 namespace GMTK2020.Level
 {
-    /*
     public class LevelManager : MonoBehaviour
     {
         private List<Enemy> _levelEnemies;
-        
+
         private int _totalEnemiesCount;
         private int _enemiesKilled;
 
         [SerializeField] private float _delayBetweenRestartAndLevelSwitch;
 
         private AstarPath _pathfinder;
-        
+
         private void Start()
         {
             _enemiesKilled = 0;
-            
+
             FindEnemies();
             FindPlayer();
-            
+
             ScanLevelField();
         }
 
         private void ScanLevelField()
         {
-            
+
         }
 
         private void FindPlayer()
@@ -49,7 +48,7 @@ namespace GMTK2020.Level
                 enemy.OnActorDeath += OnEnemyDie;
             }
         }
-        
+
         public void OnEnemyDie()
         {
             _enemiesKilled++;
@@ -66,5 +65,5 @@ namespace GMTK2020.Level
         {
             //TODO some cool loolking restart
         }
-    }*/
+    }
 }
