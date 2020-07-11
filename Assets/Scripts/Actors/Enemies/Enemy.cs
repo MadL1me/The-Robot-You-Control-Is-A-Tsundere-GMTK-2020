@@ -95,6 +95,10 @@ namespace GMTK2020
         protected abstract void Attack();
         protected abstract void Move();
         protected abstract void MakeAIDecision();
-        public override void Die() { Destroy(gameObject); }
+        public override void Die()
+        {
+            base.Die();
+            Destroy(gameObject);
+        }
     }
 }

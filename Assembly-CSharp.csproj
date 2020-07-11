@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\HUD\RageIndicator.cs" />
     <Compile Include="Assets\Scripts\HUD\ReloadIndicator.cs" />
     <Compile Include="Assets\Scripts\HUD\ReloadProgress.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelExit.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponBearer.cs" />
