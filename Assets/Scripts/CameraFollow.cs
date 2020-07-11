@@ -12,10 +12,27 @@ public class CameraFollow : MonoBehaviour
 
     private Vector3 _curPos;
     private Camera _camera;
+    private float _shakeAmount;
+    private float _wobbleCounter;
 
     private void Awake()
     {
         _camera = GetComponent<Camera>();
+    }
+
+    public void Shake(float strength)
+    {
+        _shakeAmount = strength;
+    }
+
+    private void Update()
+    {
+        var wobbleSpeed = WobbleSpeed + Mathf.Min(_shakeAmount, 2F) * 4F;
+
+        _wobbleCounter += Time.deltaTime * wobbleSpeed;
+
+        if (_shakeAmount > 0)
+            _shakeAmount -= Time.deltaTime * 10;
     }
 
     private void FixedUpdate()
@@ -28,9 +45,11 @@ public class CameraFollow : MonoBehaviour
 
         _curPos = Vector3.Lerp(_curPos, targetPos, Smoothness);
 
-        transform.position = _curPos +
-            new Vector3(Mathf.PerlinNoise(Time.time * WobbleSpeed, 0) * 2 - 1F, Mathf.PerlinNoise(0, Time.time * WobbleSpeed) * 2 - 1F) * WobbleStrength;
+        var wobbleStrength = WobbleStrength + _shakeAmount * 0.05F;
 
-        transform.rotation = Quaternion.Euler(0, 0, (Mathf.PerlinNoise(Time.time * WobbleSpeed, Time.time * WobbleSpeed) * 2 - 1F) * WobbleStrength);
+        transform.position = _curPos +
+            new Vector3(Mathf.PerlinNoise(_wobbleCounter, 0) * 2 - 1F, Mathf.PerlinNoise(0, _wobbleCounter) * 2 - 1F) * wobbleStrength;
+
+        transform.rotation = Quaternion.Euler(0, 0, (Mathf.PerlinNoise(_wobbleCounter, _wobbleCounter) * 2 - 1F) * wobbleStrength);
     }
 }

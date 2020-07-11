@@ -23,6 +23,7 @@ namespace GMTK2020
         private Rigidbody2D _rigidbody;
         private WeaponBearer _bearer;
         private Player _player;
+        private CameraFollow _cameraFollow;
         
         [SerializeField] private float _movingSpeed;
         [SerializeField] private float _dashingSpeed;
@@ -48,6 +49,7 @@ namespace GMTK2020
             _healthComponent = GetComponent<HealthComponent>();
             _bearer = GetComponent<WeaponBearer>();
             _player = GetComponent<Player>();
+            _cameraFollow = _camera.GetComponent<CameraFollow>();
         }
 
         private void Update()
@@ -96,7 +98,8 @@ namespace GMTK2020
 
                 var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;
 
-                _bearer.Shoot(direction);
+                if (_bearer.Shoot(direction))
+                    _cameraFollow.Shake(_bearer.CurrentWeapon.WeaponType.ScreenShakeAmount);
             }
 
             if (_isDashing)
