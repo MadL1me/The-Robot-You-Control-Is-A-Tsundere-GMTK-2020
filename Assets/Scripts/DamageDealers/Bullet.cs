@@ -22,7 +22,7 @@ namespace GMTK2020
         public int GetDamage => Config.BulletDamage;
 
         public BulletConfig Config;
-        public float Angle;
+        public float Angle { get; set; }
 
         public ProjectileSide Side { get; set; }
 
@@ -42,7 +42,7 @@ namespace GMTK2020
         {
             var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.01F;
 
-            transform.position += translateVec;
+            transform.position += translateVec * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0F, 0F, Angle);
 
             if (Time.time - _appearTime > KEEP_ALIVE_TIME)

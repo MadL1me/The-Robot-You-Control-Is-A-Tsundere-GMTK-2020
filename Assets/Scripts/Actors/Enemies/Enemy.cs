@@ -92,14 +92,11 @@ namespace GMTK2020
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
         
-        protected override void PlayActorAnimations()
-        {
-            
-            
-        }
+        protected virtual void Move() => _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
+
+        protected override void PlayActorAnimations() {}
 
         protected abstract void Attack();
-        protected abstract void Move();
         protected abstract void MakeAIDecision();
         public override void Die()
         {
