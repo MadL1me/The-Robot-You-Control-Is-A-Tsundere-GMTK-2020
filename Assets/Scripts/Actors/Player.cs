@@ -12,9 +12,10 @@ namespace GMTK2020
 
         private WeaponBearer _bearer;
 
-        public void Awake()
+        protected override void Awake()
         {
             _bearer = GetComponent<WeaponBearer>();
+            base.Awake();
         }
 
         public override void Die()

@@ -62,7 +62,7 @@
      <Compile Include="Assets\Scripts\Actors\Components\HealthComponent.cs" />
      <Compile Include="Assets\Scripts\Actors\Components\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Actors\Enemies\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Actors\Enemies\RobotChargerr.cs" />
+     <Compile Include="Assets\Scripts\Actors\Enemies\RobotCharger.cs" />
      <Compile Include="Assets\Scripts\Actors\Enemies\RobotSniper.cs" />
      <Compile Include="Assets\Scripts\Actors\Player.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />

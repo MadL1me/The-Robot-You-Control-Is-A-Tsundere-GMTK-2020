@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAoIeyeyiGzTQIAAPIEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMly2kAQ/RVqznFKgBfILZExzgFDGad80aWRWmiK0YxqFrO4+Pf0jCQkk8qJpt/r7tfL6JNxaSpMrdJzzbOFypD9GDBvs2+DDnzGA2yVXPMTtpx3ntnCkyBwXsFyRf6hDzOqRKt5+lNuhSdH5HSS50qXs2yLsTLWkDsHYZAgrayPluT6HLAD/dxMfciRrNGDt05kTaPBmcwUpUXdUVtiS6tZTqYCygozL7kjD1v2sKZJaqZheOGpEoKbRgmzxyp0GkNlHPVBhIwDdRbKe36BfFtYr7IfvMxzg7aRpOH4yDUNqM7Kfql6aiWYXa3rA4TzdUZ390FTnXTxD34zDHCuVfnc1h1GvoYteLp7hWMKxvbG2nc/fhXu5B7EDjYC3wuUL2qulZMZgVY7H+oMjh67v5fW4gLTXeevpV45XfX/5fgezqH7Qyx4ufHQ99vasRYqzDusHjVt5jcJDodhmhTk9Sr+GHyDbf+CGuCJa2MJarqUXt5GOe2pbBZm5rtxNlZaYnA3oiuUIOxxRWns9QqvsF7ZK+QJ/FtpijdY+wSuQoK740fRFbRS+8uyTKH2CzTF0lnBJXaiPfBCc4qVlPWF9WfShq2dziHthW0dz76eFhsNR/k4B8DJaBOlk+nNZgz344dpFI0nd+PN5JaF2+OS+gSxqoU246GtyS65pDtrPyGDuYYqXHumYT/np1L1Rs5lrtapRpTLOsNFOGoqQq8ym2WcBrRGa7kM+2afCRMq3WGWXBIlodPZwWpIuiwJq/iHst6TsDh8MxJ2Zue/UEsDBBQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSkaFRmnFaYmKqhVGSQbKFpW6ScaKZsbmlgYGxhalxkoWJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAoIeyeyiGzTQIAAPIEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAAAAAAAAAAAAAAJoCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAUgMAAAAA
+    dataString: UEsDBBQAAAgIAAAoIexYYFcbXAIAAAQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzoUxNhDorTWE9ECSCenk4ouw11iDLHn0ESAZ/ntXso0dMj0h9r1dvbe78idhQleQGqnWimUbmQH5OSDuTH4MOvABTnQvxZZ9QMt5Y5kpHIl6zgs1TGJ87NK0LMEolv4Se+7IAQatYLlU5SrbQyy10RjOKdeAkJLGZQsMfQ7ICX+GC5dyxlN4504feFoEgwseUxAGVEdtiS2tZlmRclpWkDnJHTmctmVHU88T6KahBCOPppJzphs1xJwr7zamlbboBQkZo+jOS3BmC2D7wriS/eSnPNdgGlmKnpdMYZPqquS3rDtXUn2otb1TbsHrm3lZddHNN3w49nCuZPnQ3jsO3B2mYOnhhZ5Tqk2vtf3w8qtwK46UH+iOw1sB4lGulbQiQ9Ao61KthnDZ/b1aiwtID128lnoTtNX3AYWjaD4Zz2fRbDUM7pppOUMX34pTzFm583OY1IEtl775fhdA4aT+oHq/Kbqpi1En6a+GV7rvr1QD3DOlDUKNZeG07qRVjkpWvoHOmjWxVAJUv0IFgnJzfsY65nagN9j/s+6pez3N7Q3WPoqbFB/u+EFwAz3L43V0upDHDejiyRrOBHR9d8AjNiqWQtT71rfUpm2tymnaS9tbln1dNBKOwzzKKYV5uAvS+WK4i+gsulsEQTSfRrv5hPhNZAJ9Uv5cC23ag2MTXXGBW9d+VAZrRSu/+5mixzX7KKXumEzkcpsqAPFUV7gKB4WX4DPNVhnDBm3BGCb8wMlnQrhMD5Al10KJd7o6GUWTrkpCKvYujYskJPZfkYRcyOUfUEsDBBQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSkaFRmnFaYmKqhVGSQbKFpW6ScaKZsbmlgYGxhalxkoWJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAoIexYYFcbXAIAAAQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAAAAAAAAAAAAAAKkCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAYQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -688,12 +688,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1542732416}
   - component: {fileID: 1542732417}
-  - component: {fileID: 1542732415}
   - component: {fileID: 1542732418}
   - component: {fileID: 1542732419}
   - component: {fileID: 1542732420}
+  - component: {fileID: 1542732415}
   m_Layer: 0
-  m_Name: FollowerPrefab
+  m_Name: RobotCharger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,8 +711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1cfaeaf484b0db1287739bcef6582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movingSpeed: 100
+  Side: 1
+  _movingSpeed: 200
   _damageFromTouch: 0
+  _pathUpdatingRate: 1.5
+  _currentWayPoint: 0
 --- !u!4 &1542732416
 Transform:
   m_ObjectHideFlags: 0
@@ -721,7 +724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542732414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37, y: 0.22883756, z: -0.55044323}
+  m_LocalPosition: {x: 4.37, y: 0.22883756, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

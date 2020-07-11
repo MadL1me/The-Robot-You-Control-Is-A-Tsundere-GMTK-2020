@@ -12,12 +12,12 @@ namespace GMTK2020
         [SerializeField] protected int _damageFromTouch;
         [SerializeField] protected float _pathUpdatingRate;
 
-        protected const float WAYPOINT_DISTANCE = 3F;
+        protected const float WAYPOINT_DISTANCE = 0.5F;
         
         protected Player _player;
         protected Path _path;
         protected Seeker _seeker;
-        protected int _currentWayPoint;
+        [SerializeField] protected int _currentWayPoint;
         protected bool _reachedEndOfThePath;
         protected Vector3 _directionToCurrentWaypoint;
         
@@ -53,26 +53,37 @@ namespace GMTK2020
         
         protected virtual void FixedUpdate()
         {
-            HandleAstarPath();
-
-            if (_reachedEndOfThePath || _path == null)
+            if (!HandleAstarPath())
                 return;
-
-            _directionToCurrentWaypoint = _path.vectorPath[_currentWayPoint+1]-transform.position;
             
             MakeAIDecision();
         }
 
-        protected void HandleAstarPath()
+        protected bool HandleAstarPath()
         {
-            if (_path != null && _currentWayPoint == _path.vectorPath.Count)
+            if (_path != null && _currentWayPoint >= _path.vectorPath.Count)
                 _reachedEndOfThePath = true;
             else
                 _reachedEndOfThePath = false;
 
+            if (_path == null || _path.vectorPath.Count < _currentWayPoint+1)
+                return false;
+
+            if (!_reachedEndOfThePath)
+            {
+                _directionToCurrentWaypoint = _path.vectorPath[_currentWayPoint] - transform.position;
+                _directionToCurrentWaypoint.Normalize();
+            }
+            else
+                _directionToCurrentWaypoint = Vector3.zero;
+
             var distance = Vector3.Distance(_rigidbody.position, _path.vectorPath[_currentWayPoint]);
+
+            //Debug.Log($"Distance between: {distance}");
             if (distance <= WAYPOINT_DISTANCE)
                 _currentWayPoint++;
+
+            return true;
         }
 
         protected abstract void Attack();
