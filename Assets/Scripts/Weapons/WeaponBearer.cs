@@ -8,6 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class WeaponBearer : MonoBehaviour
 {
+    public const float SINGLE_TAP_ANIMATION_DURATION = 0.15F;
+
     public WeaponConfig[] InitialArsenal;
 
     public Weapon[] Arsenal;
@@ -32,7 +34,7 @@ public class WeaponBearer : MonoBehaviour
     }
 
     public bool IsShotInProgress() =>
-        CurrentWeapon != null && Time.time - _lastShoot <= 0.15F;
+        CurrentWeapon != null && Time.time - _lastShoot <= SINGLE_TAP_ANIMATION_DURATION;
 
     public bool CanShoot() =>
         CurrentWeapon?.CanShoot() == true && !IsReloading;
