@@ -53,7 +53,7 @@ public class WeaponBearer : MonoBehaviour
 
     public bool TrySetWeapon(int weaponId)
     {
-        if (weaponId < Arsenal.Length && weaponId >= 0)
+        if (weaponId < Arsenal.Length && weaponId >= 0 && !IsReloading)
         {
             ActiveWeapon = weaponId;
             return true;
