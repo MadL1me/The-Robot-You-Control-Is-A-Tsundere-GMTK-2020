@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     private AudioSource[] _sources;
 
     private float _initialVolume;
+    private float _bossStart = int.MinValue;
     private float _intenseStart = int.MinValue;
     private int _currentLayer;
 
@@ -25,7 +26,9 @@ public class MusicManager : MonoBehaviour
         _sources = GetComponents<AudioSource>();
 
         _initialVolume = _sources[0].volume;
-        _sources[1].volume = 0F;
+
+        for (int i = 1; i < _sources.Length; i++)
+            _sources[1].volume = 0F;
 
         for (int i = 0; i < _sources.Length; i++)
             _sources[i].Play();

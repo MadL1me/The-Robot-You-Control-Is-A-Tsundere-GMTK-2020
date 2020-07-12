@@ -19,6 +19,7 @@ namespace GMTK2020
     public class PlayerMovement : MonoBehaviour
     {
         private const int RAGE_INPUT_GLITCH_FREQUENCY = 30;
+        private const float FOOTSTEP_SOUND_FREQUENCY = 0.3F;
 
         public Vector3 MoveVector { get; protected set; }
         public bool DisableAllInput { get; set; }
@@ -33,6 +34,8 @@ namespace GMTK2020
         [SerializeField] private float _dashingLength;
         [SerializeField] private float _dashTimeout;
         [SerializeField] private Camera _camera;
+        [SerializeField] private AudioSource _footstepPlayer;
+        [SerializeField] private AudioClip[] _footstepClips;
         
         private bool _isDashing;
         private bool _isDashTimeout;
@@ -43,6 +46,8 @@ namespace GMTK2020
         private float _glitchStart;
         private float _glitchDuration;
         private float _glitchEffectCounter;
+        private int _nextFootstep;
+        private float _lastFootstep;
 
         private HealthComponent _healthComponent;
         
@@ -57,11 +62,17 @@ namespace GMTK2020
 
         private void Update()
         {
-
             if (!DisableAllInput)
                 HandleInputs();
             else
                 MoveVector = Vector3.zero;
+
+            if (MoveVector.magnitude > 0.2F && !_isDashing && Time.time - _lastFootstep > FOOTSTEP_SOUND_FREQUENCY)
+            {
+                _lastFootstep = Time.time;
+                _footstepPlayer.PlayOneShot(_footstepClips[_nextFootstep]);
+                _nextFootstep = (_nextFootstep + 1) % _footstepClips.Length;
+            }
 
             if (_glitch != GlitchType.None)
             {
