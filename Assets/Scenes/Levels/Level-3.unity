@@ -11227,6 +11227,11 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[345].second.m_AllTileFlags
       value: 1073741825
       objectReference: {fileID: 0}
+    - target: {fileID: 4405490952472439701, guid: 08fba45203638784a9020e0de54824a4,
+        type: 3}
+      propertyPath: _weaponBearer
+      value: 
+      objectReference: {fileID: 1580578964}
     - target: {fileID: 4677475688336284619, guid: 08fba45203638784a9020e0de54824a4,
         type: 3}
       propertyPath: _weaponBearer
@@ -29946,7 +29951,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _outOfControl
       value: 
-      objectReference: {fileID: 1580578963}
+      objectReference: {fileID: 0}
     - target: {fileID: 9123335462255543882, guid: 08fba45203638784a9020e0de54824a4,
         type: 3}
       propertyPath: _nextRage
@@ -29957,20 +29962,14 @@ PrefabInstance:
       propertyPath: _rageLength
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9123335462255543882, guid: 08fba45203638784a9020e0de54824a4,
+        type: 3}
+      propertyPath: EnableInterference
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4677475688336284619, guid: 08fba45203638784a9020e0de54824a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08fba45203638784a9020e0de54824a4, type: 3}
---- !u!114 &1580578963 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1598645270651139454, guid: 08fba45203638784a9020e0de54824a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1580578962}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787230eb84794cff970f8b48c4c0bb77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1580578964 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9123335462255543883, guid: 08fba45203638784a9020e0de54824a4,

@@ -856,18 +856,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee07edc506af174cbd912a7ffa0dcaa, type: 3}
---- !u!114 &1285884461 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7573505683214463639, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 9166505491319055394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787230eb84794cff970f8b48c4c0bb77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1416972676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,7 +1289,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _outOfControl
       value: 
-      objectReference: {fileID: 1285884461}
+      objectReference: {fileID: 0}
+    - target: {fileID: 119733991603814819, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: EnableInterference
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 119733991603814828, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: _musicManager
