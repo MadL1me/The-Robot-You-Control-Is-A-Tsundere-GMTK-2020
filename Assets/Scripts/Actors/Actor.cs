@@ -18,9 +18,12 @@ namespace GMTK2020
         
         protected Rigidbody2D _rigidbody;
         protected SpriteRenderer _spriteRenderer;
+        protected Color _originalColor;
         
         [SerializeField] protected float _movingSpeed;
         [SerializeField] protected LevelManager _musicManager;
+
+        public void SetMusicManager(LevelManager manager) => _musicManager = manager;
         
         public bool CanTakeDamage() =>
             !HealthStats.IsInvisible;
@@ -32,7 +35,8 @@ namespace GMTK2020
 
             HealthStats.Health -= amount;
             _musicManager.Intensify();
-
+            StartCoroutine(RedColoringEffect(0.5F));
+            
             return true;
         }
         
@@ -42,23 +46,32 @@ namespace GMTK2020
             HealthStats = GetComponent<HealthComponent>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+
+            _originalColor = _spriteRenderer.color;
             
             SubscribeOnEvents();
         }
         
         protected IEnumerator RedColoringEffect(float speed)
         {
-            //var wait = new WaitForSeconds();
-            var colorBefore = _spriteRenderer.color;
+            var wait = new WaitForFixedUpdate();
+            var curColor = _spriteRenderer.color;
             
-            for (float i = 0; i < 1; i += Time.deltaTime)
+            for (float i = 0; i < 1; i += speed)
             {
-                colorBefore = _spriteRenderer.color;
-                _spriteRenderer.color = Color.clear;
-                //yield return wait;
-                _spriteRenderer.color = colorBefore;
-                yield return null;
+                _spriteRenderer.color = Color.Lerp(curColor, Color.red, i);
+                yield return wait;
             }
+            
+            _spriteRenderer.color = Color.red;
+
+            for (float i = 0; i < 1; i+=speed)
+            {
+                _spriteRenderer.color = Color.Lerp(Color.red, _originalColor, i);
+                yield return wait;
+            }
+
+            _spriteRenderer.color = _originalColor;
         }
 
         protected virtual void Update() => PlayActorAnimations();

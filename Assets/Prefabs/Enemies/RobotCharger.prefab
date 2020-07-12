@@ -17,13 +17,13 @@ GameObject:
   - component: {fileID: 134092940}
   - component: {fileID: 134092941}
   - component: {fileID: 938482295863791746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RobotCharger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2090022834594560106
 Transform:
   m_ObjectHideFlags: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 1.5
+  _agroRadius: 10
   _currentWayPoint: 0
 --- !u!58 &134092940
 CircleCollider2D:

@@ -14,7 +14,7 @@ namespace GMTK2020
 
         protected const float WAYPOINT_DISTANCE = 0.5F;
 
-        protected float _agroRadius = 10F;
+        [SerializeField] protected float _agroRadius = 10F;
         protected bool _isAgroed;
         protected Player _player;
         protected Path _path;
@@ -97,7 +97,12 @@ namespace GMTK2020
             if (other.gameObject.CompareTag("Player"))
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
-        
+
+        protected void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, _agroRadius);
+        }
+
         protected virtual void Move() => _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
 
         protected override void PlayActorAnimations()

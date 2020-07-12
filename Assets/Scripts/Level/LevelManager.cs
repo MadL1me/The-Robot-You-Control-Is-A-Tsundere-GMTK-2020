@@ -48,6 +48,7 @@ namespace GMTK2020.Level
 
             foreach (var enemy in _levelEnemies)
             {
+                enemy.SetMusicManager(this);
                 enemy.OnActorDeath += OnEnemyDie;
             }
         }
