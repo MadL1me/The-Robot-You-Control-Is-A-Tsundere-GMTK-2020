@@ -13,7 +13,9 @@ namespace GMTK2020
         [SerializeField] protected float _pathUpdatingRate;
 
         protected const float WAYPOINT_DISTANCE = 0.5F;
-        
+
+        protected float _agroRadius = 10F;
+        protected bool _isAgroed;
         protected Player _player;
         protected Path _path;
         protected Seeker _seeker;
@@ -53,7 +55,10 @@ namespace GMTK2020
         
         protected virtual void FixedUpdate()
         {
-            if (!HandleAstarPath())
+            if (!_isAgroed && Vector3.Distance(transform.position, _player.transform.position) < _agroRadius)
+                _isAgroed = true;
+
+            if (!_isAgroed || !HandleAstarPath())
                 return;
             
             MakeAIDecision();
