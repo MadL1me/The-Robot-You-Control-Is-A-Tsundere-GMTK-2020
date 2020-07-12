@@ -28,7 +28,7 @@ namespace GMTK2020
         }
 
         public float GetRemainingTimeUntilRage() =>
-            _nextRage - Time.time;
+            _nextRage - _rageTimer;
 
         private GlitchType GetRandomMoveGlitchType()
         {
@@ -93,7 +93,7 @@ namespace GMTK2020
 
                 if (type == GlitchType.None)
                 {
-                    _nextRage = Time.time + 1F;
+                    _nextRage = _rageTimer + 1F;
                     return;
                 }
 
