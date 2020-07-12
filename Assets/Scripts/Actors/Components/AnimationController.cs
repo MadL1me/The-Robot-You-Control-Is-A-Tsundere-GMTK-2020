@@ -45,8 +45,7 @@ namespace GMTK2020
                 case AnimType.Move: animName += "Move_"; break; 
                 case AnimType.Shoot: animName += "Shoot_"; break; 
                 case AnimType.Dash: animName += "Dash_"; break; 
-                case AnimType.Interaction: animName += "Interaction_"; break; 
-                case AnimType.Die: animName += "Die_"; break; 
+                case AnimType.Interaction: animName += "Interaction_"; break;
             }
             
             switch (direction)
@@ -56,6 +55,9 @@ namespace GMTK2020
                 case WatchDirection.Left: animName += "Left"; break; 
                 case WatchDirection.Right: animName += "Right"; break; 
             }
+
+            if (animType == AnimType.Die)
+                animName = "Death";
 
             _animator.speed = speedMod;
             _animator.Play(animName, 0);

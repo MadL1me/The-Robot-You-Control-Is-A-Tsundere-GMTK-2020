@@ -63,6 +63,8 @@ namespace GMTK2020.Level
             }
         }
 
+        public void DisableMusic() => _music.DisableMusic = true;
+
         public void ProceedToNextLevel() => StartCoroutine(NextLevelProceedCoroutine());
 
         public void RestartLevel() =>   StartCoroutine(RestartCoroutine());

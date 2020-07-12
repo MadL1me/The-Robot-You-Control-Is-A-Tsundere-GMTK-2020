@@ -10,6 +10,8 @@ namespace GMTK2020
         [SerializeField] protected WeaponBearer _weaponBearer;
         [SerializeField] private AudioClip[] _footstepClips;
 
+        public bool IsDead { get; private set; }
+
         protected float _moveStart;
         protected bool _isMoving;
         protected float _lastShot;
@@ -19,6 +21,8 @@ namespace GMTK2020
         private int _nextFootstep;
         private float _lastFootstep;
         private AudioSource _source;
+        private bool _deathAnim;
+        private int _wpn;
 
         protected override void Awake()
         {
@@ -31,6 +35,7 @@ namespace GMTK2020
 
         protected override void Attack()
         {
+            _weaponBearer.TrySetWeapon(_wpn);
             var difference = _player.transform.position - transform.position;
             var angle = (Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg + 360) % 360;
             if (_weaponBearer.Shoot(angle))
@@ -43,6 +48,18 @@ namespace GMTK2020
                 base.Move();
             else
                 _rigidbody.velocity = Vector3.zero;
+        }
+
+        public override void Die()
+        {
+            if (IsDead)
+                return;
+
+            RunOnDeath();
+            IsDead = true;
+            _canContact = false;
+            _camera.Shake(15F);
+            _musicManager.DisableMusic();
         }
 
         private IEnumerator TeleportToPlayer()
@@ -80,6 +97,9 @@ namespace GMTK2020
 
         protected override void MakeAIDecision()
         {
+            if (IsDead)
+                return;
+
             if (!_isTeleporting && _rigidbody.velocity.magnitude > 0.2F && Time.time - _lastFootstep > 0.3F)
             {
                 _camera.Shake(1F);
@@ -114,6 +134,7 @@ namespace GMTK2020
             {
               //  Debug.Log("Reuire to reload!");
                 _weaponBearer.Reload();
+                _wpn = _wpn == 1 ? 0 : 1;
                 return false;
             }
 
@@ -137,9 +158,20 @@ namespace GMTK2020
           //  Debug.Log("YESSS IT CA SHOOT");
             return true;
         }
-        
+
         protected override void PlayActorAnimations()
         {
+            if (IsDead)
+            {
+                if (!_deathAnim)
+                    AnimationController.AnimateActor(WatchDirection.Down, AnimType.Die, 1F);
+
+                _deathAnim = true;
+                _rigidbody.velocity = Vector3.zero;
+
+                return;
+            }
+
             if (Time.time - _lastAnimChange < 0.15F)
                 return;
 

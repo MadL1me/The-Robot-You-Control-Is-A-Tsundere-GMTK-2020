@@ -237,3 +237,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a59bef18e6b6f248bb94cb10bd89879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisableMusic: 0

@@ -102,7 +102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.507
+  m_Volume: 0.759
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialArsenal:
   - {fileID: 11400000, guid: 427eb5df3b2bfce4bb3fa1b05bdaaaf2, type: 2}
+  - {fileID: 11400000, guid: 88ed3e45a8393d241bd4c16983bc5fac, type: 2}
   ActiveWeapon: 0
   _audioSource: {fileID: 5644936730634910764}
 --- !u!114 &5644936730634910762
@@ -242,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd46afcf69e49e088c0eb635a3485c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 1000
+  _health: 1000
 --- !u!95 &5644936730634910736
 Animator:
   serializedVersion: 3
@@ -325,10 +326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Side: 1
-  _movingSpeed: 6
+  _movingSpeed: 5
   _musicManager: {fileID: 0}
   _damageFromTouch: 0
   _pathUpdatingRate: 0.2
+  _agroRadius: 10
   _currentWayPoint: 0
   _weaponBearer: {fileID: 5644936730634910763}
   _footstepClips:

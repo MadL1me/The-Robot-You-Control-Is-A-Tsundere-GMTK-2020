@@ -15,12 +15,13 @@ public enum DialogueCharAnim
     Stare = 4
 }
 
-public struct DialogueBoxLine
+[Serializable]
+public class DialogueBoxLine
 {
-    public DialogueCharAnim Animation;
-    public string Line;
-    public Color Color;
-    public float VoiceTone;
+    public DialogueCharAnim Animation = DialogueCharAnim.None;
+    public string Line = "";
+    public Color Color = Color.white;
+    public float VoiceTone = 1F;
 
     public DialogueBoxLine(DialogueCharAnim anim, string line, Color color)
     {
