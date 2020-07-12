@@ -34,14 +34,17 @@ namespace GMTK2020
         {
             _renderer = GetComponent<SpriteRenderer>();
 
-            _renderer.sprite = Config.Sprite;
-
             _appearTime = Time.time;
+        }
+
+        public void UpdateSprite()
+        {
+            _renderer.sprite = Config.Sprite;
         }
 
         private void Update()
         {
-            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.001F;
+            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed;
 
             transform.position += translateVec * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0F, 0F, Angle);
