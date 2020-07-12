@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06389b973aa6045478dd32757321b5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionScene: TutorialAndPlot
+  TransitionScene: Scenes/Levels/TutorialAndPlot
 --- !u!1 &1870452417
 GameObject:
   m_ObjectHideFlags: 0
