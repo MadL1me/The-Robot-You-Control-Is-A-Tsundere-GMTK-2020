@@ -15,7 +15,7 @@ namespace GMTK2020
         protected const float WAYPOINT_DISTANCE = 0.5F;
 
         protected float _lastAnimChange;
-        protected float _agroRadius = 10F;
+        [SerializeField] protected float _agroRadius = 10F;
         protected bool _isAgroed;
         protected Player _player;
         protected Path _path;
@@ -54,7 +54,12 @@ namespace GMTK2020
             if(_seeker.IsDone())
                 _seeker.StartPath(_rigidbody.position, _player.transform.position, OnPathComplete);
         }
-        
+
+        protected void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, _agroRadius);
+        }
+
         protected virtual void FixedUpdate()
         {
             if (!_isAgroed && Vector3.Distance(transform.position, _player.transform.position) < _agroRadius)
