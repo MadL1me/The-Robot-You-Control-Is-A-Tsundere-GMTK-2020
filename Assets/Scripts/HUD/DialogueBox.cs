@@ -20,12 +20,30 @@ public struct DialogueBoxLine
     public DialogueCharAnim Animation;
     public string Line;
     public Color Color;
+    public float VoiceTone;
 
     public DialogueBoxLine(DialogueCharAnim anim, string line, Color color)
     {
         Animation = anim;
         Line = line;
         Color = color;
+        VoiceTone = 1.5F;
+    }
+
+    public DialogueBoxLine(DialogueCharAnim anim, string line, Color color, float voice)
+    {
+        Animation = anim;
+        Line = line;
+        Color = color;
+        VoiceTone = voice;
+    }
+
+    public DialogueBoxLine(DialogueCharAnim anim, string line, float voice)
+    {
+        Animation = anim;
+        Line = line;
+        Color = Color.white;
+        VoiceTone = voice;
     }
 
     public DialogueBoxLine(DialogueCharAnim anim, string line)
@@ -33,6 +51,7 @@ public struct DialogueBoxLine
         Animation = anim;
         Line = line;
         Color = Color.white;
+        VoiceTone = 1.5F;
     }
 }
 
@@ -251,12 +270,16 @@ public class DialogueBox : MonoBehaviour
         _text.color = line.Color;
         _text.rectTransform.sizeDelta = new Vector2(TargetWidth * _imageMiddle.rect.width, _imageMiddle.rect.height);
 
+        if (line.VoiceTone != 0)
+            _source.pitch = line.VoiceTone;
+
         if (_character != null)
             StartCoroutine(AnimateCharSprite(line.Animation, BOX_APPEAR_ANIM_DURATION * 0.25F));
 
         for (int i = 0; i < line.Line.Length && !_shouldSkip; i++)
         {
-            _source.PlayOneShot(_source.clip);
+            if (line.VoiceTone != 0F)
+                _source.PlayOneShot(_source.clip);
             _text.text += line.Line[i];
 
             yield return new WaitForSeconds(BOX_TYPE_SPEED);
