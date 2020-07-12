@@ -32,7 +32,7 @@ namespace GMTK2020
             base.Awake();
         }
 
-        protected void Start()
+        protected virtual void Start()
         {
             UpdatePath();
             InvokeRepeating("UpdatePath", 1F, _pathUpdatingRate);
@@ -65,8 +65,16 @@ namespace GMTK2020
             if (!_isAgroed && Vector3.Distance(transform.position, _player.transform.position) < _agroRadius)
                 _isAgroed = true;
 
+            Debug.Log($"Distacne beetwenn shooter and player: {Vector3.Distance(transform.position, _player.transform.position)}");
+            
             if (!_isAgroed || !HandleAstarPath())
+            {
+                Debug.Log($"Is agroed: {_isAgroed}");
+                Debug.Log("Not agroed or cant handle a*"); 
                 return;
+            }
+            
+            Debug.Log("fixed works");
             
             MakeAIDecision();
             PlayActorAnimations();
@@ -105,8 +113,7 @@ namespace GMTK2020
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
         
-        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime
-        ;
+        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime;
 
         protected override void PlayActorAnimations()
         {
@@ -140,7 +147,13 @@ namespace GMTK2020
             
             AnimationController.AnimateActor(watchDir, animType);
         }
-        
+
+        public override bool Damage(int amount)
+        {
+            StartCoroutine(RedColoringEffect(0.5F));
+            return base.Damage(amount);
+        }
+
         protected abstract void Attack();
         protected abstract void MakeAIDecision();
         public override void Die()

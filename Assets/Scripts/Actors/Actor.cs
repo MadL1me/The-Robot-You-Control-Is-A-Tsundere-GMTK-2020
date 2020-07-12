@@ -35,8 +35,7 @@ namespace GMTK2020
 
             HealthStats.Health -= amount;
             _musicManager.Intensify();
-            StartCoroutine(RedColoringEffect(0.5F));
-            
+
             return true;
         }
         

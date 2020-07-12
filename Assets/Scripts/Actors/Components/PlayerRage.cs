@@ -1,4 +1,5 @@
-﻿using GMTK2020.Level;
+﻿using System.Collections;
+using GMTK2020.Level;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -110,7 +111,14 @@ namespace GMTK2020
                 _outOfControl.SetText(type);
                  _rageTimer = -_rageLength;
                 _movement.ApplyGlitch(type, duration);
+                StartCoroutine(ChangeNameAfterGlitch(_rageLength));
             }
+        }
+
+        private IEnumerator ChangeNameAfterGlitch(float time)
+        {
+            yield return new WaitForSeconds(time);
+            _outOfControl.SetText(GlitchType.None);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace GMTK2020
 {
     public class Player : Actor
     {
-        private const float BLINKING_RATE = 0.5F;
+        private const float BLINKING_RATE = 0.2F;
         
         [SerializeField] private float _invisibleTime;
         [SerializeField] private AudioSource _audioSource;
