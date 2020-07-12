@@ -212,15 +212,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Side: 1
-  _movingSpeed: 200
+  _movingSpeed: 250
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
-  _agroRadius: 10
+  _agroRadius: 2.67
   _currentWayPoint: 0
   _isDashing: 0
-  _prepareTime: 1
+  _prepareTime: 0.8
   _beforeDashDistance: 3
   _dashingSpeed: 400
   _dashingLength: 10
-  _afterDashTimeout: 1
+  _afterDashTimeout: 0.8
