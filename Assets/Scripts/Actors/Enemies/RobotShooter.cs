@@ -73,12 +73,17 @@ namespace GMTK2020
 
         protected override void PlayActorAnimations()
         {
+            if (Time.time - _lastAnimChange < 0.15F)
+                return;
+
+            _lastAnimChange = Time.time;
+
             var animType = AnimType.Idle;
             var watchDir = WatchDirection.Down;
             var vector = _directionToCurrentWaypoint;
             var speed = 1F;
             
-            if (Mathf.Abs(vector.x) >= 0.2F || Mathf.Abs(vector.y) >= 0.2f)
+            if (Mathf.Abs(_rigidbody.velocity.x) >= 0.2F || Mathf.Abs(_rigidbody.velocity.y) >= 0.2f)
                 animType = AnimType.Move;
 
             if (_weaponBearer.IsShotInProgress())
@@ -87,13 +92,7 @@ namespace GMTK2020
                 speed = 1F / WeaponBearer.SINGLE_TAP_ANIMATION_DURATION;
             }
 
-            var mainCamera = Camera.main;
-
-            var vecDiff = (vector == Vector3.zero || _weaponBearer.IsShotInProgress())
-                ? (Input.mousePosition - new Vector3(mainCamera.pixelWidth, mainCamera.pixelHeight) / 2F)
-                : vector;
-
-            var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;
+            var direction = (Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg + 360) % 360;
 
             if (direction >= 360F * 0.625F && direction < 360F * 0.875F)
                 watchDir = WatchDirection.Down;
