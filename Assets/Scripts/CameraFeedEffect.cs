@@ -62,9 +62,9 @@ public class CameraFeedEffect : MonoBehaviour
         _shaderMat.SetFloat("_FadeOutAmount", FadeOutAmount);
 
         if (_mov.GetCurrentGlitch() == GlitchType.Interference)
-            _interference = Mathf.Lerp(_interference, 1F, 0.1F);
+            _interference = Mathf.Lerp(_interference, 1F, 0.03F);
         else
-            _interference = Mathf.Lerp(_interference, 0F, 0.1F);
+            _interference = Mathf.Lerp(_interference, 0F, 0.03F);
 
         _shaderMat.SetFloat("_NoiseAmount", 0.2F + _interference * 0.4F);
         _shaderMat.SetFloat("_Interference", _interference);

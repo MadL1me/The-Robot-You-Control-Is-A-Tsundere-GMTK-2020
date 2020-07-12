@@ -61,10 +61,10 @@ namespace GMTK2020
 
             var wastedRounds = _weaponBearer.CurrentWeapon?.WeaponConfig.MagazineRounds - _weaponBearer.CurrentWeapon?.CurrentRounds;
 
-            if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
-                return GlitchType.RandomShoot;
-            else if (EnableInterference && Random.Range(0, 3) == 0)
+            if (EnableInterference && Random.Range(0, 3) == 0)
                 return GlitchType.Interference;
+            else if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
+                return GlitchType.RandomShoot;
             else if (wastedRounds != 0 && wastedRounds <= 5)
                 return GlitchType.RandomReload;
             else
