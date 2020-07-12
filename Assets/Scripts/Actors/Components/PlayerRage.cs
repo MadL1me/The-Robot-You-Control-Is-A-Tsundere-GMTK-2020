@@ -93,7 +93,7 @@ namespace GMTK2020
 
                 if (type == GlitchType.None)
                 {
-                    _nextRage = _rageTimer + 1F;
+                    _rageTimer = 0;
                     return;
                 }
 

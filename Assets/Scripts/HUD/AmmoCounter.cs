@@ -16,6 +16,6 @@ public class AmmoCounter : MonoBehaviour
 
     private void Update()
     {
-        _text.text = $"{_weaponBearer.CurrentWeapon?.CurrentRounds ?? 0} / ∞";
+        _text.text = $"{_weaponBearer.CurrentWeapon?.CurrentRounds ?? 0}";
     }
 }

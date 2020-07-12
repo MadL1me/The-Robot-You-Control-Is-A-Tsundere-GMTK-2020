@@ -80,7 +80,7 @@ namespace GMTK2020
         }
 
         public float GetGlitchProgress() =>
-            (Time.time - _glitchStart) / _glitchDuration;
+            _glitchDuration - (Time.time - _glitchStart);
 
         public GlitchType GetCurrentGlitch() =>
             _glitch;
