@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd46afcf69e49e088c0eb635a3485c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 15
-  _health: 15
+  _maxHealth: 30
+  _health: 30
 --- !u!212 &2090022834594560104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

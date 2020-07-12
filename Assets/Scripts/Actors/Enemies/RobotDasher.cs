@@ -37,11 +37,7 @@ namespace GMTK2020
             
             _isDashing = false;
         }
-
-        protected override void Move()
-        {
-            _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
-        }
+        
 
         protected override void MakeAIDecision()
         {

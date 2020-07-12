@@ -112,8 +112,11 @@ namespace GMTK2020
             if (other.gameObject.CompareTag("Player") && _canContact)
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
-        
-        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime;
+
+        protected virtual void Move()
+        {
+            _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
+        }
 
         protected override void PlayActorAnimations()
         {
