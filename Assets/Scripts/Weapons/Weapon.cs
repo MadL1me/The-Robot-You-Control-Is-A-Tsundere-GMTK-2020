@@ -51,6 +51,7 @@ public class Weapon
             bullet.Angle = directionWithSpread;
             bullet.Side = bearer.Side;
             bullet.SoundSource = bearer.GetImpactSoundSource();
+            bullet.UpdateSprite();
         }
 
         DecreaseAmmo();
