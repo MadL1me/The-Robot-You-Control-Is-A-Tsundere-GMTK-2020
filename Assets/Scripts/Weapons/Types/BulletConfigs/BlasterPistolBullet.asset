@@ -17,3 +17,5 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 442b84fb59f60644b9745420143fb822, type: 3}
   BulletPrefab: {fileID: 7871235098713688562, guid: 57bd9fede0941c548bf227d179881f23,
     type: 3}
+  ImpactSounds:
+  - {fileID: 8300000, guid: 4050ae22dd77dda49afc73f3e722503b, type: 3}

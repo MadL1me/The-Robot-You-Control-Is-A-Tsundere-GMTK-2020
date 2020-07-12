@@ -41,7 +41,7 @@ namespace GMTK2020
 
         private void Update()
         {
-            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.01F;
+            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.001F;
 
             transform.position += translateVec * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0F, 0F, Angle);

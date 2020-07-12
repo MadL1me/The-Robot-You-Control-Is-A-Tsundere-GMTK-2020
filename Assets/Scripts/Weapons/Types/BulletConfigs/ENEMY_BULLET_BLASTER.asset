@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8c8627e6ea4fb2bcf8fcc39005a955, type: 3}
   m_Name: ENEMY_BULLET_BLASTER
   m_EditorClassIdentifier: 
-  BulletSpeed: 2
+  BulletSpeed: 4
   BulletDamage: 1
   Sprite: {fileID: 21300000, guid: 026beeae478285a479922f73aab8d592, type: 3}
   BulletPrefab: {fileID: 7871235098713688562, guid: 57bd9fede0941c548bf227d179881f23,
     type: 3}
+  ImpactSounds:
+  - {fileID: 8300000, guid: ce358122aaa23574eb613124c55262d4, type: 3}
