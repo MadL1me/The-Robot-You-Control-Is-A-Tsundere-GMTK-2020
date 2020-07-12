@@ -30,15 +30,10 @@ namespace GMTK2020
         private CameraFollow _cameraFollow;
         
         [SerializeField] private float _movingSpeed;
-        [SerializeField] private float _dashingSpeed;
-        [SerializeField] private float _dashingLength;
-        [SerializeField] private float _dashTimeout;
         [SerializeField] private Camera _camera;
         [SerializeField] private AudioSource _footstepPlayer;
         [SerializeField] private AudioClip[] _footstepClips;
         
-        private bool _isDashing;
-        private bool _isDashTimeout;
         private float _horizontalMove;
         private float _verticalMove;
 
@@ -67,7 +62,7 @@ namespace GMTK2020
             else
                 MoveVector = Vector3.zero;
 
-            if (MoveVector.magnitude > 0.2F && !_isDashing && Time.time - _lastFootstep > FOOTSTEP_SOUND_FREQUENCY)
+            if (MoveVector.magnitude > 0.2F && Time.time - _lastFootstep > FOOTSTEP_SOUND_FREQUENCY)
             {
                 _lastFootstep = Time.time;
                 _footstepPlayer.PlayOneShot(_footstepClips[_nextFootstep]);
@@ -120,9 +115,6 @@ namespace GMTK2020
                     _cameraFollow.Shake(_bearer.CurrentWeapon.WeaponConfig.ScreenShakeAmount);
             }
 
-            if (_isDashing)
-                return;
-
             _horizontalMove = Input.GetAxisRaw("Horizontal");
             _verticalMove = Input.GetAxisRaw("Vertical");
 
@@ -157,42 +149,11 @@ namespace GMTK2020
             }
 
             MoveVector = new Vector3(_horizontalMove, _verticalMove).normalized;
-            
-            if (Input.GetKeyDown(KeyCode.Space) && !_isDashTimeout)
-                StartCoroutine(Dash());
         }
 
         private void FixedUpdate()
         {
-            if (!_isDashing)
-                _rigidbody.velocity = MoveVector * _movingSpeed;
-        }
-
-
-        private IEnumerator Dash()
-        {
-            Debug.Log("Dash started");
-            _isDashing = true;
-            _isDashTimeout = true;
-            _healthComponent.IsInvisible = true;
-            
-            var curPosition = transform.position;
-            var nextPosition = MoveVector * _dashingLength * _dashingSpeed;
-            var difference = (nextPosition - curPosition).normalized;
-            var wait = new WaitForFixedUpdate();
-
-            var distance = _dashingSpeed * _dashingLength;
-            
-            for (float i = 0; i < distance; i += _dashingSpeed)
-            {
-                _rigidbody.velocity = MoveVector * _dashingSpeed;
-                yield return wait;
-            }
-            
-            _healthComponent.IsInvisible = false;
-            _isDashing = false;
-            yield return new WaitForSeconds(_dashTimeout);
-            _isDashTimeout = false;
+            _rigidbody.velocity = MoveVector * _movingSpeed;
         }
     }
 }

@@ -17,13 +17,13 @@ GameObject:
   - component: {fileID: 8012058315011350687}
   - component: {fileID: 8228582464918896772}
   - component: {fileID: 8228582464918896773}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RobotDasher
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8228582464918896760
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
+  _agroRadius: 10
   _currentWayPoint: 0
   _isDashing: 0
   _prepareTime: 1

@@ -111,5 +111,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38ad4b892784e27b462f7a22f1d4098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Config: {fileID: 11400000, guid: be35b0e27c8dabd46b534838291082dd, type: 2}
-  Angle: 0
