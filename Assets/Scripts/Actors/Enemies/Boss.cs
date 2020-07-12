@@ -106,13 +106,7 @@ namespace GMTK2020
                     _isMoving = false;
             }
         }
-
-        private void OnDrawGizmos()
-        {
-          //  var raycast = Physics2D.Raycast(transform.position,
-              //  (_player.transform.position - transform.position).normalized, 100f, ~LayerMask.GetMask("Enemy"));
-            //Gizmos.DrawLine(transform.position, raycast.point);
-        }
+        
 
         public bool IsCanShot()
         {
