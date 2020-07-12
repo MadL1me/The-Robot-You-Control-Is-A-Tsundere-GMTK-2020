@@ -318,8 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelManager: {fileID: 0}
-  _nextRage: 0
-  _rageLength: 0
+  _nextRage: 5
+  _rageLength: 5
+  _outOfControl: {fileID: 0}
 --- !u!95 &1360064202758526477
 Animator:
   serializedVersion: 3
