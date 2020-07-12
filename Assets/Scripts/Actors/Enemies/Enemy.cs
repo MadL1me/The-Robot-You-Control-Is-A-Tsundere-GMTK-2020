@@ -100,7 +100,8 @@ namespace GMTK2020
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
         
-        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed;
+        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime
+        ;
 
         protected override void PlayActorAnimations()
         {
