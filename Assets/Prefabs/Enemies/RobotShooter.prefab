@@ -262,7 +262,6 @@ MonoBehaviour:
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
-  _agroRadius: 10
   _currentWayPoint: 0
   _weaponBearer: {fileID: 8923268653563955547}
 --- !u!95 &8923268653563955552
@@ -316,7 +315,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8923268653563955554
 CircleCollider2D:
   m_ObjectHideFlags: 0
