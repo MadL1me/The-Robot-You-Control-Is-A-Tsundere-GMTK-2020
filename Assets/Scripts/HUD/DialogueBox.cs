@@ -12,7 +12,9 @@ public enum DialogueCharAnim
     Normal = 1,
     Smile = 2,
     RealSmile = 3,
-    Stare = 4
+    Stare = 4,
+    Evil = 5,
+    Shock = 6
 }
 
 [Serializable]

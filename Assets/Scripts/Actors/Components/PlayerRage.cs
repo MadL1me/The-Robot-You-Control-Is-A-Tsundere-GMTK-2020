@@ -11,7 +11,7 @@ namespace GMTK2020
 {
     public class PlayerRage : MonoBehaviour
     {
-        private const float ENEMY_PRESENCE_CHECK_RADIUS = 4F;
+        private const float ENEMY_PRESENCE_CHECK_RADIUS = 7F;
 
         [SerializeField] private LevelManager _levelManager;
 
@@ -20,9 +20,9 @@ namespace GMTK2020
         
         [SerializeField] private float _nextRage;
         [SerializeField] private float _rageLength;
-        [SerializeField] private OutOfControlTextSetter _outOfControl;
 
         public bool DisableRage;
+        public bool EnableInterference;
         
         private float _rageTimer = 0;
         
@@ -63,6 +63,8 @@ namespace GMTK2020
 
             if (enemiesNear >= 1 && Random.Range(0, 3) == 0)
                 return GlitchType.RandomShoot;
+            else if (EnableInterference && Random.Range(0, 3) == 0)
+                return GlitchType.Interference;
             else if (wastedRounds != 0 && wastedRounds <= 5)
                 return GlitchType.RandomReload;
             else
@@ -75,6 +77,7 @@ namespace GMTK2020
         {
             switch (type)
             {
+                case GlitchType.Interference:
                 case GlitchType.RandomShoot:
                     return _rageLength;
                 case GlitchType.RandomWalkBack:
@@ -114,17 +117,9 @@ namespace GMTK2020
 
                  //_nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
                 
-                 _outOfControl.SetText(type);
                  _rageTimer = -_rageLength;
                 _movement.ApplyGlitch(type, duration);
-                StartCoroutine(ChangeNameAfterGlitch(duration));
             }
-        }
-
-        private IEnumerator ChangeNameAfterGlitch(float time)
-        {
-            yield return new WaitForSeconds(time);
-            _outOfControl.SetText(GlitchType.None);
         }
     }
 }
