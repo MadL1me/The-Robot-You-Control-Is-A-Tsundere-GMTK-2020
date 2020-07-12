@@ -22,12 +22,12 @@ public class RageIndicator : MonoBehaviour
         if (_mov.GetCurrentGlitch() != GlitchType.None)
         {
             _text.color = Color.red;
-            _text.text = $"RG!! {Mathf.CeilToInt(_mov.GetGlitchProgress() * 100)}%";
+            _text.text = $"{Mathf.CeilToInt(_mov.GetGlitchProgress())}";
         }
         else
         {
             _text.color = Color.white;
-            _text.text = $"{Mathf.CeilToInt(_rage.GetRemainingTimeUntilRage())}s";
+            _text.text = $"{Mathf.CeilToInt(_rage.GetRemainingTimeUntilRage())}";
         }
     }
 }
