@@ -216,11 +216,11 @@ MonoBehaviour:
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
-  _agroRadius: 2.67
+  _agroRadius: 4.56
   _currentWayPoint: 0
   _isDashing: 0
   _prepareTime: 0.8
   _beforeDashDistance: 3
-  _dashingSpeed: 400
+  _dashingSpeed: 600
   _dashingLength: 10
   _afterDashTimeout: 0.8

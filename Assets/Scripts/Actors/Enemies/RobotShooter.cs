@@ -11,6 +11,7 @@ namespace GMTK2020
         protected override void Awake()
         {
             base.Awake();
+            _weaponBearer.Reload();
             //_weaponBearer.GetComponent<WeaponBearer>();
         }
 

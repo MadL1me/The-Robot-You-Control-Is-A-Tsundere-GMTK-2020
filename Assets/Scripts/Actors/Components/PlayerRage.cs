@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTK2020.HUD;
 using UnityEngine;
 
 namespace GMTK2020
@@ -18,11 +19,13 @@ namespace GMTK2020
         
         [SerializeField] private float _nextRage;
         [SerializeField] private float _rageLength;
-
+        [SerializeField] private OutOfControlTextSetter _outOfControl;
+        
         private float _rageTimer = 0;
         
         private void Start()
         {
+            _rageTimer = 0;
             _movement = GetComponent<PlayerMovement>();
             _weaponBearer = GetComponent<WeaponBearer>();
         }
@@ -89,6 +92,8 @@ namespace GMTK2020
             
             if (_rageTimer > _nextRage)
             {
+                Debug.Log("Rage AAAAAAAAAA");
+                
                 var type = DecideGlitchType();
 
                 if (type == GlitchType.None)
@@ -102,9 +107,9 @@ namespace GMTK2020
                 Debug.Log($"Glitching {type} for {duration}");
 
                  //_nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
-
+                _outOfControl.SetText(type);
+                 _rageTimer = -_rageLength;
                 _movement.ApplyGlitch(type, duration);
-                _rageTimer = 0;
             }
         }
     }
