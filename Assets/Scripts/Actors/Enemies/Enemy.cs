@@ -65,16 +65,16 @@ namespace GMTK2020
             if (!_isAgroed && Vector3.Distance(transform.position, _player.transform.position) < _agroRadius)
                 _isAgroed = true;
 
-            Debug.Log($"Distacne beetwenn shooter and player: {Vector3.Distance(transform.position, _player.transform.position)}");
+           // Debug.Log($"Distacne beetwenn shooter and player: {Vector3.Distance(transform.position, _player.transform.position)}");
             
             if (!_isAgroed || !HandleAstarPath())
             {
-                Debug.Log($"Is agroed: {_isAgroed}");
-                Debug.Log("Not agroed or cant handle a*"); 
+                // Debug.Log($"Is agroed: {_isAgroed}");
+                //Debug.Log("Not agroed or cant handle a*"); 
                 return;
             }
             
-            Debug.Log("fixed works");
+            //Debug.Log("fixed works");
             
             MakeAIDecision();
             PlayActorAnimations();

@@ -375,6 +375,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1493180913}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &618238354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7132007184298244240, guid: 08fba45203638784a9020e0de54824a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445809258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e154cdf0114d5bba5be9820f73025d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &624639395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8923268653563955550, guid: 47d409fcbd34b8f4abea788f2e61112e,
@@ -41414,6 +41426,11 @@ PrefabInstance:
       propertyPath: _health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9123335462255543877, guid: 08fba45203638784a9020e0de54824a4,
+        type: 3}
+      propertyPath: _musicManager
+      value: 
+      objectReference: {fileID: 618238354}
     - target: {fileID: 9123335462255543880, guid: 08fba45203638784a9020e0de54824a4,
         type: 3}
       propertyPath: m_LocalPosition.x

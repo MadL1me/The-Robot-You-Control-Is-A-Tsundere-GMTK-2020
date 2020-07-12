@@ -32,7 +32,7 @@ namespace GMTK2020
                 _rigidbody.velocity = direction * _dashingSpeed * Time.fixedDeltaTime;
                 yield return wait;
             }
-            
+
             yield return new WaitForSeconds(_afterDashTimeout);
             
             _isDashing = false;
