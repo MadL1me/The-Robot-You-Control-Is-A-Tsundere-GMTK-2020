@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd46afcf69e49e088c0eb635a3485c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
-  _health: 150
+  _maxHealth: 15
+  _health: 15
 --- !u!212 &4480047955493159641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -330,5 +330,6 @@ MonoBehaviour:
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
+  _agroRadius: 10
   _currentWayPoint: 0
   _weaponBearer: {fileID: 4480047955493159460}

@@ -156,6 +156,16 @@ PrefabInstance:
       propertyPath: _agroRadius
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8923268653563955545, guid: 47d409fcbd34b8f4abea788f2e61112e,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923268653563955545, guid: 47d409fcbd34b8f4abea788f2e61112e,
+        type: 3}
+      propertyPath: _health
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8923268653563955550, guid: 47d409fcbd34b8f4abea788f2e61112e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,11 +574,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RobotShooter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8923268653563955544, guid: 47d409fcbd34b8f4abea788f2e61112e,
-        type: 3}
-      propertyPath: _agroRadius
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8923268653563955550, guid: 47d409fcbd34b8f4abea788f2e61112e,
         type: 3}
@@ -1113,11 +1118,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 119733991603814819, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: _nextRage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 119733991603814819, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: _rageLength
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 119733991603814828, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: _musicManager
       value: 
       objectReference: {fileID: 1850824122}
+    - target: {fileID: 119733991603814829, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 119733991603814829, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: _health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 813412178608423856, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.size

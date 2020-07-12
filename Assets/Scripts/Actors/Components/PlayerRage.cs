@@ -15,13 +15,16 @@ namespace GMTK2020
 
         private PlayerMovement _movement;
         private WeaponBearer _weaponBearer;
-        private float _nextRage;
+        
+        [SerializeField] private float _nextRage;
+        [SerializeField] private float _rageLength;
 
+        private float _rageTimer = 0;
+        
         private void Start()
         {
             _movement = GetComponent<PlayerMovement>();
             _weaponBearer = GetComponent<WeaponBearer>();
-            _nextRage = Time.time + Random.Range(7F, 18F);
         }
 
         public float GetRemainingTimeUntilRage() =>
@@ -67,12 +70,12 @@ namespace GMTK2020
             switch (type)
             {
                 case GlitchType.RandomShoot:
-                    return Random.Range(2F, 3.5F);
+                    return _rageLength;
                 case GlitchType.RandomWalkBack:
                 case GlitchType.RandomWalkForward:
                 case GlitchType.RandomWalkLeft:
                 case GlitchType.RandomWalkRight:
-                    return Random.Range(4F, 15F);
+                    return _rageLength;
                 case GlitchType.RandomReload:
                     return 0.5F;
             }
@@ -82,7 +85,9 @@ namespace GMTK2020
 
         private void Update()
         {
-            if (Time.time > _nextRage)
+            _rageTimer += Time.deltaTime;
+            
+            if (_rageTimer > _nextRage)
             {
                 var type = DecideGlitchType();
 
@@ -96,9 +101,10 @@ namespace GMTK2020
 
                 Debug.Log($"Glitching {type} for {duration}");
 
-                _nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
+                 //_nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
 
                 _movement.ApplyGlitch(type, duration);
+                _rageTimer = 0;
             }
         }
     }
