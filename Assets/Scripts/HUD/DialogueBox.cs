@@ -19,18 +19,26 @@ public struct DialogueBoxLine
 {
     public DialogueCharAnim Animation;
     public string Line;
+    public Color Color;
+
+    public DialogueBoxLine(DialogueCharAnim anim, string line, Color color)
+    {
+        Animation = anim;
+        Line = line;
+        Color = color;
+    }
 
     public DialogueBoxLine(DialogueCharAnim anim, string line)
     {
         Animation = anim;
         Line = line;
+        Color = Color.white;
     }
 }
 
 public class DialogueBox : MonoBehaviour
 {
     private const float BOX_APPEAR_ANIM_DURATION = 0.25F;
-    private const float BOX_TARGET_WIDTH = 7F;
     private const float BOX_TYPE_SPEED = 0.03F;
 
     [SerializeField] private RectTransform _imageMiddle;
@@ -43,7 +51,12 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private PlayerMovement _movement;
     [SerializeField] private Sprite[] _charSprites;
 
+    public bool DisableFrame;
+    public float TargetWidth = 7F;
+
     public bool IsShown { get; private set; }
+    public int ViewingLine => _currentLine;
+    public bool Complete => _currentLine == _lines.Length;
 
     private bool _playingAnim;
     private bool _isTyping;
@@ -55,7 +68,15 @@ public class DialogueBox : MonoBehaviour
 
     private void Start()
     {
-        _initialCharPos = _character.rectTransform.position.x;
+        if (DisableFrame)
+        {
+            _imageMiddle.GetComponent<Image>().enabled = false;
+            _imageLeft.GetComponent<Image>().enabled = false;
+            _imageRight.GetComponent<Image>().enabled = false;
+        }
+
+        if (_character != null)
+            _initialCharPos = _character.rectTransform.position.x;
     }
 
     public void DisplaySpeech(DialogueBoxLine[] lines)
@@ -130,7 +151,8 @@ public class DialogueBox : MonoBehaviour
 
     private IEnumerator PlayAppearAnim()
     {
-        _movement.DisableAllInput = true;
+        if (_movement != null)
+            _movement.DisableAllInput = true;
 
         _playingAnim = true;
 
@@ -155,17 +177,17 @@ public class DialogueBox : MonoBehaviour
         {
             float prog = i / (BOX_APPEAR_ANIM_DURATION * 0.7F);
 
-            _imageMiddle.transform.localScale = new Vector3(prog * BOX_TARGET_WIDTH, 1F, 1F);
-            _imageLeft.transform.localPosition = new Vector3(-prog * BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
-            _imageRight.transform.localPosition = new Vector3(prog * BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+            _imageMiddle.transform.localScale = new Vector3(prog * TargetWidth, 1F, 1F);
+            _imageLeft.transform.localPosition = new Vector3(-prog * TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+            _imageRight.transform.localPosition = new Vector3(prog * TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
 
             yield return null;
         }
 
         transform.localScale = new Vector3(1F, 1F, 1F);
-        _imageMiddle.transform.localScale = new Vector3(BOX_TARGET_WIDTH, 1F, 1F);
-        _imageLeft.transform.localPosition = new Vector3(-BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
-        _imageRight.transform.localPosition = new Vector3(BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+        _imageMiddle.transform.localScale = new Vector3(TargetWidth, 1F, 1F);
+        _imageLeft.transform.localPosition = new Vector3(-TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+        _imageRight.transform.localPosition = new Vector3(TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
 
         _playingAnim = false;
         IsShown = true;
@@ -182,9 +204,9 @@ public class DialogueBox : MonoBehaviour
         _blinker.enabled = false;
 
         transform.localScale = new Vector3(1F, 1F, 1F);
-        _imageMiddle.transform.localScale = new Vector3(BOX_TARGET_WIDTH, 1F, 1F);
-        _imageLeft.transform.localPosition = new Vector3(-BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
-        _imageRight.transform.localPosition = new Vector3(BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+        _imageMiddle.transform.localScale = new Vector3(TargetWidth, 1F, 1F);
+        _imageLeft.transform.localPosition = new Vector3(-TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+        _imageRight.transform.localPosition = new Vector3(TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
 
         StartCoroutine(AnimateCharSprite(DialogueCharAnim.None, BOX_APPEAR_ANIM_DURATION * 0.5F));
 
@@ -192,9 +214,9 @@ public class DialogueBox : MonoBehaviour
         {
             float prog = 1F - i / (BOX_APPEAR_ANIM_DURATION * 0.7F);
 
-            _imageMiddle.transform.localScale = new Vector3(prog * BOX_TARGET_WIDTH, 1F, 1F);
-            _imageLeft.transform.localPosition = new Vector3(-prog * BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
-            _imageRight.transform.localPosition = new Vector3(prog * BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+            _imageMiddle.transform.localScale = new Vector3(prog * TargetWidth, 1F, 1F);
+            _imageLeft.transform.localPosition = new Vector3(-prog * TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
+            _imageRight.transform.localPosition = new Vector3(prog * TargetWidth * _imageMiddle.rect.width * 0.5F, 0F, 0F);
 
             yield return null;
         }
@@ -216,7 +238,8 @@ public class DialogueBox : MonoBehaviour
         _playingAnim = false;
         IsShown = false;
 
-        _movement.DisableAllInput = false;
+        if (_movement != null)
+            _movement.DisableAllInput = false;
     }
 
     private IEnumerator TypeLine(DialogueBoxLine line)
@@ -225,9 +248,11 @@ public class DialogueBox : MonoBehaviour
         _shouldSkip = false;
         _isTyping = true;
         _text.text = "";
-        _text.rectTransform.sizeDelta = new Vector2(BOX_TARGET_WIDTH * _imageMiddle.rect.width, _imageMiddle.rect.height);
+        _text.color = line.Color;
+        _text.rectTransform.sizeDelta = new Vector2(TargetWidth * _imageMiddle.rect.width, _imageMiddle.rect.height);
 
-        StartCoroutine(AnimateCharSprite(line.Animation, BOX_APPEAR_ANIM_DURATION * 0.25F));
+        if (_character != null)
+            StartCoroutine(AnimateCharSprite(line.Animation, BOX_APPEAR_ANIM_DURATION * 0.25F));
 
         for (int i = 0; i < line.Line.Length && !_shouldSkip; i++)
         {
@@ -246,16 +271,6 @@ public class DialogueBox : MonoBehaviour
 
     private void Update()
     {
-        // TODO: Remove
-        if (Input.GetKeyDown(KeyCode.F))
-            DisplaySpeech(new[] {
-                new DialogueBoxLine(DialogueCharAnim.None, "None"),
-                new DialogueBoxLine(DialogueCharAnim.Normal, "Normal"),
-                new DialogueBoxLine(DialogueCharAnim.Smile, "Smile"),
-                new DialogueBoxLine(DialogueCharAnim.RealSmile, "RealSmile"),
-                new DialogueBoxLine(DialogueCharAnim.Stare, "Stare"),
-            });
-
         if (IsShown && Input.GetKeyDown(KeyCode.Space))
             Skip();
     }

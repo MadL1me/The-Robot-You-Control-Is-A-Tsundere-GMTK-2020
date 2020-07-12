@@ -6,6 +6,8 @@ public class MusicManager : MonoBehaviour
 {
     private const float INTENSE_PART_DURATION = 10F;
 
+    public bool DisableMusic { get; set; }
+
     private AudioSource[] _sources;
 
     private float _initialVolume;
@@ -27,8 +29,8 @@ public class MusicManager : MonoBehaviour
 
         _initialVolume = _sources[0].volume;
 
-        for (int i = 1; i < _sources.Length; i++)
-            _sources[1].volume = 0F;
+        for (int i = 0; i < _sources.Length; i++)
+            _sources[0].volume = 0F;
 
         for (int i = 0; i < _sources.Length; i++)
             _sources[i].Play();
@@ -47,7 +49,7 @@ public class MusicManager : MonoBehaviour
         for (int i = 0; i < _sources.Length; i++)
         {
             if (_currentLayer == i)
-                _sources[i].volume = Mathf.Lerp(_sources[i].volume, _initialVolume, 0.02F);
+                _sources[i].volume = Mathf.Lerp(_sources[i].volume, DisableMusic ? 0F : _initialVolume, 0.02F);
             else
                 _sources[i].volume = Mathf.Lerp(_sources[i].volume, 0F, 0.02F);
         }

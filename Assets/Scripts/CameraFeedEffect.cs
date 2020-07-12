@@ -13,6 +13,7 @@ public class CameraFeedEffect : MonoBehaviour
     [SerializeField] private LevelManager _levelManager;
 
     public float FadeOutAmount { get; set; } = 1F;
+    public bool ShouldFadeIn { get; set; } = true;
 
     private float _lastFactor;
     private float _randomFactor;
@@ -20,6 +21,12 @@ public class CameraFeedEffect : MonoBehaviour
     public bool IsGlitchingOut => _playerMovement.GetCurrentGlitch() != GlitchType.None || _levelManager.IsCompleted;
 
     private void Start()
+    {
+        if (ShouldFadeIn)
+            FadeIn();
+    }
+
+    public void FadeIn()
     {
         StartCoroutine(PlayFadeInAnim());
     }

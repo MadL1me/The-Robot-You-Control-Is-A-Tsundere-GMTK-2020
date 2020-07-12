@@ -20,6 +20,8 @@ namespace GMTK2020
         [SerializeField] private float _nextRage;
         [SerializeField] private float _rageLength;
         [SerializeField] private OutOfControlTextSetter _outOfControl;
+
+        public bool DisableRage;
         
         private float _rageTimer = 0;
         
@@ -88,6 +90,9 @@ namespace GMTK2020
 
         private void Update()
         {
+            if (DisableRage)
+                return;
+
             _rageTimer += Time.deltaTime;
             
             if (_rageTimer > _nextRage)
@@ -107,7 +112,7 @@ namespace GMTK2020
                 Debug.Log($"Glitching {type} for {duration}");
 
                  //_nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
-                _outOfControl.SetText(type);
+                //_outOfControl.SetText(type);
                  _rageTimer = -_rageLength;
                 _movement.ApplyGlitch(type, duration);
             }
