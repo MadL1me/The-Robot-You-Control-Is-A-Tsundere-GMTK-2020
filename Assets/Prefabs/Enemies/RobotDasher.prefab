@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Side: 1
   _movingSpeed: 200
+  _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
   _currentWayPoint: 0

@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2090022834594560106
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   Side: 1
   _movingSpeed: 200
   _musicManager: {fileID: 0}
-  _damageFromTouch: 200
+  _damageFromTouch: 1
   _pathUpdatingRate: 1.5
   _currentWayPoint: 0
 --- !u!58 &134092940

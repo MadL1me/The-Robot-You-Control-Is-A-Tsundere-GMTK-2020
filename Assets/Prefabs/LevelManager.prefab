@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1061311103086833650}
   - component: {fileID: 1061311103086833652}
   m_Layer: 0
-  m_Name: A_ manager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,4 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e154cdf0114d5bba5be9820f73025d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _totalEnemiesCount: 0
+  _enemiesKilled: 0
   _delayBetweenRestartAndLevelSwitch: 0.5
