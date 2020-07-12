@@ -258,10 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Side: 1
-  _movingSpeed: 150
+  _movingSpeed: 200
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
+  _agroRadius: 6.15
   _currentWayPoint: 0
   _weaponBearer: {fileID: 8923268653563955547}
 --- !u!95 &8923268653563955552

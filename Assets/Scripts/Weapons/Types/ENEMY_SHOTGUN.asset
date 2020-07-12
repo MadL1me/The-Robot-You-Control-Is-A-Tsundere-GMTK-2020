@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 11400000, guid: 6da3df4840b00924fb5a74d12c65b90e, type: 2}
   MagazineRounds: 1
-  ReloadDuration: 1
-  ShootDelay: 5
+  ReloadDuration: 0
+  ShootDelay: 3
   IsAutomatic: 0
   RoundsPerShot: 6
   Spread: 10

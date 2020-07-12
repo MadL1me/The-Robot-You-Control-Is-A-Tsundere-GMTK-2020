@@ -326,10 +326,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Side: 1
-  _movingSpeed: 100
+  _movingSpeed: 200
   _musicManager: {fileID: 0}
   _damageFromTouch: 1
   _pathUpdatingRate: 0.5
-  _agroRadius: 10
+  _agroRadius: 7.45
   _currentWayPoint: 0
   _weaponBearer: {fileID: 4480047955493159460}

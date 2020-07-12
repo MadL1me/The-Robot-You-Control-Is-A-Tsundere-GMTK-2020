@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd46afcf69e49e088c0eb635a3485c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
-  _health: 5
+  _maxHealth: 3
+  _health: 3
 --- !u!114 &1360064202758526474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,9 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movingSpeed: 7.5
-  _dashingSpeed: 1
-  _dashingLength: 9
-  _dashTimeout: 0
   _camera: {fileID: 0}
   _footstepPlayer: {fileID: 3252581993907908539}
   _footstepClips:
@@ -321,6 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelManager: {fileID: 0}
+  _nextRage: 0
+  _rageLength: 0
 --- !u!95 &1360064202758526477
 Animator:
   serializedVersion: 3
