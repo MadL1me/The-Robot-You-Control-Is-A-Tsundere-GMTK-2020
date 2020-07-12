@@ -23,7 +23,7 @@ namespace GMTK2020
         [SerializeField] protected int _currentWayPoint;
         protected bool _reachedEndOfThePath;
         protected Vector3 _directionToCurrentWaypoint;
-        protected bool _canContact;
+        protected bool _canContact = true;
         
         protected override void Awake()
         {

@@ -32,8 +32,12 @@ namespace GMTK2020
             } 
         }
 
-        public void SetInvisibleForTime(float time) => StartCoroutine(SetInvisibleForTimeCoroutine(time));
-        
+        public void SetInvisibleForTime(float time)
+        {
+            IsInvisible = true;
+            StartCoroutine(SetInvisibleForTimeCoroutine(time));  
+        } 
+
         private IEnumerator SetInvisibleForTimeCoroutine(float time)
         {
             IsInvisible = true;

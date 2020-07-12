@@ -70,7 +70,7 @@ namespace GMTK2020.Level
         private IEnumerator NextLevelProceedCoroutine()
         {
             yield return new WaitForSeconds(_delayBetweenRestartAndLevelSwitch);
-            Application.LoadLevel(Application.loadedLevel);
+            Application.LoadLevel(Application.loadedLevel+1);
         }
         
         private IEnumerator RestartCoroutine()

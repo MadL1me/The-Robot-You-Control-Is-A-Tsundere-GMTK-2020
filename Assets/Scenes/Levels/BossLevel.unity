@@ -702,10 +702,25 @@ PrefabInstance:
       propertyPath: _agroRadius
       value: 6.22
       objectReference: {fileID: 0}
+    - target: {fileID: 3855936271601533925, guid: 6d2c6e2ae20350045bdc154c32fc0caa,
+        type: 3}
+      propertyPath: _damageFromTouch
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5644936730634910759, guid: 6d2c6e2ae20350045bdc154c32fc0caa,
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644936730634910761, guid: 6d2c6e2ae20350045bdc154c32fc0caa,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644936730634910761, guid: 6d2c6e2ae20350045bdc154c32fc0caa,
+        type: 3}
+      propertyPath: _health
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5644936730634910766, guid: 6d2c6e2ae20350045bdc154c32fc0caa,
         type: 3}

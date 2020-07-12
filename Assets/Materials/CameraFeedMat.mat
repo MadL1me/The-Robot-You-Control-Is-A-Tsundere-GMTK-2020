@@ -60,9 +60,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FadeOutAmount: 0.0008420348
+    - _FadeOutAmount: 0.008098006
     - _GlitchAmount: 0.01
-    - _GlitchY: 0.57886255
+    - _GlitchY: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
