@@ -45,29 +45,29 @@ namespace GMTK2020
         {
             if (_weaponBearer.RequiresReload())
             {
-                Debug.Log("Reuire to reload!");
+              //  Debug.Log("Reuire to reload!");
                 _weaponBearer.Reload();
                 return false;
             }
 
             if (_weaponBearer.IsReloading)
             {
-                Debug.Log("IS reloading!");
+              //  Debug.Log("IS reloading!");
                 return false;
             }
 
             if (!_weaponBearer.CanShoot())
             {
-                Debug.Log("CantShoot!!");
+              //  Debug.Log("CantShoot!!");
                 return false; }
 
             if (!IsEnemySeesPlayer())
             {
-                Debug.Log("enemy not sees player!");
+              //  Debug.Log("enemy not sees player!");
                 return false;
             }
             
-            Debug.Log("YESSS IT CA SHOOT");
+          //  Debug.Log("YESSS IT CA SHOOT");
             return true;
         }
 

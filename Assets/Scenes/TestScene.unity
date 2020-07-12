@@ -2200,6 +2200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotShotgunShooter
       objectReference: {fileID: 0}
+    - target: {fileID: 4480047955493159461, guid: fee07edc506af174cbd912a7ffa0dcaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4480047955493159462, guid: fee07edc506af174cbd912a7ffa0dcaa,
         type: 3}
       propertyPath: _musicManager
@@ -2488,7 +2493,7 @@ PrefabInstance:
     - target: {fileID: 8923268653563955543, guid: 47d409fcbd34b8f4abea788f2e61112e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8923268653563955544, guid: 47d409fcbd34b8f4abea788f2e61112e,
         type: 3}

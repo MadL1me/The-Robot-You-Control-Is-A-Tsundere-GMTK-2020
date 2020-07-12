@@ -21,7 +21,7 @@ namespace GMTK2020
 
         public int GetDamage => Config.BulletDamage;
 
-        public BulletConfig Config;
+        public BulletConfig Config { get; set; }
         public float Angle { get; set; }
 
         public AudioSource SoundSource { get; set; }
@@ -59,6 +59,7 @@ namespace GMTK2020
             {
                 if (Side != actor.Side)
                 {
+                    Debug.Log(Config.BulletDamage);
                     if (actor.Damage(Config.BulletDamage))
                         Destroy(gameObject);
                 }

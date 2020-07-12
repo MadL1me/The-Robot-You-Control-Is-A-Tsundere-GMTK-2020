@@ -93,6 +93,8 @@ namespace GMTK2020
                 _audioSource.Play();
                 HealthStats.SetInvisibleForTime(_invisibleTime);
                 StartCoroutine(BlinkForTime(_invisibleTime));
+                Debug.Log($"Damage amount: {amount}");
+                Debug.Log($"Player health is: {HealthStats.Health}");
                 return true;
             }
             return false;
