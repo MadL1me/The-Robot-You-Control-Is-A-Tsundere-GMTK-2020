@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3099051197091833027}
   - component: {fileID: 3099051197091833028}
   - component: {fileID: 5380678006741606510}
+  - component: {fileID: 494214341}
   m_Layer: 0
   m_Name: GameCamera
   m_TagString: MainCamera
@@ -99,3 +100,20 @@ MonoBehaviour:
   FocusTarget: {fileID: 0}
   Smoothness: 0.2
   Elasticity: 1.75
+  WobbleStrength: 0.1
+  WobbleSpeed: 2
+--- !u!114 &494214341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099051197091833029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a9042eaa93d4746aa11dca38972dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shaderMat: {fileID: 2100000, guid: 81ec5f7cab0fa384c841108c28b30a6d, type: 2}
+  _playerMovement: {fileID: 0}
+  _levelManager: {fileID: 0}
