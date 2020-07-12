@@ -2,32 +2,61 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum DialogueCharAnim
+{
+    None = 0,
+    Normal = 1,
+    Smile = 2
+}
+
+public struct DialogueBoxLine
+{
+    public DialogueCharAnim Animation;
+    public string Line;
+
+    public DialogueBoxLine(DialogueCharAnim anim, string line)
+    {
+        Animation = anim;
+        Line = line;
+    }
+}
 
 public class DialogueBox : MonoBehaviour
 {
     private const float BOX_APPEAR_ANIM_DURATION = 0.25F;
-    private const float BOX_TARGET_WIDTH = 5F;
+    private const float BOX_TARGET_WIDTH = 7F;
     private const float BOX_TYPE_SPEED = 0.03F;
 
     [SerializeField] private RectTransform _imageMiddle;
     [SerializeField] private RectTransform _imageLeft;
     [SerializeField] private RectTransform _imageRight;
     [SerializeField] private Image _blinker;
+    [SerializeField] private Image _character;
     [SerializeField] private Text _text;
     [SerializeField] private AudioSource _source;
     [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private Sprite[] _charSprites;
 
     public bool IsShown { get; private set; }
 
     private bool _playingAnim;
     private bool _isTyping;
     private bool _shouldSkip;
-    private string[] _lines;
+    private DialogueBoxLine[] _lines;
     private int _currentLine;
+    private float _initialCharPos;
+    private DialogueCharAnim _lastAnim;
 
-    public void DisplaySpeech(string[] lines)
+    private void Start()
+    {
+        _initialCharPos = _character.rectTransform.position.x;
+    }
+
+    public void DisplaySpeech(DialogueBoxLine[] lines)
     {
         if (IsShown || _playingAnim)
             return;
@@ -49,6 +78,52 @@ public class DialogueBox : MonoBehaviour
             else
                 StartCoroutine(PlayDisappearAnim());
         }
+    }
+
+    private IEnumerator AnimateCharSprite(DialogueCharAnim anim, float duration)
+    {
+        if (_lastAnim == anim)
+            yield break;
+
+        if (_lastAnim == DialogueCharAnim.None)
+        {
+            _character.color = Color.clear;
+            _character.transform.position = new Vector3(_initialCharPos - 48F, _character.transform.position.y);
+            _character.sprite = _charSprites[(int)anim - 1];
+
+            for (float i = 0F; i < duration && !_shouldSkip; i += Time.deltaTime)
+            {
+                _character.color = new Color(1F, 1F, 1F, i / duration);
+                _character.transform.position = new Vector3(_initialCharPos - 48F + 48F * i / duration, _character.transform.position.y);
+
+                yield return null;
+            }
+
+            _character.color = Color.white;
+            _character.transform.position = new Vector3(_initialCharPos, _character.transform.position.y);
+        }
+        else if (anim != DialogueCharAnim.None)
+        {
+            _character.sprite = _charSprites[(int)anim - 1];
+        }
+        else
+        {
+            _character.color = Color.white;
+            _character.transform.position = new Vector3(_initialCharPos, _character.transform.position.y);
+
+            for (float i = 0F; i < duration && !_shouldSkip; i += Time.deltaTime)
+            {
+                _character.color = new Color(1F, 1F, 1F, 1F - i / duration);
+                _character.transform.position = new Vector3(_initialCharPos - 48F * i / duration, _character.transform.position.y);
+
+                yield return null;
+            }
+
+            _character.color = Color.clear;
+            _character.transform.position = new Vector3(_initialCharPos - 48F, _character.transform.position.y);
+        }
+
+        _lastAnim = anim;
     }
 
     private IEnumerator PlayAppearAnim()
@@ -109,6 +184,8 @@ public class DialogueBox : MonoBehaviour
         _imageLeft.transform.localPosition = new Vector3(-BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
         _imageRight.transform.localPosition = new Vector3(BOX_TARGET_WIDTH * _imageMiddle.rect.width * 0.5F, 0F, 0F);
 
+        StartCoroutine(AnimateCharSprite(DialogueCharAnim.None, BOX_APPEAR_ANIM_DURATION * 0.5F));
+
         for (float i = 0F; i < BOX_APPEAR_ANIM_DURATION * 0.7F; i += Time.deltaTime)
         {
             float prog = 1F - i / (BOX_APPEAR_ANIM_DURATION * 0.7F);
@@ -140,7 +217,7 @@ public class DialogueBox : MonoBehaviour
         _movement.DisableAllInput = false;
     }
 
-    private IEnumerator TypeLine(string line)
+    private IEnumerator TypeLine(DialogueBoxLine line)
     {
         _blinker.enabled = false;
         _shouldSkip = false;
@@ -148,15 +225,17 @@ public class DialogueBox : MonoBehaviour
         _text.text = "";
         _text.rectTransform.sizeDelta = new Vector2(BOX_TARGET_WIDTH * _imageMiddle.rect.width, _imageMiddle.rect.height);
 
-        for (int i = 0; i < line.Length && !_shouldSkip; i++)
+        StartCoroutine(AnimateCharSprite(line.Animation, BOX_APPEAR_ANIM_DURATION * 0.25F));
+
+        for (int i = 0; i < line.Line.Length && !_shouldSkip; i++)
         {
             _source.PlayOneShot(_source.clip);
-            _text.text += line[i];
+            _text.text += line.Line[i];
 
             yield return new WaitForSeconds(BOX_TYPE_SPEED);
         }
 
-        _text.text = line;
+        _text.text = line.Line;
 
         _isTyping = false;
         _currentLine++;
@@ -167,7 +246,11 @@ public class DialogueBox : MonoBehaviour
     {
         // TODO: Remove
         if (Input.GetKeyDown(KeyCode.F))
-            DisplaySpeech(new[] { "Hello, this is first line", "Hello, this is second line", "Hello, this is third line" });
+            DisplaySpeech(new[] {
+                new DialogueBoxLine(DialogueCharAnim.None, "First line"),
+                new DialogueBoxLine(DialogueCharAnim.Normal, "Second line"),
+                new DialogueBoxLine(DialogueCharAnim.Smile, "Third line"),
+            });
 
         if (IsShown && Input.GetKeyDown(KeyCode.Space))
             Skip();
