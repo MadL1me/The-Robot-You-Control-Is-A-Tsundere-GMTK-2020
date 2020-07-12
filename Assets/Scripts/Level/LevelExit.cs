@@ -10,10 +10,42 @@ public class LevelExit : MonoBehaviour
     private const float LEVEL_FADEOUT_ANIM_DURATION = 1F;
 
     [SerializeField] private LevelManager _manager;
+    [SerializeField] private Sprite[] _frames;
+
+    private SpriteRenderer _rdr;
 
     public bool IsOpen => _manager.IsCompleted;
 
     private bool _isAnimating;
+    private bool _wasOpen;
+
+    private void Start()
+    {
+        _rdr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (IsOpen && !_wasOpen)
+            StartCoroutine(PlayOpenAnim());
+
+        _wasOpen = IsOpen;
+    }
+
+    private IEnumerator PlayOpenAnim()
+    {
+        var main = Camera.main;
+
+        for (int i = 0; i < _frames.Length; i++)
+        {
+            if (i != 0)
+                main.GetComponent<CameraFollow>().Shake(4F);
+
+            _rdr.sprite = _frames[i];
+
+            yield return new WaitForSeconds(0.3F);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
