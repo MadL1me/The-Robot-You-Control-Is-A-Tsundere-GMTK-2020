@@ -14260,16 +14260,52 @@ PrefabInstance:
       propertyPath: data.dataString
       value: UEsDBBQAAAgIAAAoIewDR94zXwIAAAMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMziVjmzygt9YQ0kMeE9LJxZfFXmMNsuTRI0Ay/PeuZBtTOuWCtPvt4/t25S/GpWkwt0ovNS8eVYHs+4j5M/s2GpwPuIeNkiv+iT3mnRe28iAImFewXJE99mFG1Wg1z3/IjfDgiIxO8lLpelFsMFXGGjKXIAySSyvroyWZvkZsT3/jmQ850Cm586dPOs2i0ZGOOUqLeoDG06to1oHjq2kUfnddTBviZC6gbrDw/Q+R17NTjQCTxKxDRFfJja+lhOCm64zZQxOYp9AYR7wIUHAgpqGdhK4V8k1lu8sp+LksDdpOBg2HOdckWJuV/VStijWYbdvaBwjn6yQ3t6GtNunjP/5xHNylVvVDXzeOfA1b8Xz7CoccjD2T+dw8HxqPg0I7EFtYC3yvUD6ppVZOFuS02vlQZzCZD9cTtbTCfDvY21YvjK4ZJO+n2s/UczgG9vtU8HodpL9uDSuhgt5hFVDTcH5Rw2FRTJeCrL6L3wbfYHO+UZ3jnmtjydWxlL69tXLaQ9kiaObZOJsqLVGfZ2hQgrCHF8pjL2d44ft/1D34x9NV73z9m7gICeYBH0UXrhe1O03LVGr3iKZ6dlZwiYPU3vFEQqVKynbFzin1YSunS8jPwjaOF3/vFkvipJyUADhN1lE+nY3XE7id3M2iaDK9mayn1ywsH5fEE8RL22gnD41NDsklLVr/TRktNTRh3QsNuyX/rJUZkFyWapVrRPncZjg1jpqK0MssFgUngVZoLZdh4OwrY0LlWyyyU6IsMF3srYZsyJKxhn8o6y0ZS8NHJGNHdvwDUEsDBBQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSkaFRmnFaYmKqhVGSQbKFpW6ScaKZsbmlgYGxhalxkoWJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAoIewDR94zXwIAAAMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAoIewPG6sebQAAAHgAAAAJACQAAAAAAAAAAAAAAKwCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZAMAAAAA
       objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036081, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.027254075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036081, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036081, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.9920645
+      objectReference: {fileID: 0}
     - target: {fileID: 4056921253213036082, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.59
+      value: 16.54
       objectReference: {fileID: 0}
     - target: {fileID: 4056921253213036082, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.74
+      value: 12.95
       objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036082, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5289707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036082, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0166245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036082, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056921253213036083, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2449002243892796776, guid: 14d33975d79743942b62ff11a83b0e5a,
+        type: 3}
     - target: {fileID: 8489872831757010652, guid: 0d32c6547894ed746bdcd8c24b6ccd9a,
         type: 3}
       propertyPath: m_IsActive
