@@ -110,7 +110,8 @@ public class StartCutscene : MonoBehaviour
 
         _boxAfter.DisplaySpeech(new[]
         {
-            new DialogueBoxLine(DialogueCharAnim.None, "Use WASD to move and LMB to shoot"),
+            new DialogueBoxLine(DialogueCharAnim.None, "Use WASD to move and LMB to shoot, keys 1,2,3 - various weapons"),
+            new DialogueBoxLine(DialogueCharAnim.None, "Destroy all robots to leave"), 
             new DialogueBoxLine(DialogueCharAnim.None, "Good luck!"),
         });
     }

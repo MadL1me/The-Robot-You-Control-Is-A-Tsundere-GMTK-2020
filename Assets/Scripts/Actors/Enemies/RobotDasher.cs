@@ -32,16 +32,12 @@ namespace GMTK2020
                 _rigidbody.velocity = direction * _dashingSpeed * Time.fixedDeltaTime;
                 yield return wait;
             }
-            
+
             yield return new WaitForSeconds(_afterDashTimeout);
             
             _isDashing = false;
         }
-
-        protected override void Move()
-        {
-            _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
-        }
+        
 
         protected override void MakeAIDecision()
         {

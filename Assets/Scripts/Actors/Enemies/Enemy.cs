@@ -23,7 +23,7 @@ namespace GMTK2020
         [SerializeField] protected int _currentWayPoint;
         protected bool _reachedEndOfThePath;
         protected Vector3 _directionToCurrentWaypoint;
-        protected bool _canContact;
+        protected bool _canContact = true;
         
         protected override void Awake()
         {
@@ -65,16 +65,16 @@ namespace GMTK2020
             if (!_isAgroed && Vector3.Distance(transform.position, _player.transform.position) < _agroRadius)
                 _isAgroed = true;
 
-            Debug.Log($"Distacne beetwenn shooter and player: {Vector3.Distance(transform.position, _player.transform.position)}");
+           // Debug.Log($"Distacne beetwenn shooter and player: {Vector3.Distance(transform.position, _player.transform.position)}");
             
             if (!_isAgroed || !HandleAstarPath())
             {
-                Debug.Log($"Is agroed: {_isAgroed}");
-                Debug.Log("Not agroed or cant handle a*"); 
+                // Debug.Log($"Is agroed: {_isAgroed}");
+                //Debug.Log("Not agroed or cant handle a*"); 
                 return;
             }
             
-            Debug.Log("fixed works");
+            //Debug.Log("fixed works");
             
             MakeAIDecision();
             PlayActorAnimations();
@@ -112,8 +112,11 @@ namespace GMTK2020
             if (other.gameObject.CompareTag("Player") && _canContact)
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
-        
-        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime;
+
+        protected virtual void Move()
+        {
+            _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
+        }
 
         protected override void PlayActorAnimations()
         {

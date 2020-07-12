@@ -60,7 +60,7 @@ namespace GMTK2020
 
             if (actor != null)
             {
-                if (Side != actor.Side)
+                if (Side != actor.Side && actor.CanTakeDamage())
                 {
                     Debug.Log(Config.BulletDamage);
                     if (actor.Damage(Config.BulletDamage))

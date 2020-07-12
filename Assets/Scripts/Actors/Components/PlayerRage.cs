@@ -113,10 +113,11 @@ namespace GMTK2020
                 Debug.Log($"Glitching {type} for {duration}");
 
                  //_nextRage = Time.time + duration * 1.5F + Random.Range(7F, 19F);
-                //_outOfControl.SetText(type);
+                
+                 _outOfControl.SetText(type);
                  _rageTimer = -_rageLength;
                 _movement.ApplyGlitch(type, duration);
-                StartCoroutine(ChangeNameAfterGlitch(_rageLength));
+                StartCoroutine(ChangeNameAfterGlitch(duration));
             }
         }
 
