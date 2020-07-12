@@ -35,6 +35,9 @@ public class WeaponBearer : MonoBehaviour
         _actor = GetComponent<Actor>();
     }
 
+    public AudioSource GetImpactSoundSource() =>
+        _audioSource;
+
     public bool IsShotInProgress() =>
         CurrentWeapon != null && Time.time - _lastShoot <= SINGLE_TAP_ANIMATION_DURATION;
 

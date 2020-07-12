@@ -24,6 +24,7 @@ namespace GMTK2020
         public BulletConfig Config;
         public float Angle { get; set; }
 
+        public AudioSource SoundSource { get; set; }
         public ProjectileSide Side { get; set; }
 
         private SpriteRenderer _renderer;
@@ -64,6 +65,7 @@ namespace GMTK2020
             }
             else
             {
+                SoundSource.PlayOneShot(Config.ImpactSounds[UnityEngine.Random.Range(0, Config.ImpactSounds.Length)], 0.3F);
                 Destroy(gameObject);
             }
         }

@@ -9,5 +9,6 @@ namespace GMTK2020
         public int BulletDamage;
         public Sprite Sprite;
         public Bullet BulletPrefab;
+        public AudioClip[] ImpactSounds;
     }
 }
