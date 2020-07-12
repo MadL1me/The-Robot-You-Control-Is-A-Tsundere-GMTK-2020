@@ -47,6 +47,7 @@ public class Weapon
 
             var bullet = UnityEngine.Object.Instantiate(WeaponConfig.Ammo.BulletPrefab, pos, angle);
             Debug.Log("Shoot!");
+            bullet.Config = WeaponConfig.Ammo;
             bullet.Angle = directionWithSpread;
             bullet.Side = bearer.Side;
             bullet.SoundSource = bearer.GetImpactSoundSource();

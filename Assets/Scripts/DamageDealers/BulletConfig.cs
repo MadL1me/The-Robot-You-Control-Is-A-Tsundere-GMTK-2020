@@ -6,7 +6,7 @@ namespace GMTK2020
     public class BulletConfig : ScriptableObject
     {
         public float BulletSpeed;
-        public int BulletDamage;
+        public int BulletDamage = 1;
         public Sprite Sprite;
         public Bullet BulletPrefab;
         public AudioClip[] ImpactSounds;

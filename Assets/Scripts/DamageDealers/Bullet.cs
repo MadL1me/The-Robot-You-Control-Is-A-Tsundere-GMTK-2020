@@ -21,7 +21,7 @@ namespace GMTK2020
 
         public int GetDamage => Config.BulletDamage;
 
-        public BulletConfig Config;
+        public BulletConfig Config { get; set; }
         public float Angle { get; set; }
 
         public AudioSource SoundSource { get; set; }
@@ -41,7 +41,7 @@ namespace GMTK2020
 
         private void Update()
         {
-            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.01F;
+            var translateVec = new Vector3(Mathf.Cos(Mathf.Deg2Rad * Angle), Mathf.Sin(Mathf.Deg2Rad * Angle)) * Config.BulletSpeed * 0.001F;
 
             transform.position += translateVec * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0F, 0F, Angle);
@@ -59,6 +59,7 @@ namespace GMTK2020
             {
                 if (Side != actor.Side)
                 {
+                    Debug.Log(Config.BulletDamage);
                     if (actor.Damage(Config.BulletDamage))
                         Destroy(gameObject);
                 }
