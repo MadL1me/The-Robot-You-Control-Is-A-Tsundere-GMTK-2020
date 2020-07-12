@@ -77,6 +77,8 @@ namespace GMTK2020
         protected abstract void PlayActorAnimations();
         protected virtual void SubscribeOnEvents() => HealthStats.OnHealthEnd += Die;
 
+        protected void RunOnDeath() => OnActorDeath?.Invoke();
+
         public virtual void Die() => OnActorDeath?.Invoke();
     }
 }

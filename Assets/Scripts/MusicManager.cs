@@ -6,12 +6,11 @@ public class MusicManager : MonoBehaviour
 {
     private const float INTENSE_PART_DURATION = 10F;
 
-    public bool DisableMusic { get; set; }
+    public bool DisableMusic;
 
     private AudioSource[] _sources;
 
     private float _initialVolume;
-    private float _bossStart = int.MinValue;
     private float _intenseStart = int.MinValue;
     private int _currentLayer;
 
@@ -36,9 +35,15 @@ public class MusicManager : MonoBehaviour
             _sources[i].Play();
     }
 
+    public void Restart()
+    {
+        for (int i = 0; i < _sources.Length; i++)
+            _sources[i].Play();
+    }
+
     private void Update()
     {
-        if (Time.time - _intenseStart > INTENSE_PART_DURATION)
+        if (Time.time - _intenseStart > INTENSE_PART_DURATION || _sources.Length == 1 || !_sources[1].enabled)
             _currentLayer = 0;
         else
             _currentLayer = 1;
