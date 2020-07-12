@@ -94,8 +94,6 @@ public class WeaponBearer : MonoBehaviour
             Debug.Log("Cant reload!");
             return;
         }
-
-        
         
         IsReloading = true;
         _reloadStart = Time.time;
