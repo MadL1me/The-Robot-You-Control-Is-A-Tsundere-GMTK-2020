@@ -24,12 +24,11 @@ public class BossEventHandler : MonoBehaviour
 
         _box.DisplaySpeech(new[]
         {
-            new DialogueBoxLine(DialogueCharAnim.RealSmile, "Yay!!! We did it!"),
-            new DialogueBoxLine(DialogueCharAnim.Stare, "I.. I meant I did it!"),
-            new DialogueBoxLine(DialogueCharAnim.Stare, "That's what I was trying to say."),
-            new DialogueBoxLine(DialogueCharAnim.Stare, "And you are still an idiot."),
-            new DialogueBoxLine(DialogueCharAnim.Stare, "..."),
-            new DialogueBoxLine(DialogueCharAnim.Normal, "Anyway, let's go beat up that annoying old fart!"),
+            new DialogueBoxLine(DialogueCharAnim.RealSmile, "Yay!!! We did it!", 1.75F),
+            new DialogueBoxLine(DialogueCharAnim.Stare, "I.. I mean I did it!", 1.75F),
+            new DialogueBoxLine(DialogueCharAnim.Stare, "That's what I was trying to say.", 1.75F),
+            new DialogueBoxLine(DialogueCharAnim.Stare, "And you are still an idiot.", 1.75F),
+            new DialogueBoxLine(DialogueCharAnim.Stare, "...", 1.75F),
         });
     }
 

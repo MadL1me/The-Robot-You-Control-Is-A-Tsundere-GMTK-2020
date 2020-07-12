@@ -12,16 +12,21 @@ public class CameraFeedEffect : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private LevelManager _levelManager;
 
+    private PlayerMovement _mov;
+
     public float FadeOutAmount { get; set; } = 1F;
     public bool ShouldFadeIn { get; set; } = true;
 
     private float _lastFactor;
     private float _randomFactor;
+    private float _interference;
 
     public bool IsGlitchingOut => _playerMovement.GetCurrentGlitch() != GlitchType.None || _levelManager.IsCompleted;
 
     private void Start()
     {
+        _mov = _playerMovement.GetComponent<PlayerMovement>();
+
         if (ShouldFadeIn)
             FadeIn();
     }
@@ -55,6 +60,14 @@ public class CameraFeedEffect : MonoBehaviour
 
         _shaderMat.SetFloat("_GlitchY", screenCutOff);
         _shaderMat.SetFloat("_FadeOutAmount", FadeOutAmount);
+
+        if (_mov.GetCurrentGlitch() == GlitchType.Interference)
+            _interference = Mathf.Lerp(_interference, 1F, 0.1F);
+        else
+            _interference = Mathf.Lerp(_interference, 0F, 0.1F);
+
+        _shaderMat.SetFloat("_NoiseAmount", 0.2F + _interference * 0.4F);
+        _shaderMat.SetFloat("_Interference", _interference);
 
         Graphics.Blit(source, destination, _shaderMat);
     }

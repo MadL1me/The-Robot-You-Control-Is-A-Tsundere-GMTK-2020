@@ -13,7 +13,8 @@ namespace GMTK2020
         RandomWalkRight = 1 << 2,
         RandomWalkForward = 1 << 3,
         RandomWalkBack = 1 << 4,
-        RandomReload = 1 << 5
+        RandomReload = 1 << 5,
+        Interference = 1 << 6
     }
 
     public class PlayerMovement : MonoBehaviour
