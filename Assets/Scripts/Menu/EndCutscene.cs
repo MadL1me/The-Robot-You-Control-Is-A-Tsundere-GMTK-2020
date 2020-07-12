@@ -9,6 +9,8 @@ public class EndCutscene : MonoBehaviour
     [SerializeField] private Image _ops;
     [SerializeField] private Image _girl;
     [SerializeField] private DialogueBox _box;
+    [SerializeField] private MusicManager _mgr;
+    [SerializeField] private Text _credits;
 
     private void Awake()
     {
@@ -58,6 +60,12 @@ public class EndCutscene : MonoBehaviour
 
         yield return new WaitForSeconds(2F);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().handle + 1);
+        _mgr.DisableMusic = false;
+
+        while (true)
+        {
+            _credits.transform.position -= new Vector3(0, Time.deltaTime * 25F);
+            yield return null;
+        }
     }
 }
