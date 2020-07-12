@@ -14,7 +14,8 @@ namespace GMTK2020
 
         protected const float WAYPOINT_DISTANCE = 0.5F;
 
-        [SerializeField] protected float _agroRadius = 10F;
+        protected float _lastAnimChange;
+        protected float _agroRadius = 10F;
         protected bool _isAgroed;
         protected Player _player;
         protected Path _path;
@@ -22,6 +23,7 @@ namespace GMTK2020
         [SerializeField] protected int _currentWayPoint;
         protected bool _reachedEndOfThePath;
         protected Vector3 _directionToCurrentWaypoint;
+        protected bool _canContact;
         
         protected override void Awake()
         {
@@ -94,29 +96,29 @@ namespace GMTK2020
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") && _canContact)
                 other.gameObject.GetComponent<Player>().Damage(_damageFromTouch);
         }
-
-        protected void OnDrawGizmos()
-        {
-            Gizmos.DrawWireSphere(transform.position, _agroRadius);
-        }
-
-        protected virtual void Move() => _rigidbody.velocity = (_directionToCurrentWaypoint.normalized * _movingSpeed * Time.fixedDeltaTime);
+        
+        protected virtual void Move() => _rigidbody.velocity = _directionToCurrentWaypoint.normalized * _movingSpeed;
 
         protected override void PlayActorAnimations()
         {
+            if (Time.time - _lastAnimChange < 0.15F)
+                return;
+
+            _lastAnimChange = Time.time;
+
             var animType = AnimType.Idle;
             var watchDir = WatchDirection.Down;
             var vector = _directionToCurrentWaypoint;
             var speed = 1F;
             
-            if (Math.Abs(vector.x) >= 0.2F || Math.Abs(vector.y) >= 0.2f)
+            if (Math.Abs(_rigidbody.velocity.x) >= 0.2F || Math.Abs(_rigidbody.velocity.y) >= 0.2f)
                 animType = AnimType.Move;
-            
-            var vecDiff = (vector == Vector3.zero) //|| _bearer.IsShotInProgress()
-                ? (Input.mousePosition - new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight) / 2F)
+
+            var vecDiff = vector == Vector3.zero
+                ? _player.transform.position - transform.position
                 : vector;
 
             var direction = (Mathf.Atan2(vecDiff.y, vecDiff.x) * Mathf.Rad2Deg + 360) % 360;

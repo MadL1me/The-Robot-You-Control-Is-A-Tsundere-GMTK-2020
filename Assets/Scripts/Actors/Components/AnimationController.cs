@@ -23,7 +23,6 @@ namespace GMTK2020
         Move
     }
     
-    
     [RequireComponent(typeof(Animator), typeof(Actor))]
     public class AnimationController : MonoBehaviour
     {

@@ -69,7 +69,8 @@ namespace GMTK2020
             }
             else
             {
-                SoundSource.PlayOneShot(Config.ImpactSounds[UnityEngine.Random.Range(0, Config.ImpactSounds.Length)], 0.3F);
+                if (Config.ImpactSounds.Length > 0)
+                    SoundSource.PlayOneShot(Config.ImpactSounds[UnityEngine.Random.Range(0, Config.ImpactSounds.Length)], 0.3F);
                 Destroy(gameObject);
             }
         }

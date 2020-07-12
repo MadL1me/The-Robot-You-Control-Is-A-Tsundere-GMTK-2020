@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
 
     public void Shake(float strength)
     {
-        _shakeAmount = strength;
+        _shakeAmount = Mathf.Max(_shakeAmount, strength);
     }
 
     private void Update()
