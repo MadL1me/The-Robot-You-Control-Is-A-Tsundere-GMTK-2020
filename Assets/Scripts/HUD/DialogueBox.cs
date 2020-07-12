@@ -10,7 +10,9 @@ public enum DialogueCharAnim
 {
     None = 0,
     Normal = 1,
-    Smile = 2
+    Smile = 2,
+    RealSmile = 3,
+    Stare = 4
 }
 
 public struct DialogueBoxLine
@@ -247,9 +249,11 @@ public class DialogueBox : MonoBehaviour
         // TODO: Remove
         if (Input.GetKeyDown(KeyCode.F))
             DisplaySpeech(new[] {
-                new DialogueBoxLine(DialogueCharAnim.None, "First line"),
-                new DialogueBoxLine(DialogueCharAnim.Normal, "Second line"),
-                new DialogueBoxLine(DialogueCharAnim.Smile, "Third line"),
+                new DialogueBoxLine(DialogueCharAnim.None, "None"),
+                new DialogueBoxLine(DialogueCharAnim.Normal, "Normal"),
+                new DialogueBoxLine(DialogueCharAnim.Smile, "Smile"),
+                new DialogueBoxLine(DialogueCharAnim.RealSmile, "RealSmile"),
+                new DialogueBoxLine(DialogueCharAnim.Stare, "Stare"),
             });
 
         if (IsShown && Input.GetKeyDown(KeyCode.Space))
